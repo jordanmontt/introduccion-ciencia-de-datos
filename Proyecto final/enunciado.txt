@@ -1,0 +1,16 @@
+El archivo "data/mdb_dataset.csv" contiene 50,000 comentarios sobre películas. Cada uno clasificado como positivo (pos) o negativo (neg).
+El proyecto consiste en desarrollar un artefacto capaz de clasificar nuevos comentarios.
+
+NOTA. Si su computadora no tiene los recursos para procesar todos los comentarios es aceptable trabajaar con una muestra aleatoria  que incluya al menos un 20% de los datos. 
+
+El desarrollo del proyecto consiste en los siguientes pasos:
+
+1) Convertir cada comentarios en un vector numérico siguiendo los linenamientos desarrollados en la unidad "Procesamiento de Lenguaje Natural (NLP)"
+	Aqui hay al menos 3 alternativas.
+
+2) Con cada comentario convertido en un vector numérico, deberá entrenar un clasificador hasta obtener un artefacto con al menos un 80% de exactitud (accuracy).
+	Aqui hay al menos 2 alternativas y sus variaciones.
+
+3) Este artefacto deberá ser desplegado como un servicio REST que reciba nuevos comentarios y retorne los comentarios con su clasificación.
+
+4) Finalmente, deberá desarrollar un ETL que lea nuevos comentarios desde un archivo, envíe cada comentario al servicio REST y guarde los comentarios con su clasificación en otro archivo
