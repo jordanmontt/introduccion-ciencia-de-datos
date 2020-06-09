@@ -13,4 +13,4 @@ El desarrollo del proyecto consiste en los siguientes pasos:
 
 3) Este artefacto deberá ser desplegado como un servicio REST que reciba nuevos comentarios y retorne los comentarios con su clasificación.
 
-4) Finalmente, deberá desarrollar un ETL que lea nuevos comentarios desde un archivo, envíe cada comentario al servicio REST y guarde los comentarios con su clasificación en otro archivo
+4) Finalmente, deberá desarrollar un ETL que lea nuevos comentarios desde un archivo, envíe cada comentario al servicio REST y guarde los comentarios con su clasificación en otro archivo.

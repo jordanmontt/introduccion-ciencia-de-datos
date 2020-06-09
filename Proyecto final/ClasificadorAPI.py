@@ -27,6 +27,7 @@ palabras_de_parada = cargar_objeto_de_archivo('palabras-parada.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    print("entro")
     solicitud_prediccion = request.get_json(force=True)
     critica = solicitud_prediccion['critica']
 
