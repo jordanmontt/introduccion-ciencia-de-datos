@@ -1,0 +1,1 @@
+{"accuracy": 0.8206666666666667, "precision": 0.81408276714021, "recall": 0.847588424437299, "f1": 0.8304977945809703, "model": "GradientBoostedTrees", "n_estimators": 100, "max_depth": 10}
