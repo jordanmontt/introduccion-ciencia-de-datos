@@ -1,1 +1,1 @@
-{"accuracy": 0.84, "precision": 0.803921568627451, "recall": 0.8723404255319149, "f1": 0.8367346938775511, "model": "LogisticRegression", "solver": "saga", "random_state": 42, "max_iter": 300}
+{"accuracy": 0.868, "precision": 0.8688010043942247, "recall": 0.8809675366008911, "f1": 0.8748419721871048, "model": "LogisticRegression", "solver": "lbfgs"}
