@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arboles de decisión &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Arboles de decisión" href="../13.%20Guardar%20y%20utilizar%20una%20API/Guardar%20y%20desplegar%20un%20clasificador.html" />
+    <link rel="prev" title="1 En un filtro antispam ¿prefeririría que sea más alta la presición o la exhaustividad? Justifique su respuesta." href="../11.%20Cuarto%20parcial/pec04.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-Pandas/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/web_scraping.html">
+   Web Scraping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/Ejercicio_NUSO_web_scrappng.html">
+   Utilizando web scraping en una página real
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Precesamiento-de-Lenguaje-Natural/nlp.html">
+   Procesamiento de Lenguaje Natural (
+   <em>
+    NLP
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Segundo%20examen%20parcial.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Prueba%20dos%20resulta%20por%20el%20profesor.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html">
+   Análisis exploratorio de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.2%20An%C3%A1lisis%20exploratorio%20de%20datos%20unidimensionales.html">
+   Análisis unidimensional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html">
+   Análisis exploratorio de datos multivariable
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%201.html">
+   Ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%202.html">
+   Ejercicio parte 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/feature%20engineering.html">
+   Feature engineering (preparación de variables)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/data%20reshaping.html">
+   Reshaping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/Ejercicio%20feature%20engineering.html">
+   Ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7.%20Tercer%20parcial%20Ejercicio%20tema%205%20y%206/pec03.html">
+   1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8.%20Feature%20Selection/03_feature-selection.html">
+   Feature selection (selección de variables)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/01_fundamentos.html">
+   Aprendizaje Automático (Machine Learning)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/02_scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/03_regresion-logistica.html">
+   Regresión logística
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/04-arboles-de-decision.html">
+   Arboles de decisión
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/Ejercicio%20regresi%C3%B3n%20log%C3%ADstica.html">
+   Ejercicio clasificación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11.%20Cuarto%20parcial/pec04.html">
+   1 En un filtro antispam ¿prefeririría que sea más alta la presición o la exhaustividad? Justifique su respuesta.
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Arboles de decisión
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13.%20Guardar%20y%20utilizar%20una%20API/Guardar%20y%20desplegar%20un%20clasificador.html">
+   Arboles de decisión
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../14.%20Quinto%20parcial/pec05.html">
+   Arboles de decisión
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/12. Arboles de decision/04-arboles-de-decision-python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/12. Arboles de decision/04-arboles-de-decision-python.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/12. Arboles de decision/04-arboles-de-decision-python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Arboles de decisión
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hiperparametros-para-ajustar-la-complejidad-del-modelo">
+     Hiperparámetros para ajustar la complejidad del modelo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobreajuste">
+   Sobreajuste
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-learning">
+     Ensemble learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosted-trees">
+   Gradient Boosted Trees
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametros-que-se-pueden-emplear-para-evitar-sobre-ajuste-overfitting">
+     Parámetros que se pueden emplear para evitar sobre ajuste (overfitting)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimizacion-de-parametros">
+   Optimización de parámetros
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Arboles de decisión</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Arboles de decisión
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hiperparametros-para-ajustar-la-complejidad-del-modelo">
+     Hiperparámetros para ajustar la complejidad del modelo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobreajuste">
+   Sobreajuste
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-learning">
+     Ensemble learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosted-trees">
+   Gradient Boosted Trees
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametros-que-se-pueden-emplear-para-evitar-sobre-ajuste-overfitting">
+     Parámetros que se pueden emplear para evitar sobre ajuste (overfitting)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimizacion-de-parametros">
+   Optimización de parámetros
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="arboles-de-decision">
+<h1>Arboles de decisión<a class="headerlink" href="#arboles-de-decision" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../Datasets/diabetes.csv&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pregnancies</th>
+      <th>Glucose</th>
+      <th>BloodPressure</th>
+      <th>SkinThickness</th>
+      <th>Insulin</th>
+      <th>BMI</th>
+      <th>DiabetesPedigreeFunction</th>
+      <th>Age</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>148</td>
+      <td>72</td>
+      <td>35</td>
+      <td>0</td>
+      <td>33.6</td>
+      <td>0.627</td>
+      <td>50</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>85</td>
+      <td>66</td>
+      <td>29</td>
+      <td>0</td>
+      <td>26.6</td>
+      <td>0.351</td>
+      <td>31</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>183</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
+      <td>23.3</td>
+      <td>0.672</td>
+      <td>32</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>89</td>
+      <td>66</td>
+      <td>23</td>
+      <td>94</td>
+      <td>28.1</td>
+      <td>0.167</td>
+      <td>21</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>137</td>
+      <td>40</td>
+      <td>35</td>
+      <td>168</td>
+      <td>43.1</td>
+      <td>2.288</td>
+      <td>33</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pregnancies&#39;</span><span class="p">,</span> <span class="s1">&#39;Insulin&#39;</span><span class="p">,</span> <span class="s1">&#39;BMI&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span><span class="s1">&#39;Glucose&#39;</span><span class="p">,</span><span class="s1">&#39;BloodPressure&#39;</span><span class="p">,</span><span class="s1">&#39;DiabetesPedigreeFunction&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Outcome&quot;</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 70% training, 30% test</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(537, 7) (231, 7) (537,) (231,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># baseline no incluye poda (max_depth)</span>
+<span class="n">treev1</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">treev1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion=&#39;gini&#39;,
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort=&#39;deprecated&#39;,
+                       random_state=None, splitter=&#39;best&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_pred</span> <span class="o">=</span> <span class="n">treev1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">Y_pred</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0,
+       1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0,
+       0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0,
+       1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0,
+       1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+       0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">metricas_desempenio</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accuracy del clasificador - version 1 : </span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;matriz de confusión del clasificador - version 1: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision del clasificador - version 1 : </span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall del clasificador - version 1 : </span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recall_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1 del clasificador - version 1 : </span><span class="si">{0:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))))</span>
+<span class="n">metricas_desempenio</span><span class="p">(</span><span class="n">treev1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy del clasificador - version 1 : 0.68
+matriz de confusión del clasificador - version 1: 
+ [[111  35]
+ [ 40  45]]
+precision del clasificador - version 1 : 0.56
+recall del clasificador - version 1 : 0.53
+f1 del clasificador - version 1 : 0.55
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ajustar algunos hiperparámetros</span>
+<span class="n">tree_v2</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;entropy&quot;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">tree_v2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion=&#39;entropy&#39;,
+                       max_depth=3, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort=&#39;deprecated&#39;,
+                       random_state=None, splitter=&#39;best&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metricas_desempenio</span><span class="p">(</span><span class="n">tree_v2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy del clasificador - version 1 : 0.77
+matriz de confusión del clasificador - version 1: 
+ [[124  22]
+ [ 31  54]]
+precision del clasificador - version 1 : 0.71
+recall del clasificador - version 1 : 0.64
+f1 del clasificador - version 1 : 0.67
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hiperparametros-para-ajustar-la-complejidad-del-modelo">
+<h2>Hiperparámetros para ajustar la complejidad del modelo<a class="headerlink" href="#hiperparametros-para-ajustar-la-complejidad-del-modelo" title="Permalink to this headline">¶</a></h2>
+<p><strong><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">DecisionTreeClassifier</a></strong></p>
+<ul class="simple">
+<li><p>class_weight=None importancia relativa de los valores de clasificación</p></li>
+<li><p>criterion=’entropy’/’gini’</p></li>
+<li><p>max_depth=3 distancia max entre a raiz y las hojas</p></li>
+<li><p>max_features=None numero max de variables a considerar</p></li>
+<li><p>max_leaf_nodes=20 numero max de hojas</p></li>
+<li><p>min_impurity_decrease=0.0</p></li>
+<li><p>min_impurity_split=None (Deprecado)</p></li>
+<li><p>min_samples_leaf=1 Podar si quedan menos que este numero de ejemplos</p></li>
+<li><p>min_samples_split=2 Continuar si quedan al menos esta cantidad de ejemplos</p></li>
+<li><p>min_weight_fraction_leaf=0.0 Porcentaje minimo de ejemplo para continuar</p></li>
+</ul>
+<img src="./img/28-complejidad-vs-accuracy.png" style="width:600px"/>
+<p><strong>Más allá de cierto umbral, la complejidad del modelo afecta negativamente el desempeño debido al sobreajuste</strong></p>
+</div>
+</div>
+<div class="section" id="sobreajuste">
+<h1>Sobreajuste<a class="headerlink" href="#sobreajuste" title="Permalink to this headline">¶</a></h1>
+<p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Sobreajuste">Sobreajuste</a></strong></p>
+<img src="./img/29-overfitting-sobreajuste.png" style="width:600px"/>
+<img src="./img/30.0-underfitting.png" style="width:600px"/>
+<img src="./img/30.1-origen-del-sobreajuste.png" style="width:600px"/>
+<p><strong>Como evitar?</strong>
+En el caso particular de los árboles de decisión, reducir nodos del arbol cuando no incrementan los indicadores con una buena cantidad de datos de prueba (<strong>poda - pruning</strong>)</p>
+<div class="section" id="ensemble-learning">
+<h2>Ensemble learning<a class="headerlink" href="#ensemble-learning" title="Permalink to this headline">¶</a></h2>
+<p><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Ensemble_learning">Ensemble learning</a></strong></p>
+<img src="./img/31-ensemble-learning.png" style="width:600px"/>
+<img src="./img/32-ensemble-arboles.png" style="width:600px"/>
+<img src="./img/33-ensemble-arboles.png" style="width:600px"/>
+</div>
+</div>
+<div class="section" id="random-forest">
+<h1>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">¶</a></h1>
+<p><strong><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a></strong></p>
+<p>Se crean varios árboles <strong>INDEPENDIENTES</strong> variando los casos/observaciones del conjunto de entrenamiento y/o las variables empleadas durante el proceso de entrenamiento.</p>
+<p>Las predicciones de cada modelo (árbol) tienen el mismo peso y el resultado final es el voto de mayoría</p>
+<p><strong>Parámetros:</strong></p>
+<ul class="simple">
+<li><p><strong>n_estimators</strong> número de clasificadores, árboles en este caso.</p></li>
+</ul>
+<p>Los valores adecuados para este y otros parámetros se obtienen via experimentación (prueba y error). Si es posible, se recomienda tener varios conjuntos de prueba para seleccionar el modelo con el mejor desempeño (promedio) en todos los conjunto de prueba</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="c1">#Ajustar n_estimators puede reducir la posiblidad de overfitting</span>
+<span class="n">tree_v3</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">tree_v3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=10,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_v3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=10,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metricas_desempenio</span><span class="p">(</span><span class="n">tree_v3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy del clasificador - version 1 : 0.77
+matriz de confusión del clasificador - version 1: 
+ [[132  14]
+ [ 38  47]]
+precision del clasificador - version 1 : 0.77
+recall del clasificador - version 1 : 0.55
+f1 del clasificador - version 1 : 0.64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gradient-boosted-trees">
+<h1>Gradient Boosted Trees<a class="headerlink" href="#gradient-boosted-trees" title="Permalink to this headline">¶</a></h1>
+<p>Los arboles se construyen en <strong>secuencia</strong> a partir de una fracción del conjunto de entrenamiento; la idea central es que el siguiente árbol corriga los errores del anterior.:</p>
+<p>Inicialmente, todos los ejemplos tienen la misma probabilidad de ser seleccionados. A partir del segundo árbol, los ejemplos que fueros incorrectamente clasificados por el árbol anterior tienen mayor probabilidad de ser seleccionados. (para detectar patrones que no fueron detectados por el anterior)</p>
+<p>En consecuencia, cada árbol se crea a partir de una fracción diferente del conjunto de entrenamiento. En la colección final, la clasificación de cada árbol tiene un peso mayor en función del desempeño obtenido con el conjuto de entrenamiento.</p>
+<p><strong><a class="reference external" href="https://anaconda.org/anaconda/py-xgboost">py-xgboost</a></strong></p>
+<p><strong><a class="reference external" href="https://xgboost.readthedocs.io/en/latest/python/python_api.html">xgboost</a></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xgboost.sklearn</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_v4</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">tree_v4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XGBClassifier(base_score=None, booster=None, colsample_bylevel=None,
+              colsample_bynode=None, colsample_bytree=None, gamma=None,
+              gpu_id=None, importance_type=&#39;gain&#39;, interaction_constraints=None,
+              learning_rate=None, max_delta_step=None, max_depth=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=10, n_jobs=None, num_parallel_tree=None,
+              objective=&#39;binary:logistic&#39;, random_state=None, reg_alpha=None,
+              reg_lambda=None, scale_pos_weight=None, subsample=None,
+              tree_method=None, validate_parameters=False, verbosity=None)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_v4</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XGBClassifier(base_score=0.5, booster=None, colsample_bylevel=1,
+              colsample_bynode=1, colsample_bytree=1, gamma=0, gpu_id=-1,
+              importance_type=&#39;gain&#39;, interaction_constraints=None,
+              learning_rate=0.300000012, max_delta_step=0, max_depth=6,
+              min_child_weight=1, missing=nan, monotone_constraints=None,
+              n_estimators=10, n_jobs=0, num_parallel_tree=1,
+              objective=&#39;binary:logistic&#39;, random_state=0, reg_alpha=0,
+              reg_lambda=1, scale_pos_weight=1, subsample=1, tree_method=None,
+              validate_parameters=False, verbosity=None)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metricas_desempenio</span><span class="p">(</span><span class="n">tree_v4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy del clasificador - version 1 : 0.80
+matriz de confusión del clasificador - version 1: 
+ [[131  15]
+ [ 32  53]]
+precision del clasificador - version 1 : 0.78
+recall del clasificador - version 1 : 0.62
+f1 del clasificador - version 1 : 0.69
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="parametros-que-se-pueden-emplear-para-evitar-sobre-ajuste-overfitting">
+<h2>Parámetros que se pueden emplear para evitar sobre ajuste (overfitting)<a class="headerlink" href="#parametros-que-se-pueden-emplear-para-evitar-sobre-ajuste-overfitting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>n_estimators</strong>: a mayor cantidad de ejemplos, se puede incrementar el valor n_estimators para evitar sobreajuste</p></li>
+<li><p><strong>learning_rate</strong>, determina la probabilidad de que un ejemplo sea seleccionado en la siguiente iteracion, se recomienda un valor entre 0.1 - 0.2 para reducir la probabilidad de que se produzca overfitting</p></li>
+<li><p><strong>subsample</strong>, permite controlar el tamaño de la fracción del conjunto de entrenamiento  para cada iteración. Mientras más bajo el valor, más probabilidad hay de que los conjuntos de entrenamiento entre iteraciones sean diferentes (a mayor diferencia, menos probabilidad de que se produzca overfitting). Se recomienda valores entre 0.5 - 1.0</p></li>
+<li><p><strong>colsample_bytree</strong>, permite controlar la fracción de las variables empleadas para entrenar los árboles en cada iteración. Se recomienda valores entre 0.5 - 1.0</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="optimizacion-de-parametros">
+<h1>Optimización de parámetros<a class="headerlink" href="#optimizacion-de-parametros" title="Permalink to this headline">¶</a></h1>
+<p>Objetivo: encontrar la mejor combinación de hiper-parámetros para obtener el clasificador con el mejor desempeño.</p>
+<p>Para evitar probar manualmente todas las posibles combinaciones de valores para todos los posibles parámetros que resultan en un buen desempeño, se emplean técnicas de optimización para evitar buscar en todo el espacio de posible valores y garantizar al mismo tiempo un buen desempeño del clasificador.</p>
+<p><strong><a class="reference external" href="https://github.com/hyperopt/hyperopt">hyperopt (Distributed Hyperparameter Optimization)</a></strong> es el módulo python que facilita realizar esta tarea.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#conda install -c conda-forge hyperopt</span>
+<span class="kn">from</span> <span class="nn">hyperopt</span> <span class="kn">import</span> <span class="n">fmin</span><span class="p">,</span> <span class="n">tpe</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">STATUS_OK</span><span class="p">,</span><span class="n">Trials</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="n">hp</span><span class="o">.</span><span class="n">quniform</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="c1">#probar con valores entre -10 - 10, con incrementos de 1 </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;loss&#39;</span><span class="p">:</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span><span class="s1">&#39;status&#39;</span><span class="p">:</span><span class="n">STATUS_OK</span><span class="p">}</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trials</span> <span class="o">=</span> <span class="n">Trials</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best</span> <span class="o">=</span> <span class="n">fmin</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">space</span><span class="p">,</span> <span class="n">algo</span><span class="o">=</span><span class="n">tpe</span><span class="o">.</span><span class="n">suggest</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="n">trials</span><span class="p">,</span> <span class="n">max_evals</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 5/5 [00:00&lt;00:00, 271.82trial/s, best loss: 0.0]
+{&#39;x&#39;: 0.0}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Probar valores entre 100 - 1000, con incrementos de 1 - con igual probabilidad de ser seleccionado: </span>
+<span class="c1">#&#39;n_estimators&#39;:hp.quniform(&#39;n_estimators&#39;,100,1000,1)</span>
+<span class="c1">#Crear un diccionario que contiene la configuración para generar diferentes valores para cada parámetro; en este ejemplo,</span>
+<span class="c1">#para el algoritmo XGBClassifier.</span>
+<span class="n">space</span> <span class="o">=</span>  <span class="p">{</span>
+    <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span><span class="n">hp</span><span class="o">.</span><span class="n">quniform</span><span class="p">(</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="c1">#probar con valores entre 100 - 100, con incrementos de 1 </span>
+    <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span><span class="n">hp</span><span class="o">.</span><span class="n">quniform</span><span class="p">(</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">,</span><span class="mf">0.025</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.025</span><span class="p">),</span>
+    <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span><span class="n">hp</span><span class="o">.</span><span class="n">quniform</span><span class="p">(</span><span class="s1">&#39;max_depth&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;subsample&#39;</span><span class="p">:</span> <span class="n">hp</span><span class="o">.</span><span class="n">quniform</span><span class="p">(</span><span class="s1">&#39;subsample&#39;</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.05</span><span class="p">),</span>
+    <span class="s1">&#39;colsample_bytree&#39;</span><span class="p">:</span><span class="n">hp</span><span class="o">.</span><span class="n">quniform</span><span class="p">(</span><span class="s1">&#39;colsample_bytree&#39;</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.05</span><span class="p">),</span>
+    <span class="s1">&#39;nthread&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="c1">#cuando se posible, paralelizar el procesamiento empleando hasta 6 hilos</span>
+    <span class="s1">&#39;silent&#39;</span><span class="p">:</span><span class="mi">1</span> <span class="c1">#si ocurre un error, continuar con la ejecución</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Es necesario definir una función de manera tal que cuando alcance el valor mínimo, esto implique que el clasificador</span>
+<span class="c1">#ha alanzado en mejor desempeño. </span>
+<span class="c1">#En el ejemplo siguiente, el menor valor posible para esta función (0), si se da cuando accuracy = 1.</span>
+<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">])</span>
+    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">])</span>  
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span> <span class="c1">#https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/</span>
+    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>   
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">accuracy</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">STATUS_OK</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#https://github.com/hyperopt/hyperopt/wiki/FMin#12-attaching-extra-information-via-the-trials-object</span>
+<span class="c1">#fmin Itera 100 veces y retorna la combinación de parámetros que generan el menor valor para la función &#39;objective&#39;</span>
+<span class="n">trials</span> <span class="o">=</span> <span class="n">Trials</span><span class="p">()</span>
+<span class="n">best</span> <span class="o">=</span> <span class="n">fmin</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span><span class="n">space</span><span class="p">,</span><span class="n">algo</span><span class="o">=</span><span class="n">tpe</span><span class="o">.</span><span class="n">suggest</span><span class="p">,</span><span class="n">trials</span><span class="o">=</span><span class="n">trials</span><span class="p">,</span><span class="n">max_evals</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 100/100 [01:55&lt;00:00,  1.16s/trial, best loss: 0.18181818181818177]
+{&#39;colsample_bytree&#39;: 0.8, &#39;learning_rate&#39;: 0.025, &#39;max_depth&#39;: 3.0, &#39;n_estimators&#39;: 560.0, &#39;subsample&#39;: 0.6000000000000001}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">best</span><span class="p">[</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">])</span>
+<span class="n">best</span><span class="p">[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">best</span><span class="p">[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">])</span>                      
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_v5</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="o">**</span><span class="n">best</span><span class="p">)</span>
+<span class="n">tree_v5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XGBClassifier(base_score=None, booster=None, colsample_bylevel=None,
+              colsample_bynode=None, colsample_bytree=0.8, gamma=None,
+              gpu_id=None, importance_type=&#39;gain&#39;, interaction_constraints=None,
+              learning_rate=0.025, max_delta_step=None, max_depth=3,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=560, n_jobs=None, num_parallel_tree=None,
+              objective=&#39;binary:logistic&#39;, random_state=None, reg_alpha=None,
+              reg_lambda=None, scale_pos_weight=None,
+              subsample=0.6000000000000001, tree_method=None,
+              validate_parameters=False, verbosity=None)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_v5</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XGBClassifier(base_score=0.5, booster=None, colsample_bylevel=1,
+              colsample_bynode=1, colsample_bytree=0.8, gamma=0, gpu_id=-1,
+              importance_type=&#39;gain&#39;, interaction_constraints=None,
+              learning_rate=0.025, max_delta_step=0, max_depth=3,
+              min_child_weight=1, missing=nan, monotone_constraints=None,
+              n_estimators=560, n_jobs=0, num_parallel_tree=1,
+              objective=&#39;binary:logistic&#39;, random_state=0, reg_alpha=0,
+              reg_lambda=1, scale_pos_weight=1, subsample=0.6000000000000001,
+              tree_method=None, validate_parameters=False, verbosity=None)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metricas_desempenio</span><span class="p">(</span><span class="n">tree_v5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy del clasificador - version 1 : 0.82
+matriz de confusión del clasificador - version 1: 
+ [[131  15]
+ [ 27  58]]
+precision del clasificador - version 1 : 0.79
+recall del clasificador - version 1 : 0.68
+f1 del clasificador - version 1 : 0.73
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks\12. Arboles de decision"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../11.%20Cuarto%20parcial/pec04.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">1 En un filtro antispam ¿prefeririría que sea más alta la presición o la exhaustividad? Justifique su respuesta.</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../13.%20Guardar%20y%20utilizar%20una%20API/Guardar%20y%20desplegar%20un%20clasificador.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arboles de decisión</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

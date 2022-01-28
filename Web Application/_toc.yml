@@ -22,3 +22,7 @@ chapters:
 - file: Notebooks/10. Modelos predictivos/03_regresion-logistica
 - file: Notebooks/10. Modelos predictivos/04-arboles-de-decision
 - file: Notebooks/10. Modelos predictivos/Ejercicio regresión logística
+- file: Notebooks/11. Cuarto parcial/pec04
+- file: Notebooks/12. Arboles de decision/04-arboles-de-decision-python
+- file: Notebooks/13. Guardar y utilizar una API/Guardar y desplegar un clasificador
+- file: Notebooks/14. Quinto parcial/pec05
