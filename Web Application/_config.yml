@@ -1,5 +1,5 @@
 title: Introducción a la Ciencia de Datos
-author: The Jupyter Book Community
+author: Daniel Oropeza and Sebastian Jordan
 logo: logo.png
 
 execute:
@@ -18,5 +18,11 @@ repository:
   branch: master
 
 html:
+  favicon: logo.png
   use_issues_button: true
   use_repository_button: true
+  home_page_in_navbar: true
+
+sphinx:
+  config:
+    html_show_copyright: false
