@@ -1,0 +1,2732 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’ &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Ejercicio" href="../6.%20Feature%20Engineering/Ejercicio%20feature%20engineering.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-Pandas/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/web_scraping.html">
+   Web Scraping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/Ejercicio_NUSO_web_scrappng.html">
+   Utilizando web scraping en una página real
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Precesamiento-de-Lenguaje-Natural/nlp.html">
+   Procesamiento de Lenguaje Natural (
+   <em>
+    NLP
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Segundo%20examen%20parcial.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Prueba%20dos%20resulta%20por%20el%20profesor.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html">
+   Análisis exploratorio de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.2%20An%C3%A1lisis%20exploratorio%20de%20datos%20unidimensionales.html">
+   Análisis unidimensional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html">
+   Análisis exploratorio de datos multivariable
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%201.html">
+   Ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%202.html">
+   Ejercicio parte 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/feature%20engineering.html">
+   Feature engineering (preparación de variables)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/data%20reshaping.html">
+   Reshaping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/Ejercicio%20feature%20engineering.html">
+   Ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/7. Tercer parcial Ejercicio tema 5 y 6/pec03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/7. Tercer parcial Ejercicio tema 5 y 6/pec03.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/7. Tercer parcial Ejercicio tema 5 y 6/pec03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encuentre-los-mejores-valores-para-completar-la-variable-embarked-para-los-pasajeros-con-datos-faltantes">
+   2 Encuentre los mejores valores para completar la variable ‘Embarked’ para los  pasajeros con datos faltantes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complete-el-codigo-de-la-siguiente-funcion-para-extraer-el-titulo-de-cada-pasajero">
+   3 Complete el código de la siguiente función para extraer el título de cada pasajero
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encuentre-los-mejores-valores-para-completar-la-variable-age-para-los-pasajeros-con-datos-faltantes">
+   4 Encuentre los mejores valores para completar la variable ‘Age’ para los pasajeros con datos faltantes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cree-una-nueva-variable-ismother-1-es-madre-0-no-es-madre">
+   5 Cree una nueva variable ‘IsMother’ (1=es madre, 0=no es madre)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#responda-la-siguiente-pregunta-sustentando-su-respuesta-con-los-resultados-de-un-analisis-exploratorio-de-datos">
+   Responda la siguiente pregunta sustentando su respuesta con los resultados de un análisis exploratorio de datos.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#las-madres-tuvieron-mayor-probabilidad-de-sobrevivir-al-accidente-del-titanic">
+     Las madres tuvieron mayor probabilidad de sobrevivir al accidente del Titanic?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encuentre-los-mejores-valores-para-completar-la-variable-embarked-para-los-pasajeros-con-datos-faltantes">
+   2 Encuentre los mejores valores para completar la variable ‘Embarked’ para los  pasajeros con datos faltantes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complete-el-codigo-de-la-siguiente-funcion-para-extraer-el-titulo-de-cada-pasajero">
+   3 Complete el código de la siguiente función para extraer el título de cada pasajero
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encuentre-los-mejores-valores-para-completar-la-variable-age-para-los-pasajeros-con-datos-faltantes">
+   4 Encuentre los mejores valores para completar la variable ‘Age’ para los pasajeros con datos faltantes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cree-una-nueva-variable-ismother-1-es-madre-0-no-es-madre">
+   5 Cree una nueva variable ‘IsMother’ (1=es madre, 0=no es madre)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#responda-la-siguiente-pregunta-sustentando-su-respuesta-con-los-resultados-de-un-analisis-exploratorio-de-datos">
+   Responda la siguiente pregunta sustentando su respuesta con los resultados de un análisis exploratorio de datos.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#las-madres-tuvieron-mayor-probabilidad-de-sobrevivir-al-accidente-del-titanic">
+     Las madres tuvieron mayor probabilidad de sobrevivir al accidente del Titanic?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Habilitar intellisense</span>
+<span class="o">%</span><span class="k">config</span> IPCompleter.greedy = True
+<span class="o">%</span><span class="k">autosave</span> 60
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">IPython.notebook.set_autosave_interval(60000)</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Autosaving every 60 seconds
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;IPCompleter.greedy = True&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;autosave&#39;</span><span class="p">,</span> <span class="s1">&#39;60&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+
+<span class="nn">File c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\IPython\core\interactiveshell.py:2204,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2202</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2203</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2204</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2205</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\IPython\core\magics\pylab.py:99,</span> in <span class="ni">PylabMagics.matplotlib</span><span class="nt">(self, line)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>     <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+
+<span class="nn">File c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\IPython\core\interactiveshell.py:3327,</span> in <span class="ni">InteractiveShell.enable_matplotlib</span><span class="nt">(self, gui)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3306</span> <span class="sd">&quot;&quot;&quot;Enable interactive matplotlib and inline figure support.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3307</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">3308</span><span class="sd"> This takes the following steps:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3324</span><span class="sd">     display figures inline.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3325</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3326</span> <span class="kn">from</span> <span class="nn">IPython.core</span> <span class="kn">import</span> <span class="n">pylabtools</span> <span class="k">as</span> <span class="n">pt</span>
+<span class="ne">-&gt; </span><span class="mi">3327</span> <span class="kn">from</span> <span class="nn">matplotlib_inline.backend_inline</span> <span class="kn">import</span> <span class="n">configure_inline_support</span>
+<span class="g g-Whitespace">   </span><span class="mi">3328</span> <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="n">gui</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3330</span> <span class="k">if</span> <span class="n">gui</span> <span class="o">!=</span> <span class="s1">&#39;inline&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3331</span>     <span class="c1"># If we have our first gui selection, store it</span>
+
+<span class="n">File</span> <span class="n">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">daniel</span><span class="o">.</span><span class="n">oropeza</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python39</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">matplotlib_inline</span>\<span class="n">backend_inline</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;A matplotlib backend for publishing figures via display_data&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Copyright (c) IPython Development Team.</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Distributed under the terms of the BSD 3-Clause License.</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">matplotlib.backends.backend_agg</span> <span class="kn">import</span> <span class="p">(</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">new_figure_manager</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">FigureCanvasAgg</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">new_figure_manager_given_figure</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta_archivo</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;titanic&quot;</span><span class="p">,</span> <span class="s2">&quot;train.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;titanic&quot;</span><span class="p">,</span> <span class="s2">&quot;train.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;PassengerId&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="elimine-las-variables-columnas-ticket-y-cabin">
+<h1>1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’<a class="headerlink" href="#elimine-las-variables-columnas-ticket-y-cabin" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cabin&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Ticket&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7.2500</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>71.2833</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.9250</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>53.1000</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.0500</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>892.000000</td>
+      <td>892.000000</td>
+      <td>892</td>
+      <td>892</td>
+      <td>715.000000</td>
+      <td>892.000000</td>
+      <td>892.000000</td>
+      <td>891.000000</td>
+      <td>890</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>892</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Jonsson, Mr. Carl</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>578</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>645</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.383408</td>
+      <td>2.309417</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>29.742196</td>
+      <td>0.522422</td>
+      <td>0.381166</td>
+      <td>32.204208</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.486489</td>
+      <td>0.835923</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.561951</td>
+      <td>1.102264</td>
+      <td>0.805706</td>
+      <td>49.693429</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.420000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+      <td>2.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20.250000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.910400</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000000</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>28.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.454200</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>38.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>31.000000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>80.000000</td>
+      <td>8.000000</td>
+      <td>6.000000</td>
+      <td>512.329200</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="encuentre-los-mejores-valores-para-completar-la-variable-embarked-para-los-pasajeros-con-datos-faltantes">
+<h1>2 Encuentre los mejores valores para completar la variable ‘Embarked’ para los  pasajeros con datos faltantes<a class="headerlink" href="#encuentre-los-mejores-valores-para-completar-la-variable-embarked-para-los-pasajeros-con-datos-faltantes" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+      <th>IsMother</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Tome en cuenta que simplemente emplear el valor que más aparece casi nunca es la mejor alternativa</span>
+<span class="c1">#Para obtener mejores resultados deberá apoyarse en los resultados de un análisis exploratorio de datos</span>
+<span class="c1">#aplicado a las variable(s) que puedan estar relacionadas con &#39;Embarked&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S    645
+C    168
+Q     77
+Name: Embarked, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtenemos el puerto más común según la clase y el sexo</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">])[</span><span class="s1">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pclass  Sex   
+1       female    S
+        male      S
+2       female    S
+        male      S
+3       female    S
+        male      S
+Name: Embarked, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Como podemos observar, todos los valores que se obtuvieron en la celda de arriba pertenecen al puerto &#39;S&#39;</span>
+<span class="c1"># Entonces, reemplazaremos los valores NaN por el puerto &#39;S&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+      <th>IsMother</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="complete-el-codigo-de-la-siguiente-funcion-para-extraer-el-titulo-de-cada-pasajero">
+<h1>3 Complete el código de la siguiente función para extraer el título de cada pasajero<a class="headerlink" href="#complete-el-codigo-de-la-siguiente-funcion-para-extraer-el-titulo-de-cada-pasajero" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extractTitle</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">title_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mr&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;mrs&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;miss&#39;</span> <span class="p">:</span> <span class="s1">&#39;Miss&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;master&#39;</span> <span class="p">:</span> <span class="s1">&#39;Master&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;don&#39;</span> <span class="p">:</span> <span class="s1">&#39;Sir&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;rev&#39;</span> <span class="p">:</span> <span class="s1">&#39;Sir&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;dr&#39;</span> <span class="p">:</span> <span class="s1">&#39;Officer&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;mme&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;ms&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;major&#39;</span> <span class="p">:</span> <span class="s1">&#39;Officer&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;lady&#39;</span> <span class="p">:</span> <span class="s1">&#39;Lady&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;sir&#39;</span> <span class="p">:</span> <span class="s1">&#39;Sir&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;mlle&#39;</span> <span class="p">:</span> <span class="s1">&#39;Miss&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;col&#39;</span> <span class="p">:</span> <span class="s1">&#39;Officer&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;capt&#39;</span> <span class="p">:</span> <span class="s1">&#39;Officer&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;the countess&#39;</span> <span class="p">:</span> <span class="s1">&#39;Lady&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;jonkheer&#39;</span> <span class="p">:</span> <span class="s1">&#39;Sir&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;dona&#39;</span> <span class="p">:</span> <span class="s1">&#39;Lady&#39;</span>
+                 <span class="p">}</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">title_mapping</span><span class="p">[</span><span class="n">title</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">name</span> <span class="p">:</span> <span class="n">extractTitle</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7.2500</td>
+      <td>S</td>
+      <td>Mr</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>71.2833</td>
+      <td>C</td>
+      <td>Mrs</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.9250</td>
+      <td>S</td>
+      <td>Miss</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>53.1000</td>
+      <td>S</td>
+      <td>Mrs</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.0500</td>
+      <td>S</td>
+      <td>Mr</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>892.000000</td>
+      <td>892.000000</td>
+      <td>892</td>
+      <td>892</td>
+      <td>715.000000</td>
+      <td>892.000000</td>
+      <td>892.000000</td>
+      <td>891.000000</td>
+      <td>890</td>
+      <td>892</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>892</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Simmons, Mr. John</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>Mr</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>578</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>645</td>
+      <td>518</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.383408</td>
+      <td>2.309417</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>29.742196</td>
+      <td>0.522422</td>
+      <td>0.381166</td>
+      <td>32.204208</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.486489</td>
+      <td>0.835923</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.561951</td>
+      <td>1.102264</td>
+      <td>0.805706</td>
+      <td>49.693429</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.420000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+      <td>2.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20.250000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.910400</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000000</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>28.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.454200</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>38.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>31.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>80.000000</td>
+      <td>8.000000</td>
+      <td>6.000000</td>
+      <td>512.329200</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="encuentre-los-mejores-valores-para-completar-la-variable-age-para-los-pasajeros-con-datos-faltantes">
+<h1>4 Encuentre los mejores valores para completar la variable ‘Age’ para los pasajeros con datos faltantes<a class="headerlink" href="#encuentre-los-mejores-valores-para-completar-la-variable-age-para-los-pasajeros-con-datos-faltantes" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Tome en cuenta que simplemente emplear el valor de tendencia central (mediana) de todo el conjunto casi nunca es la mejor alternativa</span>
+<span class="c1">#Para obtener mejores resultados deberá apoyarse en los resultados de un análisis exploratorio de datos</span>
+<span class="c1">#aplicado a las variable(s) que puedan estar relacionadas con &#39;Age&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Moran, Mr. James</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.4583</td>
+      <td>Q</td>
+      <td>Mr</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Williams, Mr. Charles Eugene</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13.0000</td>
+      <td>S</td>
+      <td>Mr</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Masselmani, Mrs. Fatima</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.2250</td>
+      <td>C</td>
+      <td>Mrs</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Emir, Mr. Farred Chehab</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.2250</td>
+      <td>C</td>
+      <td>Mr</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1</td>
+      <td>3</td>
+      <td>O'Dwyer, Miss. Ellen "Nellie"</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.8792</td>
+      <td>Q</td>
+      <td>Miss</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(177, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Survived</th>
+      <td>1.000000</td>
+      <td>-0.338965</td>
+      <td>-0.079388</td>
+      <td>-0.034886</td>
+      <td>0.082010</td>
+      <td>0.257307</td>
+    </tr>
+    <tr>
+      <th>Pclass</th>
+      <td>-0.338965</td>
+      <td>1.000000</td>
+      <td>-0.365161</td>
+      <td>0.082599</td>
+      <td>0.017994</td>
+      <td>-0.549500</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>-0.079388</td>
+      <td>-0.365161</td>
+      <td>1.000000</td>
+      <td>-0.308847</td>
+      <td>-0.189989</td>
+      <td>0.096067</td>
+    </tr>
+    <tr>
+      <th>SibSp</th>
+      <td>-0.034886</td>
+      <td>0.082599</td>
+      <td>-0.308847</td>
+      <td>1.000000</td>
+      <td>0.414985</td>
+      <td>0.159651</td>
+    </tr>
+    <tr>
+      <th>Parch</th>
+      <td>0.082010</td>
+      <td>0.017994</td>
+      <td>-0.189989</td>
+      <td>0.414985</td>
+      <td>1.000000</td>
+      <td>0.216225</td>
+    </tr>
+    <tr>
+      <th>Fare</th>
+      <td>0.257307</td>
+      <td>-0.549500</td>
+      <td>0.096067</td>
+      <td>0.159651</td>
+      <td>0.216225</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Según la matriz de correlación, <em>Age</em> tiene la correlación más alta con <em>Pclass</em>. Entonces, agruparemos los datos según este parámetro. También los agruparemos según el sexo, o sea, que los datos estarán agrupados por clase y por sexo. Porque las edades de las personas pueden variar según su sexo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pasajeros_por_clase_y_sexo</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">])</span>
+<span class="n">mediana_age_pasajeros</span> <span class="o">=</span> <span class="n">pasajeros_por_clase_y_sexo</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reemplazar los datos nulos de Age</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mediana_age_pasajeros</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="cree-una-nueva-variable-ismother-1-es-madre-0-no-es-madre">
+<h1>5 Cree una nueva variable ‘IsMother’ (1=es madre, 0=no es madre)<a class="headerlink" href="#cree-una-nueva-variable-ismother-1-es-madre-0-no-es-madre" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="responda-la-siguiente-pregunta-sustentando-su-respuesta-con-los-resultados-de-un-analisis-exploratorio-de-datos">
+<h1>Responda la siguiente pregunta sustentando su respuesta con los resultados de un análisis exploratorio de datos.<a class="headerlink" href="#responda-la-siguiente-pregunta-sustentando-su-respuesta-con-los-resultados-de-un-analisis-exploratorio-de-datos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="las-madres-tuvieron-mayor-probabilidad-de-sobrevivir-al-accidente-del-titanic">
+<h2>Las madres tuvieron mayor probabilidad de sobrevivir al accidente del Titanic?<a class="headerlink" href="#las-madres-tuvieron-mayor-probabilidad-de-sobrevivir-al-accidente-del-titanic" title="Permalink to this headline">¶</a></h2>
+<p>Elegimos a las madres como las mujeres que están casadas y que viajen al menos con un Parch(parientes que sean padres o hijos).</p>
+<p>No incluímos a las mujeres con el título de Miss, para evitar incluir a las mujeres que no son madres pero que
+viajan con sus papás.</p>
+<p>Hay que tener en cuenta que en esa época no habían muchas madres solteras (por el machismo), así que no se
+pierde mucha información en caso de que una mujer sea madre y no esté casada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_mujer_y_no_soltera_y_viaja_con_hijos</span><span class="p">(</span><span class="n">fila</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">fila</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fila</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fila</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Miss&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">es_madre</span><span class="p">(</span><span class="n">fila</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">es_mujer_y_no_soltera_y_viaja_con_hijos</span><span class="p">(</span><span class="n">fila</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;IsMother&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">es_madre</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+      <th>IsMother</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>888</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.00</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
+      <td>21.5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>23.45</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.00</td>
+      <td>C</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>891</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.75</td>
+      <td>Q</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1044</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Storey, Mr. Thomas</td>
+      <td>male</td>
+      <td>60.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;IsMother&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>Title</th>
+      <th>IsMother</th>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)</td>
+      <td>female</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>11.1333</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Asplund, Mrs. Carl Oscar (Selma Augusta Emilia...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>31.3875</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Doling, Mrs. John T (Ada Julia Bone)</td>
+      <td>female</td>
+      <td>34.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>23.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Boulos, Mrs. Joseph (Sultana)</td>
+      <td>female</td>
+      <td>21.5</td>
+      <td>0</td>
+      <td>2</td>
+      <td>15.2458</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Chibnall, Mrs. (Edith Martha Bowerman)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>55.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Skoog, Mrs. William (Anna Bernhardina Karlsson)</td>
+      <td>female</td>
+      <td>45.0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>27.9000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Hamalainen, Mrs. William (Anna)</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>14.5000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Strom, Mrs. Wilhelm (Elna Matilda Persson)</td>
+      <td>female</td>
+      <td>29.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>10.4625</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Rosblom, Mrs. Viktor (Helena Wilhelmina)</td>
+      <td>female</td>
+      <td>41.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>20.2125</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Touma, Mrs. Darwis (Hanne Youssef Razi)</td>
+      <td>female</td>
+      <td>29.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>15.2458</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Parrish, Mrs. (Lutie Davis)</td>
+      <td>female</td>
+      <td>50.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>26.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>269</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Mrs. William Thompson (Edith Junkins)</td>
+      <td>female</td>
+      <td>58.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>153.4625</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Mellinger, Mrs. (Elizabeth Anne Maidment)</td>
+      <td>female</td>
+      <td>41.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>19.5000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>280</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Abbott, Mrs. Stanton (Rosa Hunt)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20.2500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Baxter, Mrs. James (Helene DeLaudeniere Chaput)</td>
+      <td>female</td>
+      <td>50.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>247.5208</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Lahtinen, Mrs. William (Anna Sylfven)</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>26.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>320</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Spedden, Mrs. Frederic Oakley (Margaretta Corn...</td>
+      <td>female</td>
+      <td>40.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>134.5000</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Caldwell, Mrs. Albert Francis (Sylvia Mae Harb...</td>
+      <td>female</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>29.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>329</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Goldsmith, Mrs. Frank John (Emily Alice Brown)</td>
+      <td>female</td>
+      <td>31.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20.5250</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>363</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Barbara, Mrs. (Catherine David)</td>
+      <td>female</td>
+      <td>45.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>14.4542</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Sandstrom, Mrs. Hjalmar (Agnes Charlotta Bengt...</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>16.7000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>417</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Drew, Mrs. James Vivian (Lulu Thorne Christian)</td>
+      <td>female</td>
+      <td>34.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>32.5000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Danbom, Mrs. Ernst Gilbert (Anna Sigrid Maria ...</td>
+      <td>female</td>
+      <td>28.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>14.4000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Richards, Mrs. Sidney (Emily Hocking)</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>18.7500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Hart, Mrs. Benjamin (Esther Ada Bloomfield)</td>
+      <td>female</td>
+      <td>45.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>26.2500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>473</th>
+      <td>1</td>
+      <td>2</td>
+      <td>West, Mrs. Edwy Arthur (Ada Mary Worth)</td>
+      <td>female</td>
+      <td>33.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>27.7500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>0</td>
+      <td>1</td>
+      <td>Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
+      <td>female</td>
+      <td>25.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>151.5500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>507</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Quick, Mrs. Frederick Charles (Jane Richards)</td>
+      <td>female</td>
+      <td>33.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>26.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>524</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Hippach, Mrs. Louis Albert (Ida Sophia Fischer)</td>
+      <td>female</td>
+      <td>44.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>57.9792</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>534</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Peter, Mrs. Catherine (Catherine Rizk)</td>
+      <td>female</td>
+      <td>21.5</td>
+      <td>0</td>
+      <td>2</td>
+      <td>22.3583</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>559</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Taussig, Mrs. Emil (Tillie Mandelbaum)</td>
+      <td>female</td>
+      <td>39.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>79.6500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>568</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Palsson, Mrs. Nils (Alma Cornelia Berglund)</td>
+      <td>female</td>
+      <td>29.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>21.0750</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>582</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Thayer, Mrs. John Borland (Marian Longstreth M...</td>
+      <td>female</td>
+      <td>39.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>110.8833</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Jacobsohn, Mrs. Sidney Samuel (Amy Frances Chr...</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>27.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>609</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Laroche, Mrs. Joseph (Juliette Marie Louise La...</td>
+      <td>female</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>41.5792</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>611</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Andersson, Mrs. Anders Johan (Alfrida Konstant...</td>
+      <td>female</td>
+      <td>39.0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>31.2750</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>639</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Panula, Mrs. Juha (Maria Emilia Ojala)</td>
+      <td>female</td>
+      <td>41.0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>39.6875</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>658</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Bourke, Mrs. John (Catherine)</td>
+      <td>female</td>
+      <td>32.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>15.5000</td>
+      <td>Q</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>671</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Brown, Mrs. Thomas William Solomon (Elizabeth ...</td>
+      <td>female</td>
+      <td>40.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>39.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>679</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Goodwin, Mrs. Frederick (Augusta Tyler)</td>
+      <td>female</td>
+      <td>43.0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>46.9000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>737</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Ford, Mrs. Edward (Margaret Ann Watson)</td>
+      <td>female</td>
+      <td>48.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>34.3750</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>755</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Herman, Mrs. Samuel (Jane Laver)</td>
+      <td>female</td>
+      <td>48.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>65.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>764</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Carter, Mrs. William Ernest (Lucile Polk)</td>
+      <td>female</td>
+      <td>36.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>120.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>775</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Hocking, Mrs. Elizabeth (Eliza Needs)</td>
+      <td>female</td>
+      <td>54.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>23.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>780</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Robert, Mrs. Edward Scott (Elisabeth Walton Mc...</td>
+      <td>female</td>
+      <td>43.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>211.3375</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>800</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Van Impe, Mrs. Jean Baptiste (Rosalie Paula Go...</td>
+      <td>female</td>
+      <td>30.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>24.1500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>802</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Collyer, Mrs. Harvey (Charlotte Annie Tate)</td>
+      <td>female</td>
+      <td>31.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>26.2500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>821</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Hays, Mrs. Charles Melville (Clara Jennings Gr...</td>
+      <td>female</td>
+      <td>52.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>93.5000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>824</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Moor, Mrs. (Beila)</td>
+      <td>female</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>12.4750</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Aks, Mrs. Sam (Leah Rosen)</td>
+      <td>female</td>
+      <td>18.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>9.3500</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Wick, Mrs. George Dennick (Mary Hitchcock)</td>
+      <td>female</td>
+      <td>45.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>164.8667</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>859</th>
+      <td>1</td>
+      <td>3</td>
+      <td>Baclini, Mrs. Solomon (Latifa Qurban)</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>19.2583</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>872</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Beckwith, Mrs. Richard Leonard (Sallie Monypeny)</td>
+      <td>female</td>
+      <td>47.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>52.5542</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>880</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Potter, Mrs. Thomas Jr (Lily Alexenia Wilson)</td>
+      <td>female</td>
+      <td>56.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>83.1583</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>881</th>
+      <td>1</td>
+      <td>2</td>
+      <td>Shelley, Mrs. William (Imanita Parrish Hall)</td>
+      <td>female</td>
+      <td>25.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>26.0000</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Rice, Mrs. William (Margaret Norton)</td>
+      <td>female</td>
+      <td>39.0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>29.1250</td>
+      <td>Q</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks\7. Tercer parcial Ejercicio tema 5 y 6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../6.%20Feature%20Engineering/Ejercicio%20feature%20engineering.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ejercicio</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

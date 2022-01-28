@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio parte 2 &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Ejercicio" href="Ejercicio%20parte%201.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-Pandas/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/web_scraping.html">
+   Web Scraping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/Ejercicio_NUSO_web_scrappng.html">
+   Utilizando web scraping en una página real
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Precesamiento-de-Lenguaje-Natural/nlp.html">
+   Procesamiento de Lenguaje Natural (
+   <em>
+    NLP
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Segundo%20examen%20parcial.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Prueba%20dos%20resulta%20por%20el%20profesor.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html">
+   Análisis exploratorio de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.2%20An%C3%A1lisis%20exploratorio%20de%20datos%20unidimensionales.html">
+   Análisis unidimensional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html">
+   Análisis exploratorio de datos multivariable
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio%20parte%201.html">
+   Ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ejercicio parte 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/5. Analisis Exploratorio/Ejercicio parte 2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/5. Analisis Exploratorio/Ejercicio parte 2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/5. Analisis Exploratorio/Ejercicio parte 2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#existe-alguna-relacion-entre-el-territorio-y-los-caballos-de-potencia">
+   1. ¿Existe alguna relacion entre el territorio y los caballos de potencia?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cual-es-la-correlacion-entre-los-caballos-de-potencia-y-las-millas-por-galon">
+   2. ¿Cuál es la correlación entre los caballos de potencia y las millas por galón?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#si-existiese-una-relacion-ambas-variables-se-mueven-en-la-misma-direccion">
+   3. ¿Si existiese una relación, ambas variables se mueven en la misma dirección?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compruebe-la-direccion-de-la-relacion-con-una-visualizacion">
+   Compruebe la dirección de la relación con una visualización
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ejercicio parte 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#existe-alguna-relacion-entre-el-territorio-y-los-caballos-de-potencia">
+   1. ¿Existe alguna relacion entre el territorio y los caballos de potencia?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cual-es-la-correlacion-entre-los-caballos-de-potencia-y-las-millas-por-galon">
+   2. ¿Cuál es la correlación entre los caballos de potencia y las millas por galón?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#si-existiese-una-relacion-ambas-variables-se-mueven-en-la-misma-direccion">
+   3. ¿Si existiese una relación, ambas variables se mueven en la misma dirección?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compruebe-la-direccion-de-la-relacion-con-una-visualizacion">
+   Compruebe la dirección de la relación con una visualización
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ejercicio-parte-2">
+<h1>Ejercicio parte 2<a class="headerlink" href="#ejercicio-parte-2" title="Permalink to this headline">¶</a></h1>
+<p>Utilizando los mimos datos sobre automoviles, responda a las siguientes preguntas</p>
+<ol class="simple">
+<li><p><a class="reference external" href="#1">¿Existe alguna relacion entre el territorio y los caballos de potencia?</a></p></li>
+<li><p><a class="reference external" href="#2">¿Cuál es la correlación entre los caballos de potencia y las millas por galón?</a></p></li>
+<li><p><a class="reference external" href="#3">¿Si existiese una relación, ambas variables se mueven en la misma dirección?</a></p></li>
+<li><p><a class="reference external" href="#4">Compruebe la dirección de la relación con una visualización.</a></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">autos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;datos_automoviles.csv&quot;</span><span class="p">))</span>
+<span class="n">autos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="existe-alguna-relacion-entre-el-territorio-y-los-caballos-de-potencia">
+<h2>1. ¿Existe alguna relacion entre el territorio y los caballos de potencia?<a class="headerlink" href="#existe-alguna-relacion-entre-el-territorio-y-los-caballos-de-potencia" title="Permalink to this headline">¶</a></h2>
+<p><a id="1"></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">territorio</span></code> es una variable categórica, por tanto, no es posible calcular la correlación con <code class="docutils literal notranslate"><span class="pre">caballos_potencia</span></code>. Pero, como <code class="docutils literal notranslate"><span class="pre">territorio</span></code> solo puede tomar 3 valores (Europe, Japan, USA), convertir cada valor en un número y crear una nueva columna que tenga el <code class="docutils literal notranslate"><span class="pre">territorio</span></code> almacenado como un número. Así, sí es posible calcular la correlación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se crea la nueva columna</span>
+<span class="k">def</span> <span class="nf">territorio_a_num</span><span class="p">(</span><span class="n">territorio</span><span class="p">):</span>
+    <span class="n">serie_paises</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">territorio</span> <span class="o">==</span> <span class="n">serie_paises</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">territorio</span> <span class="o">==</span> <span class="n">serie_paises</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">territorio</span> <span class="o">==</span> <span class="n">serie_paises</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    
+<span class="n">autos</span><span class="p">[</span><span class="s1">&#39;territorio_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">autos</span><span class="p">[</span><span class="s1">&#39;territorio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">territorio_a_num</span><span class="p">)</span>
+
+<span class="c1"># La correlación entre las variables</span>
+<span class="n">autos</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s1">&#39;territorio_num&#39;</span><span class="p">][</span><span class="s1">&#39;caballos_potencia&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.030029215705601634
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cual-es-la-correlacion-entre-los-caballos-de-potencia-y-las-millas-por-galon">
+<h2>2. ¿Cuál es la correlación entre los caballos de potencia y las millas por galón?<a class="headerlink" href="#cual-es-la-correlacion-entre-los-caballos-de-potencia-y-las-millas-por-galon" title="Permalink to this headline">¶</a></h2>
+<p><a id="2"></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">autos_corr</span> <span class="o">=</span> <span class="n">autos</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">autos_corr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cilindros</th>
+      <th>peso</th>
+      <th>anio</th>
+      <th>aceleracion</th>
+      <th>mpg</th>
+      <th>caballos_potencia</th>
+      <th>desplazamiento</th>
+      <th>territorio_num</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cilindros</th>
+      <td>1.000000</td>
+      <td>0.895220</td>
+      <td>-0.360762</td>
+      <td>-0.522452</td>
+      <td>-0.775396</td>
+      <td>0.844158</td>
+      <td>0.951787</td>
+      <td>-0.027908</td>
+    </tr>
+    <tr>
+      <th>peso</th>
+      <td>0.895220</td>
+      <td>1.000000</td>
+      <td>-0.315389</td>
+      <td>-0.430086</td>
+      <td>-0.831741</td>
+      <td>0.866586</td>
+      <td>0.932475</td>
+      <td>-0.094713</td>
+    </tr>
+    <tr>
+      <th>anio</th>
+      <td>-0.360762</td>
+      <td>-0.315389</td>
+      <td>1.000000</td>
+      <td>0.301992</td>
+      <td>0.579267</td>
+      <td>-0.424419</td>
+      <td>-0.381714</td>
+      <td>0.143544</td>
+    </tr>
+    <tr>
+      <th>aceleracion</th>
+      <td>-0.522452</td>
+      <td>-0.430086</td>
+      <td>0.301992</td>
+      <td>1.000000</td>
+      <td>0.420289</td>
+      <td>-0.697124</td>
+      <td>-0.557984</td>
+      <td>-0.062585</td>
+    </tr>
+    <tr>
+      <th>mpg</th>
+      <td>-0.775396</td>
+      <td>-0.831741</td>
+      <td>0.579267</td>
+      <td>0.420289</td>
+      <td>1.000000</td>
+      <td>-0.778427</td>
+      <td>-0.804203</td>
+      <td>0.127164</td>
+    </tr>
+    <tr>
+      <th>caballos_potencia</th>
+      <td>0.844158</td>
+      <td>0.866586</td>
+      <td>-0.424419</td>
+      <td>-0.697124</td>
+      <td>-0.778427</td>
+      <td>1.000000</td>
+      <td>0.898326</td>
+      <td>-0.030029</td>
+    </tr>
+    <tr>
+      <th>desplazamiento</th>
+      <td>0.951787</td>
+      <td>0.932475</td>
+      <td>-0.381714</td>
+      <td>-0.557984</td>
+      <td>-0.804203</td>
+      <td>0.898326</td>
+      <td>1.000000</td>
+      <td>-0.040180</td>
+    </tr>
+    <tr>
+      <th>territorio_num</th>
+      <td>-0.027908</td>
+      <td>-0.094713</td>
+      <td>0.143544</td>
+      <td>-0.062585</td>
+      <td>0.127164</td>
+      <td>-0.030029</td>
+      <td>-0.040180</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">autos_corr</span><span class="p">[</span><span class="s1">&#39;caballos_potencia&#39;</span><span class="p">][</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.7784267838977751
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="si-existiese-una-relacion-ambas-variables-se-mueven-en-la-misma-direccion">
+<h2>3. ¿Si existiese una relación, ambas variables se mueven en la misma dirección?<a class="headerlink" href="#si-existiese-una-relacion-ambas-variables-se-mueven-en-la-misma-direccion" title="Permalink to this headline">¶</a></h2>
+<p><a id="3"></a></p>
+<p>Como se puede apreciar, la covarianza es negativa, lo cual indica que las variables se mueven en direcciones contrarias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">autos</span><span class="o">.</span><span class="n">cov</span><span class="p">()[</span><span class="s1">&#39;mpg&#39;</span><span class="p">][</span><span class="s1">&#39;caballos_potencia&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-233.85792577900736
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compruebe-la-direccion-de-la-relacion-con-una-visualizacion">
+<h2>Compruebe la dirección de la relación con una visualización<a class="headerlink" href="#compruebe-la-direccion-de-la-relacion-con-una-visualizacion" title="Permalink to this headline">¶</a></h2>
+<p><a id="4"></a></p>
+<p>Las gráficas de regresión, se observa que la pendiente de la curva es negativa, lo cual indica que las variables son inversamente proporcionales, lo cual significa que las variables se mueven en direcciones contrarias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficar utilizando seaborn</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;caballos_potencia&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">autos</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+
+<span class="c1"># Graficar utilizando pandas</span>
+<span class="n">autos</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;caballos_potencia&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;scatter plot : mpg por caballos_potencia&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f8da07623d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Ejercicio parte 2_10_1.png" src="../../_images/Ejercicio parte 2_10_1.png" />
+<img alt="../../_images/Ejercicio parte 2_10_2.png" src="../../_images/Ejercicio parte 2_10_2.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks\5. Analisis Exploratorio"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Ejercicio%20parte%201.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ejercicio</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
