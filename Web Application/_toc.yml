@@ -1,8 +1,6 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
+- file: Notebooks/1-Pandas/pandas
+- file: Notebooks/2-Web-Scraping/web_scraping
+- file: Notebooks/2-Web-Scraping/Ejercicio_NUSO_web_scrappng
