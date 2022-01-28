@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis unidimensional &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Análisis exploratorio de datos multivariable" href="5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html" />
+    <link rel="prev" title="Análisis exploratorio de datos" href="5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-Pandas/pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/web_scraping.html">
+   Web Scraping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-Web-Scraping/Ejercicio_NUSO_web_scrappng.html">
+   Utilizando web scraping en una página real
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3-Precesamiento-de-Lenguaje-Natural/nlp.html">
+   Procesamiento de Lenguaje Natural (
+   <em>
+    NLP
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Segundo%20examen%20parcial.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Prueba%20dos%20resulta%20por%20el%20profesor.html">
+   Enunciado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html">
+   Análisis exploratorio de datos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Análisis unidimensional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html">
+   Análisis exploratorio de datos multivariable
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio%20parte%201.html">
+   Ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio%20parte%202.html">
+   Ejercicio parte 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/5. Analisis Exploratorio/5.2 Análisis exploratorio de datos unidimensionales.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/5. Analisis Exploratorio/5.2 Análisis exploratorio de datos unidimensionales.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/5. Analisis Exploratorio/5.2 Análisis exploratorio de datos unidimensionales.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivo">
+   Objetivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-de-como-graficar">
+   Ejemplo de como graficar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tecnicas-de-analisis">
+   Técnicas de análisis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-lbrerias-y-cargar-datos">
+     Importar lbrerías y cargar datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-describe">
+   DataFrame.describe()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacion">
+   Visualización
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indicadores-de-tendencia-central">
+   Indicadores de tendencia central
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indicadores-de-dispersion">
+   Indicadores de dispersión
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficos-de-distribucion">
+   Gráficos de distribución
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficos-de-comparacion">
+   Gráficos de comparación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficos-de-composicion">
+   Gráficos de composición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilizando-groupby">
+   Utilizando Groupby
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Análisis unidimensional</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objetivo">
+   Objetivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-de-como-graficar">
+   Ejemplo de como graficar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tecnicas-de-analisis">
+   Técnicas de análisis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-lbrerias-y-cargar-datos">
+     Importar lbrerías y cargar datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-describe">
+   DataFrame.describe()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizacion">
+   Visualización
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indicadores-de-tendencia-central">
+   Indicadores de tendencia central
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indicadores-de-dispersion">
+   Indicadores de dispersión
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficos-de-distribucion">
+   Gráficos de distribución
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficos-de-comparacion">
+   Gráficos de comparación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficos-de-composicion">
+   Gráficos de composición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilizando-groupby">
+   Utilizando Groupby
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="analisis-unidimensional">
+<h1>Análisis unidimensional<a class="headerlink" href="#analisis-unidimensional" title="Permalink to this headline">¶</a></h1>
+<p><a id="1"></a></p>
+<div class="section" id="objetivo">
+<h2>Objetivo<a class="headerlink" href="#objetivo" title="Permalink to this headline">¶</a></h2>
+<p>Como ya se dijo anteriormente, el análisis unidimensional consiste en analizar individualmente a las variables (columnas de un DataFrame) para conocer sus características y su naturaleza. Para ello, se emplea mayormente gráficos, aunque tambien se pueden calcular valores estadísticos como el promdio, la mediana, la kurtosis, entre muchos otros.</p>
+</div>
+<div class="section" id="ejemplo-de-como-graficar">
+<h2>Ejemplo de como graficar<a class="headerlink" href="#ejemplo-de-como-graficar" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#8">Ejemplo visualización</a></p></li>
+</ul>
+</div>
+<div class="section" id="tecnicas-de-analisis">
+<h2>Técnicas de análisis<a class="headerlink" href="#tecnicas-de-analisis" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#3">DataFrame.describe()</a></p></li>
+<li><p><a class="reference external" href="#1">Indicadores de tendencia central</a></p></li>
+<li><p><a class="reference external" href="#2">Indicadores de dispersión</a></p></li>
+<li><p><a class="reference external" href="#4">Gráficos de distribución</a></p></li>
+<li><p><a class="reference external" href="#5">Gráficos de comparación</a></p></li>
+<li><p><a class="reference external" href="#6">Gráficos de composición</a></p></li>
+<li><p><a class="reference external" href="#7">Utilizando Groupby</a></p></li>
+</ol>
+<div class="section" id="importar-lbrerias-y-cargar-datos">
+<h3>Importar lbrerías y cargar datos<a class="headerlink" href="#importar-lbrerias-y-cargar-datos" title="Permalink to this headline">¶</a></h3>
+<p><strong><a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Forest+Fires">Fuente de los datos</a></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Cargarlos desde la web</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://www.dsi.uminho.pt/~pcortez/forestfires/forestfires.csv&#39;</span><span class="p">)</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataframe-describe">
+<h2>DataFrame.describe()<a class="headerlink" href="#dataframe-describe" title="Permalink to this headline">¶</a></h2>
+<p><a id="3"></a></p>
+<p>Llamando a la función<code class="docutils literal notranslate"><span class="pre">describe()</span></code> de <em>Pandas</em> se obtiene una matriz la cual tiene varios indicadores para cada una de las columnas. Con estos indicaroes se puede tener una visión general de los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_description</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">data_description</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>month</th>
+      <th>day</th>
+      <th>FFMC</th>
+      <th>DMC</th>
+      <th>DC</th>
+      <th>ISI</th>
+      <th>temp</th>
+      <th>RH</th>
+      <th>wind</th>
+      <th>rain</th>
+      <th>area</th>
+      <th>month_number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517</td>
+      <td>517</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+      <td>517.000000</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>aug</td>
+      <td>sun</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>184</td>
+      <td>95</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.669246</td>
+      <td>4.299807</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>90.644681</td>
+      <td>110.872340</td>
+      <td>547.940039</td>
+      <td>9.021663</td>
+      <td>18.889168</td>
+      <td>44.288201</td>
+      <td>4.017602</td>
+      <td>0.021663</td>
+      <td>12.847292</td>
+      <td>7.475822</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.313778</td>
+      <td>1.229900</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.520111</td>
+      <td>64.046482</td>
+      <td>248.066192</td>
+      <td>4.559477</td>
+      <td>5.806625</td>
+      <td>16.317469</td>
+      <td>1.791653</td>
+      <td>0.295959</td>
+      <td>63.655818</td>
+      <td>2.275990</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>2.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.700000</td>
+      <td>1.100000</td>
+      <td>7.900000</td>
+      <td>0.000000</td>
+      <td>2.200000</td>
+      <td>15.000000</td>
+      <td>0.400000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.000000</td>
+      <td>4.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>90.200000</td>
+      <td>68.600000</td>
+      <td>437.700000</td>
+      <td>6.500000</td>
+      <td>15.500000</td>
+      <td>33.000000</td>
+      <td>2.700000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.000000</td>
+      <td>4.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>91.600000</td>
+      <td>108.300000</td>
+      <td>664.200000</td>
+      <td>8.400000</td>
+      <td>19.300000</td>
+      <td>42.000000</td>
+      <td>4.000000</td>
+      <td>0.000000</td>
+      <td>0.520000</td>
+      <td>8.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7.000000</td>
+      <td>5.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>92.900000</td>
+      <td>142.400000</td>
+      <td>713.900000</td>
+      <td>10.800000</td>
+      <td>22.800000</td>
+      <td>53.000000</td>
+      <td>4.900000</td>
+      <td>0.000000</td>
+      <td>6.570000</td>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>9.000000</td>
+      <td>9.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>96.200000</td>
+      <td>291.300000</td>
+      <td>860.600000</td>
+      <td>56.100000</td>
+      <td>33.300000</td>
+      <td>100.000000</td>
+      <td>9.400000</td>
+      <td>6.400000</td>
+      <td>1090.840000</td>
+      <td>12.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="visualizacion">
+<h2>Visualización<a class="headerlink" href="#visualizacion" title="Permalink to this headline">¶</a></h2>
+<p><a id="8"></a></p>
+<p>Esto es solamente un ejemplo de la manipulación de las librerías para graficar. En la celda de abajo, se grafica la distribución de los valores de la <em>temperatura</em> y se añaden líneas al gráfico las cuales muestran los indicares de tendencia central así como los límites de los valores atípicos.</p>
+<p>Para graficar los datos se utilizan estas dos librerías:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html">Seaborn</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axvline.html?highlight=axvline">matplotlib</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Agrega lineas verticales en los indicadores de la tendencia central</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span> <span class="c1"># Agrega una línea color verde, la cual indica el promedio</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># Agrega una línea color negro, la cual indica la mediana</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">data_description</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][</span><span class="s1">&#39;25%&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># Agrega una línea color negro, la cual indica el Q1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">data_description</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][</span><span class="s1">&#39;75%&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># Agrega una línea color negro, la cual indica el Q3</span>
+
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">data_description</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][</span><span class="s1">&#39;75%&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data_description</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][</span><span class="s1">&#39;25%&#39;</span><span class="p">]</span>
+
+<span class="n">upper_outliers</span> <span class="o">=</span> <span class="n">data_description</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][</span><span class="s1">&#39;75%&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span>
+<span class="n">lower_outliers</span> <span class="o">=</span> <span class="n">data_description</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">][</span><span class="s1">&#39;25%&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span>
+
+<span class="c1"># Agrega dos líneas de color rojo, las cuales indican los límites para los valores atípicos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">upper_outliers</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">lower_outliers</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_6_0.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_6_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="indicadores-de-tendencia-central">
+<h2>Indicadores de tendencia central<a class="headerlink" href="#indicadores-de-tendencia-central" title="Permalink to this headline">¶</a></h2>
+<p><a id="1"></a></p>
+<p>Los indicadores que son sirven para medir la tendencia central son:</p>
+<ul class="simple">
+<li><p><strong>Media</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">mean</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># utilizando la librería pandas</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span>  <span class="c1"># utilizando la librería  statistics</span>
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span> <span class="c1"># utilizando la librería  numpy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">a2</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">a3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.88916827852998, 18.88916827852998, 18.88916827852998
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Mediana</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">median</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span> <span class="c1"># pandas</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span>  <span class="c1"># statistics</span>
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span> <span class="c1"># numpy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">a2</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">a3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.3, 19.3, 19.3
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Cuantiles</strong></p></li>
+</ul>
+<p>Son valores que dividen a los datos en cuatro partes iguales.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- 1er cuantil (Q1) 	25% de los datos es menor que o igual a este valor.
+- 2do cuantil (Q2) 	La mediana. 50% de los datos es menor que o igual a este valor.
+- 3er cuantil (Q3) 	75% de los datos es menor que o igual a este valor. 
+</pre></div>
+</div>
+<img src="./img/02-quartiles.png" style="width:600px"/></div>
+<div class="section" id="indicadores-de-dispersion">
+<h2>Indicadores de dispersión<a class="headerlink" href="#indicadores-de-dispersion" title="Permalink to this headline">¶</a></h2>
+<p><a id="2"></a></p>
+<p>Estos indicares muestran cuan dispersos están los datos.</p>
+<ul class="simple">
+<li><p><strong>Varianza, desviación estándar</strong></p></li>
+</ul>
+<img src="./img/03-dispersion.png" style="width:600px"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">stdev</span>
+<span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">variance</span>
+
+<span class="n">std1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># pandas</span>
+<span class="n">std2</span> <span class="o">=</span> <span class="n">stdev</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span>  <span class="c1"># statistics</span>
+<span class="n">std3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span> <span class="c1"># numpy</span>
+
+<span class="n">varianza1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span> <span class="c1"># pandas</span>
+<span class="n">varianza2</span> <span class="o">=</span> <span class="n">variance</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span>  <span class="c1"># statistics</span>
+<span class="n">varianza3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span> <span class="c1"># numpy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Desviación estándar: </span><span class="si">{</span><span class="n">std1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">std2</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">std3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Varianza: </span><span class="si">{</span><span class="n">varianza1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">varianza2</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">varianza3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Desviación estándar: 5.806625349573505, 5.806625349573505, 5.801006939598366
+Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Valores atípicos</strong></p></li>
+</ul>
+<img src="./img/04-outliers.png" style="width:600px"/><ul class="simple">
+<li><p><strong>Asimetría (skweness). Grado de simetría de la distribución.</strong></p></li>
+</ul>
+<img src="./img/05-skewness.png" style="width:600px"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">skew</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span> <span class="c1"># pandas</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span>  <span class="c1"># scipy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.331172237347285 -0.3302106140354586
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Curtosis. Indicador de la “anchura” de una distribución</strong></p></li>
+</ul>
+<img src="./img/06-kurtosis.png" style="width:600px"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kurtosis</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span> <span class="c1"># pandas</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">kurtosis</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span>  <span class="c1"># scipy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1361655076587991 0.12326917606611909
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="graficos-de-distribucion">
+<h2>Gráficos de distribución<a class="headerlink" href="#graficos-de-distribucion" title="Permalink to this headline">¶</a></h2>
+<p><a id="4"></a></p>
+<p>Para visualizar los gráficos, se puede utilizar, en vez de librerias externas como en el ejemplo de arriba, la librería <em>pandas</em>. <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">Panda’s Plots</a></strong></p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Histograma">Histograma</a></strong></p></li>
+</ul>
+<p>Permite visualizar las frecuencias de diferentes categorías o rangos de valores (clases o bins)</p>
+<img src="./img/07-histograma.png" style="width:400px"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma Temp&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Histograma Temp&#39;}, ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_20_1.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_20_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad">Diagrama de Densidad</a></strong></p></li>
+</ul>
+<img src="./img/08-density-plot.png" style="width:400px"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Densidad Temp&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Densidad Temp&#39;}, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_22_1.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_22_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Diagrama_de_caja">Diagrama de Caja</a></strong></p></li>
+</ul>
+<p>Este es especialmente útil para la identificación de valores atípicos.</p>
+<img src="./img/09-box-plot.png" style="width:400px"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Box Temp&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Box Temp&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_24_1.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="graficos-de-comparacion">
+<h2>Gráficos de comparación<a class="headerlink" href="#graficos-de-comparacion" title="Permalink to this headline">¶</a></h2>
+<p><a id="5"></a></p>
+<p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">Panda’s Plots</a></strong></p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Diagrama_de_barras">Gráfico de Barras</a></strong></p></li>
+</ul>
+<p>Presenta datos <strong>cualitativos</strong> con barras rectangulares con alturas o longitudes proporcionales a los valores que representan. (No son histogramas!!)</p>
+<img src="./img/10-bar-chart.png" style="width:400px"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;lab&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="s1">&#39;val&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lab&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;lab&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_26_1.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_26_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Line_chart">Gráfico de lineas</a></strong></p></li>
+</ul>
+<p>Presenta una serie de valores (marcas) conectados por líneas. Se emplean frecuentemente para visualizar tendencias a lo largo del tiempo.</p>
+<img src="./img/11-line-chart.png" style="width:400px"/>
+<p>Para ambos tipos de gráficos, se recomienda aplicarlos para un número reducido de variables (~ 6)</p>
+</div>
+<div class="section" id="graficos-de-composicion">
+<h2>Gráficos de composición<a class="headerlink" href="#graficos-de-composicion" title="Permalink to this headline">¶</a></h2>
+<p><a id="6"></a></p>
+<p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">Panda’s Plots</a></strong></p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">Torta</a></strong></p></li>
+</ul>
+<img src="./img/12-pie-chart.png" style="width:400px"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;masa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.330</span><span class="p">,</span> <span class="mf">4.87</span> <span class="p">,</span> <span class="mf">5.97</span><span class="p">],</span>
+                   <span class="s1">&#39;radio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">2439.7</span><span class="p">,</span> <span class="mf">6051.8</span><span class="p">,</span> <span class="mf">6378.1</span><span class="p">]},</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mercurio&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">,</span> <span class="s1">&#39;Tierra&#39;</span><span class="p">])</span>
+
+<span class="c1"># Las dos maneras son equivalentes</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;masa&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;masa&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;masa&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_29_1.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_29_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://businessq-software.com/2017/02/21/stacked-bar-chart-definition-and-examples-businessq/">Barras apiladas</a></strong></p></li>
+</ul>
+<img src="./img/13-stacked-bar.png" style="width:400px"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;vestimenta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">8261.68</span><span class="p">,</span> <span class="mf">7875.87</span> <span class="p">,</span> <span class="mf">4990.23</span><span class="p">],</span>
+                   <span class="s1">&#39;equipamiento&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4810.34</span><span class="p">,</span> <span class="mf">3126.58</span><span class="p">,</span> <span class="mf">4923.48</span><span class="p">],</span>
+                   <span class="s1">&#39;accesorios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1536.57</span><span class="p">,</span> <span class="mf">2019.81</span><span class="p">,</span> <span class="mf">1472.59</span><span class="p">],},</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cherry St&#39;</span><span class="p">,</span> <span class="s1">&#39;Strawberry Mall&#39;</span><span class="p">,</span> <span class="s1">&#39;Peach St&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5.2 Análisis exploratorio de datos unidimensionales_32_1.png" src="../../_images/5.2 Análisis exploratorio de datos unidimensionales_32_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="utilizando-groupby">
+<h2>Utilizando Groupby<a class="headerlink" href="#utilizando-groupby" title="Permalink to this headline">¶</a></h2>
+<p><a id="7"></a></p>
+<p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.1/api.html#groupby">Panda’s groupby</a></strong></p>
+<p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.1/generated/pandas.core.groupby.DataFrameGroupBy.agg.html">Panda’s DataFrameGroupBy aggr</a></strong></p>
+<p>La función groupby puede ser beneficiosa. Por ejemplo, si queremos saber qué temperatura promedio tiene cada mes se hace lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Este celda agrega una columna month_number la cual tiene el número del mes.</span>
+<span class="c1"># Por ejemplo, para una fila que tiene jan como mes, el valor de month_number será 1.</span>
+   
+<span class="k">def</span> <span class="nf">month_number</span><span class="p">(</span><span class="n">month</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;jan&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="s1">&#39;feb&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="s1">&#39;mar&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="s1">&#39;apr&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">elif</span> <span class="s1">&#39;may&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="s1">&#39;jun&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">6</span>
+    <span class="k">elif</span> <span class="s1">&#39;jul&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">7</span>
+    <span class="k">elif</span> <span class="s1">&#39;aug&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">8</span>
+    <span class="k">elif</span> <span class="s1">&#39;sep&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">9</span>
+    <span class="k">elif</span> <span class="s1">&#39;oct&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span>
+    <span class="k">elif</span> <span class="s1">&#39;nov&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">11</span>
+    <span class="k">elif</span> <span class="s1">&#39;dec&#39;</span> <span class="o">==</span> <span class="n">month</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">12</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;month_number&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">month_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ahora, agruparemos los datos según la nueva columna month_number</span>
+<span class="n">temperaturas_por_mes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;month_number&quot;</span><span class="p">)</span>
+
+<span class="c1"># Finalmente, sacaremos el promedio de las temperaturas por mes</span>
+<span class="n">temperaturas_por_mes</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;temp&#39;</span> <span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temp</th>
+    </tr>
+    <tr>
+      <th>month_number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>5.250000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9.635000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13.083333</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12.044444</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>14.650000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>20.494118</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>22.109375</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>21.631522</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>19.612209</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>17.093333</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11.800000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4.522222</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks\5. Analisis Exploratorio"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Análisis exploratorio de datos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Análisis exploratorio de datos multivariable</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
