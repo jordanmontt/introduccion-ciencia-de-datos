@@ -17,16 +17,147 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+#https://archive.ics.uci.edu/ml/datasets/auto+mpg
+#Auto MPG Data Set
+#Inciar el servidor web localmente: 
+#python -m http.server
 import requests
-
-respuesta = requests.get("./html/auto_mpg.html")
+respuesta = requests.get("http://localhost:8000/auto_mpg.html")
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mMissingSchema[0m                             Traceback (most recent call last)
+[1;31mConnectionRefusedError[0m                    Traceback (most recent call last)
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connection.py:174[0m, in [0;36mHTTPConnection._new_conn[1;34m(self)[0m
+[0;32m    173[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 174[0m     conn [38;5;241m=[39m connection[38;5;241m.[39mcreate_connection(
+[0;32m    175[0m         ([38;5;28mself[39m[38;5;241m.[39m_dns_host, [38;5;28mself[39m[38;5;241m.[39mport), [38;5;28mself[39m[38;5;241m.[39mtimeout, [38;5;241m*[39m[38;5;241m*[39mextra_kw
+[0;32m    176[0m     )
+[0;32m    178[0m [38;5;28;01mexcept[39;00m SocketTimeout:
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\util\connection.py:95[0m, in [0;36mcreate_connection[1;34m(address, timeout, source_address, socket_options)[0m
+[0;32m     94[0m [38;5;28;01mif[39;00m err [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m---> 95[0m     [38;5;28;01mraise[39;00m err
+[0;32m     97[0m [38;5;28;01mraise[39;00m socket[38;5;241m.[39merror([38;5;124m"[39m[38;5;124mgetaddrinfo returns an empty list[39m[38;5;124m"[39m)
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\util\connection.py:85[0m, in [0;36mcreate_connection[1;34m(address, timeout, source_address, socket_options)[0m
+[0;32m     84[0m     sock[38;5;241m.[39mbind(source_address)
+[1;32m---> 85[0m [43msock[49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43msa[49m[43m)[49m
+[0;32m     86[0m [38;5;28;01mreturn[39;00m sock
+
+[1;31mConnectionRefusedError[0m: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+[1;31mNewConnectionError[0m                        Traceback (most recent call last)
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connectionpool.py:703[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[0;32m    702[0m [38;5;66;03m# Make the request on the httplib connection object.[39;00m
+[1;32m--> 703[0m httplib_response [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_request[49m[43m([49m
+[0;32m    704[0m [43m    [49m[43mconn[49m[43m,[49m
+[0;32m    705[0m [43m    [49m[43mmethod[49m[43m,[49m
+[0;32m    706[0m [43m    [49m[43murl[49m[43m,[49m
+[0;32m    707[0m [43m    [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout_obj[49m[43m,[49m
+[0;32m    708[0m [43m    [49m[43mbody[49m[38;5;241;43m=[39;49m[43mbody[49m[43m,[49m
+[0;32m    709[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mheaders[49m[43m,[49m
+[0;32m    710[0m [43m    [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[0;32m    711[0m [43m[49m[43m)[49m
+[0;32m    713[0m [38;5;66;03m# If we're going to release the connection in ``finally:``, then[39;00m
+[0;32m    714[0m [38;5;66;03m# the response doesn't need to know about the connection. Otherwise[39;00m
+[0;32m    715[0m [38;5;66;03m# it will also try to release it and we'll have a double-release[39;00m
+[0;32m    716[0m [38;5;66;03m# mess.[39;00m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connectionpool.py:398[0m, in [0;36mHTTPConnectionPool._make_request[1;34m(self, conn, method, url, timeout, chunked, **httplib_request_kw)[0m
+[0;32m    397[0m     [38;5;28;01melse[39;00m:
+[1;32m--> 398[0m         conn[38;5;241m.[39mrequest(method, url, [38;5;241m*[39m[38;5;241m*[39mhttplib_request_kw)
+[0;32m    400[0m [38;5;66;03m# We are swallowing BrokenPipeError (errno.EPIPE) since the server is[39;00m
+[0;32m    401[0m [38;5;66;03m# legitimately able to close the connection after sending a valid response.[39;00m
+[0;32m    402[0m [38;5;66;03m# With this behaviour, the received response is still readable.[39;00m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connection.py:239[0m, in [0;36mHTTPConnection.request[1;34m(self, method, url, body, headers)[0m
+[0;32m    238[0m     headers[[38;5;124m"[39m[38;5;124mUser-Agent[39m[38;5;124m"[39m] [38;5;241m=[39m _get_default_user_agent()
+[1;32m--> 239[0m [38;5;28;43msuper[39;49m[43m([49m[43mHTTPConnection[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[38;5;241;43m.[39;49m[43mrequest[49m[43m([49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43mbody[49m[38;5;241;43m=[39;49m[43mbody[49m[43m,[49m[43m [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mheaders[49m[43m)[49m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\http\client.py:1253[0m, in [0;36mHTTPConnection.request[1;34m(self, method, url, body, headers, encode_chunked)[0m
+[0;32m   1252[0m [38;5;124;03m"""Send a complete request to the server."""[39;00m
+[1;32m-> 1253[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_send_request[49m[43m([49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43mbody[49m[43m,[49m[43m [49m[43mheaders[49m[43m,[49m[43m [49m[43mencode_chunked[49m[43m)[49m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\http\client.py:1299[0m, in [0;36mHTTPConnection._send_request[1;34m(self, method, url, body, headers, encode_chunked)[0m
+[0;32m   1298[0m     body [38;5;241m=[39m _encode(body, [38;5;124m'[39m[38;5;124mbody[39m[38;5;124m'[39m)
+[1;32m-> 1299[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mendheaders[49m[43m([49m[43mbody[49m[43m,[49m[43m [49m[43mencode_chunked[49m[38;5;241;43m=[39;49m[43mencode_chunked[49m[43m)[49m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\http\client.py:1248[0m, in [0;36mHTTPConnection.endheaders[1;34m(self, message_body, encode_chunked)[0m
+[0;32m   1247[0m     [38;5;28;01mraise[39;00m CannotSendHeader()
+[1;32m-> 1248[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_send_output[49m[43m([49m[43mmessage_body[49m[43m,[49m[43m [49m[43mencode_chunked[49m[38;5;241;43m=[39;49m[43mencode_chunked[49m[43m)[49m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\http\client.py:1008[0m, in [0;36mHTTPConnection._send_output[1;34m(self, message_body, encode_chunked)[0m
+[0;32m   1007[0m [38;5;28;01mdel[39;00m [38;5;28mself[39m[38;5;241m.[39m_buffer[:]
+[1;32m-> 1008[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msend[49m[43m([49m[43mmsg[49m[43m)[49m
+[0;32m   1010[0m [38;5;28;01mif[39;00m message_body [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m   1011[0m 
+[0;32m   1012[0m     [38;5;66;03m# create a consistent interface to message_body[39;00m
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\http\client.py:948[0m, in [0;36mHTTPConnection.send[1;34m(self, data)[0m
+[0;32m    947[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mauto_open:
+[1;32m--> 948[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43m)[49m
+[0;32m    949[0m [38;5;28;01melse[39;00m:
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connection.py:205[0m, in [0;36mHTTPConnection.connect[1;34m(self)[0m
+[0;32m    204[0m [38;5;28;01mdef[39;00m [38;5;21mconnect[39m([38;5;28mself[39m):
+[1;32m--> 205[0m     conn [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_new_conn[49m[43m([49m[43m)[49m
+[0;32m    206[0m     [38;5;28mself[39m[38;5;241m.[39m_prepare_conn(conn)
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connection.py:186[0m, in [0;36mHTTPConnection._new_conn[1;34m(self)[0m
+[0;32m    185[0m [38;5;28;01mexcept[39;00m SocketError [38;5;28;01mas[39;00m e:
+[1;32m--> 186[0m     [38;5;28;01mraise[39;00m NewConnectionError(
+[0;32m    187[0m         [38;5;28mself[39m, [38;5;124m"[39m[38;5;124mFailed to establish a new connection: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m e
+[0;32m    188[0m     )
+[0;32m    190[0m [38;5;28;01mreturn[39;00m conn
+
+[1;31mNewConnectionError[0m: <urllib3.connection.HTTPConnection object at 0x000001F9EED98520>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+[1;31mMaxRetryError[0m                             Traceback (most recent call last)
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\adapters.py:440[0m, in [0;36mHTTPAdapter.send[1;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[0;32m    439[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m chunked:
+[1;32m--> 440[0m     resp [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43murlopen[49m[43m([49m
+[0;32m    441[0m [43m        [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[43m,[49m
+[0;32m    442[0m [43m        [49m[43murl[49m[38;5;241;43m=[39;49m[43murl[49m[43m,[49m
+[0;32m    443[0m [43m        [49m[43mbody[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mbody[49m[43m,[49m
+[0;32m    444[0m [43m        [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m
+[0;32m    445[0m [43m        [49m[43mredirect[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    446[0m [43m        [49m[43massert_same_host[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    447[0m [43m        [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    448[0m [43m        [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    449[0m [43m        [49m[43mretries[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmax_retries[49m[43m,[49m
+[0;32m    450[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout[49m
+[0;32m    451[0m [43m    [49m[43m)[49m
+[0;32m    453[0m [38;5;66;03m# Send the request.[39;00m
+[0;32m    454[0m [38;5;28;01melse[39;00m:
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\connectionpool.py:785[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[0;32m    783[0m     e [38;5;241m=[39m ProtocolError([38;5;124m"[39m[38;5;124mConnection aborted.[39m[38;5;124m"[39m, e)
+[1;32m--> 785[0m retries [38;5;241m=[39m [43mretries[49m[38;5;241;43m.[39;49m[43mincrement[49m[43m([49m
+[0;32m    786[0m [43m    [49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43merror[49m[38;5;241;43m=[39;49m[43me[49m[43m,[49m[43m [49m[43m_pool[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43m_stacktrace[49m[38;5;241;43m=[39;49m[43msys[49m[38;5;241;43m.[39;49m[43mexc_info[49m[43m([49m[43m)[49m[43m[[49m[38;5;241;43m2[39;49m[43m][49m
+[0;32m    787[0m [43m[49m[43m)[49m
+[0;32m    788[0m retries[38;5;241m.[39msleep()
+
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\urllib3\util\retry.py:592[0m, in [0;36mRetry.increment[1;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[0;32m    591[0m [38;5;28;01mif[39;00m new_retry[38;5;241m.[39mis_exhausted():
+[1;32m--> 592[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, error [38;5;129;01mor[39;00m ResponseError(cause))
+[0;32m    594[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
+
+[1;31mMaxRetryError[0m: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /auto_mpg.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F9EED98520>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+[1;31mConnectionError[0m                           Traceback (most recent call last)
 Input [1;32mIn [1][0m, in [0;36m<module>[1;34m[0m
-[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mrequests[39;00m
-[1;32m----> 3[0m respuesta [38;5;241m=[39m [43mrequests[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m./html/auto_mpg.html[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m      1[0m [38;5;66;03m#https://archive.ics.uci.edu/ml/datasets/auto+mpg[39;00m
+[0;32m      2[0m [38;5;66;03m#Auto MPG Data Set[39;00m
+[0;32m      3[0m [38;5;66;03m#Inciar el servidor web localmente: [39;00m
+[0;32m      4[0m [38;5;66;03m#python -m http.server[39;00m
+[0;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mrequests[39;00m
+[1;32m----> 6[0m respuesta [38;5;241m=[39m [43mrequests[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mhttp://localhost:8000/auto_mpg.html[39;49m[38;5;124;43m"[39;49m[43m)[49m
 
 File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\api.py:75[0m, in [0;36mget[1;34m(url, params, **kwargs)[0m
 [0;32m     64[0m [38;5;28;01mdef[39;00m [38;5;21mget[39m(url, params[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
@@ -45,51 +176,30 @@ File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\s
 [0;32m     60[0m [38;5;28;01mwith[39;00m sessions[38;5;241m.[39mSession() [38;5;28;01mas[39;00m session:
 [1;32m---> 61[0m     [38;5;28;01mreturn[39;00m session[38;5;241m.[39mrequest(method[38;5;241m=[39mmethod, url[38;5;241m=[39murl, [38;5;241m*[39m[38;5;241m*[39mkwargs)
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\sessions.py:515[0m, in [0;36mSession.request[1;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
-[0;32m    502[0m [38;5;66;03m# Create the Request.[39;00m
-[0;32m    503[0m req [38;5;241m=[39m Request(
-[0;32m    504[0m     method[38;5;241m=[39mmethod[38;5;241m.[39mupper(),
-[0;32m    505[0m     url[38;5;241m=[39murl,
-[1;32m   (...)[0m
-[0;32m    513[0m     hooks[38;5;241m=[39mhooks,
-[0;32m    514[0m )
-[1;32m--> 515[0m prep [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mprepare_request[49m[43m([49m[43mreq[49m[43m)[49m
-[0;32m    517[0m proxies [38;5;241m=[39m proxies [38;5;129;01mor[39;00m {}
-[0;32m    519[0m settings [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mmerge_environment_settings(
-[0;32m    520[0m     prep[38;5;241m.[39murl, proxies, stream, verify, cert
-[0;32m    521[0m )
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\sessions.py:529[0m, in [0;36mSession.request[1;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[0;32m    524[0m send_kwargs [38;5;241m=[39m {
+[0;32m    525[0m     [38;5;124m'[39m[38;5;124mtimeout[39m[38;5;124m'[39m: timeout,
+[0;32m    526[0m     [38;5;124m'[39m[38;5;124mallow_redirects[39m[38;5;124m'[39m: allow_redirects,
+[0;32m    527[0m }
+[0;32m    528[0m send_kwargs[38;5;241m.[39mupdate(settings)
+[1;32m--> 529[0m resp [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39msend(prep, [38;5;241m*[39m[38;5;241m*[39msend_kwargs)
+[0;32m    531[0m [38;5;28;01mreturn[39;00m resp
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\sessions.py:443[0m, in [0;36mSession.prepare_request[1;34m(self, request)[0m
-[0;32m    440[0m     auth [38;5;241m=[39m get_netrc_auth(request[38;5;241m.[39murl)
-[0;32m    442[0m p [38;5;241m=[39m PreparedRequest()
-[1;32m--> 443[0m [43mp[49m[38;5;241;43m.[39;49m[43mprepare[49m[43m([49m
-[0;32m    444[0m [43m    [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[38;5;241;43m.[39;49m[43mupper[49m[43m([49m[43m)[49m[43m,[49m
-[0;32m    445[0m [43m    [49m[43murl[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43murl[49m[43m,[49m
-[0;32m    446[0m [43m    [49m[43mfiles[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mfiles[49m[43m,[49m
-[0;32m    447[0m [43m    [49m[43mdata[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mdata[49m[43m,[49m
-[0;32m    448[0m [43m    [49m[43mjson[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mjson[49m[43m,[49m
-[0;32m    449[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mmerge_setting[49m[43m([49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m [49m[43mdict_class[49m[38;5;241;43m=[39;49m[43mCaseInsensitiveDict[49m[43m)[49m[43m,[49m
-[0;32m    450[0m [43m    [49m[43mparams[49m[38;5;241;43m=[39;49m[43mmerge_setting[49m[43m([49m[43mrequest[49m[38;5;241;43m.[39;49m[43mparams[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mparams[49m[43m)[49m[43m,[49m
-[0;32m    451[0m [43m    [49m[43mauth[49m[38;5;241;43m=[39;49m[43mmerge_setting[49m[43m([49m[43mauth[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mauth[49m[43m)[49m[43m,[49m
-[0;32m    452[0m [43m    [49m[43mcookies[49m[38;5;241;43m=[39;49m[43mmerged_cookies[49m[43m,[49m
-[0;32m    453[0m [43m    [49m[43mhooks[49m[38;5;241;43m=[39;49m[43mmerge_hooks[49m[43m([49m[43mrequest[49m[38;5;241;43m.[39;49m[43mhooks[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mhooks[49m[43m)[49m[43m,[49m
-[0;32m    454[0m [43m[49m[43m)[49m
-[0;32m    455[0m [38;5;28;01mreturn[39;00m p
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\sessions.py:645[0m, in [0;36mSession.send[1;34m(self, request, **kwargs)[0m
+[0;32m    642[0m start [38;5;241m=[39m preferred_clock()
+[0;32m    644[0m [38;5;66;03m# Send the request[39;00m
+[1;32m--> 645[0m r [38;5;241m=[39m adapter[38;5;241m.[39msend(request, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    647[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[0;32m    648[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\models.py:318[0m, in [0;36mPreparedRequest.prepare[1;34m(self, method, url, headers, files, data, params, auth, cookies, hooks, json)[0m
-[0;32m    315[0m [38;5;124;03m"""Prepares the entire request with the given parameters."""[39;00m
-[0;32m    317[0m [38;5;28mself[39m[38;5;241m.[39mprepare_method(method)
-[1;32m--> 318[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mprepare_url[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mparams[49m[43m)[49m
-[0;32m    319[0m [38;5;28mself[39m[38;5;241m.[39mprepare_headers(headers)
-[0;32m    320[0m [38;5;28mself[39m[38;5;241m.[39mprepare_cookies(cookies)
+File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\adapters.py:519[0m, in [0;36mHTTPAdapter.send[1;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[0;32m    515[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e[38;5;241m.[39mreason, _SSLError):
+[0;32m    516[0m         [38;5;66;03m# This branch is for urllib3 v1.22 and later.[39;00m
+[0;32m    517[0m         [38;5;28;01mraise[39;00m SSLError(e, request[38;5;241m=[39mrequest)
+[1;32m--> 519[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+[0;32m    521[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
+[0;32m    522[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\models.py:392[0m, in [0;36mPreparedRequest.prepare_url[1;34m(self, url, params)[0m
-[0;32m    389[0m     error [38;5;241m=[39m ([38;5;124m"[39m[38;5;124mInvalid URL [39m[38;5;132;01m{0!r}[39;00m[38;5;124m: No scheme supplied. Perhaps you meant http://[39m[38;5;132;01m{0}[39;00m[38;5;124m?[39m[38;5;124m"[39m)
-[0;32m    390[0m     error [38;5;241m=[39m error[38;5;241m.[39mformat(to_native_string(url, [38;5;124m'[39m[38;5;124mutf8[39m[38;5;124m'[39m))
-[1;32m--> 392[0m     [38;5;28;01mraise[39;00m MissingSchema(error)
-[0;32m    394[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m host:
-[0;32m    395[0m     [38;5;28;01mraise[39;00m InvalidURL([38;5;124m"[39m[38;5;124mInvalid URL [39m[38;5;132;01m%r[39;00m[38;5;124m: No host supplied[39m[38;5;124m"[39m [38;5;241m%[39m url)
-
-[1;31mMissingSchema[0m: Invalid URL './html/auto_mpg.html': No scheme supplied. Perhaps you meant http://./html/auto_mpg.html?
-MissingSchema: Invalid URL './html/auto_mpg.html': No scheme supplied. Perhaps you meant http://./html/auto_mpg.html?
+[1;31mConnectionError[0m: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /auto_mpg.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F9EED98520>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ConnectionError: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /auto_mpg.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F9EED98520>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
 
