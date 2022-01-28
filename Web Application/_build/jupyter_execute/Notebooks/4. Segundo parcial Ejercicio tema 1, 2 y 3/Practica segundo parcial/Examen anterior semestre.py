@@ -37,7 +37,7 @@ import seaborn as sns
 http = urllib3.PoolManager()
 
 
-# In[107]:
+# In[3]:
 
 
 #1) Procesar el archivo "cine_center_cartelera.html" para extraer datos y guardarlos en un archivo CSV (cartelera.csv)
@@ -51,7 +51,7 @@ http = urllib3.PoolManager()
 # Nota aclaratria: incluir un print() que muestra la cantidad de filas recuperadas
 
 
-# In[182]:
+# In[4]:
 
 
 def obtener_peliculas_comom_componente(pagina):
@@ -124,7 +124,7 @@ def guardar_como_csv(lista_peliculas):
         dict_writer.writerows(lista_peliculas)
 
 
-# In[183]:
+# In[5]:
 
 
 respuesta = requests.get('http://localhost:3000/')

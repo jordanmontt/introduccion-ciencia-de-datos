@@ -1,22 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
-#Habilitar intellisense
-get_ipython().run_line_magic('config', 'IPCompleter.greedy = True')
-
-
-# In[2]:
-
-
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
 # # Feature engineering (preparación de variables)
-# 
+
+# 1. [Definicion](#1)
+# 2. [Imputación](#2)
+# 3. [Valores atípicos](#3)
+# 4. [Binning](#4)
+# 5. [Transformación logarítmica](#5)
+# 6. [One-hot encoding](#6)
+# 7. [Separación de valores](#7)
+# 8. [Ajuste de escala](#8)
+
 # ## Definición
+# 
+# <a id="1"></a>
+# 
 # __[What Is Feature Engineering](https://medium.com/mindorks/what-is-feature-engineering-for-machine-learning-d8ba3158d97a)__
 # 
 # Proceso de aplicación del conocimiento de los datos de cierto ámbito/dominio para seleccionar o crear variables que mejoren el desempeño de los modelos predictivos. Se recomienda realizar luego del Análisis Exploratorio de Datos.
@@ -36,7 +35,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # ![](./01-eda-visual-techniques.png)
 
-# In[3]:
+# In[1]:
 
 
 import os
@@ -45,77 +44,79 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv(os.path.join("diabetes.csv"))
+df = pd.read_csv(os.path.join("./csv/diabetes.csv"))
 df.head()
 
 
 # ## Imputación
+# 
+# <a id="2"></a>
 
-# In[4]:
+# In[2]:
 
 
 #df.isnull()
 df.describe(include='all')
 
 
-# In[5]:
+# In[3]:
 
 
 df.loc[3,'Age'] = np.nan
 df.head()
 
 
-# In[6]:
+# In[4]:
 
 
 df.describe(include='all')
 
 
-# In[7]:
+# In[5]:
 
 
 #df['Age'].isnull()
 
 
-# In[8]:
+# In[6]:
 
 
 df.loc[df['Age'].isnull()]
 
 
-# In[9]:
+# In[7]:
 
 
 df.shape
 
 
-# In[10]:
+# In[8]:
 
 
 #Eliminación de valores faltantes
 df.dropna(how='all').shape
 
 
-# In[11]:
+# In[9]:
 
 
 df.dropna(subset=['Insulin', 'Age'], how='any').shape
 
 
-# In[12]:
+# In[10]:
 
 
 df.head()
 
 
-# In[13]:
+# In[11]:
 
 
 df.dropna(subset=['Insulin', 'Age'], how='any', inplace=True )
 df.head()
 
 
-# In[14]:
+# In[12]:
 
 
 #Asignación de valores
@@ -221,6 +222,8 @@ df.head()
 
 
 # ## Valores atípicos
+# 
+# <a id="3"></a>
 
 # In[30]:
 
@@ -254,6 +257,8 @@ df.loc[(df['Age'] <= q3 + 1.5 * IQR) & (df['Age'] >= q1 - 1.5 * IQR)].shape
 
 
 # ## Binning
+# 
+# <a id="4"></a>
 
 # ![](https://www.saedsayad.com/images/Binning_1.png)
 
@@ -304,6 +309,8 @@ df.head()
 
 # ## Transformación logarítmica
 # 
+# <a id="5"></a>
+# 
 # Recuerde que log(0) = infinito
 
 # In[41]:
@@ -325,6 +332,8 @@ np.log(df['Pregnancies'] + 1.0).plot.density(color='c')
 
 
 # ## One-hot encoding
+# 
+# <a id="6"></a>
 # 
 # <img src="./img/02-one-hot-encoding.png" style="width:600px"/>
 
@@ -349,6 +358,8 @@ df.head()
 
 
 # ## Separación de valores
+# 
+# <a id="7"></a>
 
 # In[47]:
 
@@ -377,6 +388,8 @@ df.head()
 
 
 # ## Ajuste de escala
+# 
+# <a id="8"></a>
 # 
 # El ajuste de escala es una transformación aplicada a variables numéricas que tiene como objetivo asegurar que los valores de diferentes variables estén en el mismo rango. Esta transformación es necesaria cuando se emplean algoritmos sensibles a las magnitudes de las variables.
 # 

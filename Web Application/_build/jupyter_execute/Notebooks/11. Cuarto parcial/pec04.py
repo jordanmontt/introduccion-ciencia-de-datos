@@ -1,19 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# # Ejercicio misceláneo: Feature Selection, Modelos predictivos
 
-
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
-# ##  1 En un filtro antispam ¿prefeririría que sea más alta la presición o la exhaustividad? Justifique su respuesta.
+# ##  1. En un filtro antispam ¿prefeririría que sea más alta la presición o la exhaustividad? Justifique su respuesta.
 # 
 # Asuma que el filtro elimina cualquier mensaje que detecte como spam.
 
 # En este caso, **es más importante tener una alta precisión**. Porque una alta precisión significa que el número de falsos positivos es reducido. Es mucho peor tener un falso positivo que un falso negativo. Porque, digamos, si tengo un correo muy importante sobre trabajo y se lo marca como spam, es catastrófico. En cambio, si me llega un correo spam a mi bandeja de entrada, no es algo tan molesto.
 
-# In[87]:
+# In[1]:
 
 
 import pandas as pd
@@ -26,14 +22,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 
-# In[88]:
+# In[2]:
 
 
 diabetes_df = pd.read_csv(os.path.join("datasets","diabetes.csv"))
 diabetes_df.head()
 
 
-# In[89]:
+# In[3]:
 
 
 VARIABLES_INDEPENDIENTES = list(diabetes_df.columns[:-1])
@@ -44,7 +40,7 @@ VARIABLES_INDEPENDIENTES
 # 
 # En el siguiente problema de clasificación. Determine el porcentaje adecuado de variables aplicando la Información mutua. El valor a partir de cual un incremento en el mismo no incrementa significativamente el desempeño del clasificador (2% o menos)
 
-# In[90]:
+# In[4]:
 
 
 from sklearn.feature_selection import mutual_info_classif, SelectPercentile
@@ -56,7 +52,7 @@ def seleccionar_variables(X, Y, porcentaje):
     return X_new
 
 
-# In[91]:
+# In[5]:
 
 
 def datos_performance(performance_clasificador):   
@@ -65,7 +61,7 @@ def datos_performance(performance_clasificador):
     return pd.DataFrame(data={'exactitud' : exactitud}, index = nro_variables)
 
 
-# In[92]:
+# In[6]:
 
 
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
@@ -87,7 +83,7 @@ def evaluar_clasificador(variable_dependiente,
             'exhaustividad' : recall_score(Y_test, clasificador.predict(X_test))}
 
 
-# In[93]:
+# In[7]:
 
 
 performance_clasificador = {}
@@ -99,14 +95,14 @@ for i in range (1, 100, 10):
                                                    i)
 
 
-# In[94]:
+# In[8]:
 
 
 df = datos_performance(performance_clasificador)
 df.head(10)
 
 
-# In[95]:
+# In[9]:
 
 
 df.plot.line(rot=0)

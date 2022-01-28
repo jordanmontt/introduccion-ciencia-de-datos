@@ -5,15 +5,15 @@ chapters:
 - file: Notebooks/2-Web-Scraping/web_scraping
 - file: Notebooks/2-Web-Scraping/Ejercicio_NUSO_web_scrappng
 - file: Notebooks/3-Precesamiento-de-Lenguaje-Natural/nlp
-- file: Notebooks/4. Segundo parcial Ejercicio tema 1, 2 y 3/Segundo examen parcial
 - file: Notebooks/4. Segundo parcial Ejercicio tema 1, 2 y 3/Prueba dos resulta por el profesor
+- file: Notebooks/4. Segundo parcial Ejercicio tema 1, 2 y 3/Segundo examen parcial
 - file: Notebooks/5. Analisis Exploratorio/5.1 Introduccion al Analisis Exploratorio de Datos
 - file: Notebooks/5. Analisis Exploratorio/5.2 Análisis exploratorio de datos unidimensionales
 - file: Notebooks/5. Analisis Exploratorio/5.3 Analisis exploratorio de datos multidimensionales
 - file: Notebooks/5. Analisis Exploratorio/Ejercicio parte 1
 - file: Notebooks/5. Analisis Exploratorio/Ejercicio parte 2
-- file: Notebooks/6. Feature Engineering/feature engineering
 - file: Notebooks/6. Feature Engineering/data reshaping
+- file: Notebooks/6. Feature Engineering/feature engineering
 - file: Notebooks/6. Feature Engineering/Ejercicio feature engineering
 - file: Notebooks/7. Tercer parcial Ejercicio tema 5 y 6/pec03
 - file: Notebooks/8. Feature Selection/03_feature-selection
@@ -25,4 +25,3 @@ chapters:
 - file: Notebooks/11. Cuarto parcial/pec04
 - file: Notebooks/12. Arboles de decision/04-arboles-de-decision-python
 - file: Notebooks/13. Guardar y utilizar una API/Guardar y desplegar un clasificador
-- file: Notebooks/14. Quinto parcial/pec05

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Enunciado
+# ## Ejercicio misceláneo: NLP, Web Scrapping 
+# 
 # La prueba consiste en completar el código marcado con **#FIXME** para obtener automáticamente el resumen de un texto.
 # 
 # La decripción general de las reglas/algoritmo:
@@ -27,13 +28,13 @@ import unicodedata
 http = urllib3.PoolManager()
 
 
-# In[10]:
+# In[2]:
 
 
 articleURL = "https://www.muyinteresante.es/naturaleza/video/objetivo-2030-proteger-el-30-de-la-tierra-751579255112"
 
 
-# In[11]:
+# In[3]:
 
 
 import requests
@@ -48,13 +49,13 @@ soup
 p_containers = soup.body.find_all(name="div", attrs={"class":"paragraph--text"})
 
 
-# In[12]:
+# In[5]:
 
 
 p_containers[0].find_all("p")[1]
 
 
-# In[15]:
+# In[6]:
 
 
 #El valor de la variable text debe ser una cadena con los párrafos separados por '\n'
@@ -63,14 +64,14 @@ for p_container in p_containers:
     text = text + '\n'.join(map(lambda p: p.text, p_container.find_all("p"))) #function
 
 
-# In[16]:
+# In[7]:
 
 
 text = unicodedata.normalize("NFKD",text) #replace \xa0 with regular space
 text
 
 
-# In[17]:
+# In[8]:
 
 
 def summarize(text, n):
@@ -100,7 +101,7 @@ def summarize(text, n):
     return summary_sentences
 
 
-# In[18]:
+# In[9]:
 
 
 summarize(text,3)

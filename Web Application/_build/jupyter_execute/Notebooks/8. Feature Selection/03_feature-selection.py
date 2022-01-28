@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
 # # Feature selection (selección de variables)
 # 
 # __[More data beats clever algorithms, but better data beats more data](https://quotefancy.com/quote/1779267/Peter-Norvig-More-data-beats-clever-algorithms-but-better-data-beats-more-data)__
@@ -58,7 +52,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # ![](./01-eda-visual-techniques.png)
 
-# In[18]:
+# In[1]:
 
 
 import os
@@ -70,7 +64,7 @@ from sklearn.feature_selection import VarianceThreshold
 # ## Umbral de Varianza
 # Se puede trabajar también con datos normalizados (z-score)
 
-# In[19]:
+# In[2]:
 
 
 df = pd.read_csv(os.path.join("boston.csv"))

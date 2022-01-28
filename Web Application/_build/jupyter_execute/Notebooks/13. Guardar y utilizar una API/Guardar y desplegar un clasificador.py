@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Arboles de decisión
+# # Guardar y deployar un modelo predictivo
+# 
+# Para este ejemplo utilizaremos un árbol de decisión
 
 # In[1]:
 
@@ -13,14 +15,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
 
 
-# In[15]:
+# In[2]:
 
 
 df = pd.read_csv(os.path.join('../Datasets/diabetes.csv'))
 df.head()
 
 
-# In[19]:
+# In[3]:
 
 
 feature_cols = ['Pregnancies', 'Insulin', 'BMI', 'Age','Glucose','BloodPressure','DiabetesPedigreeFunction']
@@ -31,14 +33,14 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 
 # ## Optimización de parámetros
 
-# In[21]:
+# In[4]:
 
 
 #https://github.com/conda-forge/hyperopt-feedstock
 from hyperopt import fmin, tpe, hp, STATUS_OK,Trials
 
 
-# In[22]:
+# In[5]:
 
 
 space ={
@@ -52,7 +54,7 @@ space ={
 }
 
 
-# In[24]:
+# In[6]:
 
 
 def objective(params):
@@ -64,35 +66,36 @@ def objective(params):
     return {'loss': 1-accuracy, 'status': STATUS_OK}
 
 
-# In[25]:
+# In[7]:
 
 
 trials=Trials()
 best=fmin(objective,space,algo=tpe.suggest,trials=trials,max_evals=20)
+
+
+# In[8]:
+
+
 print(best)
-
-
-# In[26]:
-
 
 best['n_estimators']=int(best['n_estimators'])
 best['max_depth']=int(best['max_depth'])
 
 
-# In[27]:
+# In[9]:
 
 
 tree_v5 = XGBClassifier(**best)
 tree_v5
 
 
-# In[29]:
+# In[10]:
 
 
 tree_v5.fit(X_train, Y_train)
 
 
-# In[31]:
+# In[11]:
 
 
 # métricas de desempeño
@@ -112,13 +115,13 @@ print('f1 del clasificador - version 5 : {0:.2f}'.format(f1_score(Y_test, tree_v
 # 
 # Python cuenta con librerias de serialización que facilitan guardar el clasificador en un archivo (pickle, joblib); este archivo puede ser restaurado para hacer predicciones.
 
-# In[32]:
+# In[12]:
 
 
 import pickle
 
 
-# In[36]:
+# In[13]:
 
 
 # Cree la carpeta 'clasificador' en el folder donde está el notebook
@@ -133,7 +136,7 @@ archivo_clasificador.close()
 
 # ## Cargar el clasificador
 
-# In[37]:
+# In[14]:
 
 
 #Abrir el archivo en modo lectura de contenido binario y cargar el clasificdor
@@ -142,7 +145,7 @@ tree_v6 = pickle.load(archivo_clasificador)
 archivo_clasificador.close()
 
 
-# In[39]:
+# In[15]:
 
 
 # métricas de desempeño
@@ -160,7 +163,7 @@ print('f1 del clasificador - version 6 : {0:.2f}'.format(f1_score(Y_test, tree_v
 
 # ##  Modificar el clasificador
 
-# In[43]:
+# In[16]:
 
 
 tree_v6.n_estimators = 700
@@ -168,7 +171,7 @@ tree_v6.n_estimators = 700
 tree_v6.fit(X_train,Y_train)
 
 
-# In[42]:
+# In[17]:
 
 
 # Guardar el nuevo clasificador
@@ -190,7 +193,7 @@ archivo_clasificador.close()
 # 
 # Ahora, utilizando el clasificador guardado anteriormente en un archivo binario, se creará un servicio API REST en Flask para poder utilizarlo. Para hacerlo funcionar hacerlo, colocar el código en un archivo .py y hacerlo correr en la consola.
 
-# In[ ]:
+# In[18]:
 
 
 # http://flask.palletsprojects.com/en/1.1.x/quickstart/#quickstart

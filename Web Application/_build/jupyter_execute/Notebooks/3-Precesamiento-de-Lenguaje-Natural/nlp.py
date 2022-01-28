@@ -5,6 +5,7 @@
 # __[NLP](https://es.wikipedia.org/wiki/Procesamiento_de_lenguajes_naturales)__ es un campo de las ciencias de la computación, inteligencia artificial y lingüística que estudia las interacciones entre las computadoras y el lenguaje humano. Se ocupa de la formulación e investigación de mecanismos eficaces computacionalmente para la comunicación entre personas y máquinas por medio del lenguaje natural. En poca palabras, hacer que la computadora pueden entender y responder en lenguage natural.
 
 # ### Algunas aplicaciones de *NLP*
+# 
 # - Extracción de palabras clave (*Keyword extraction*): identificación automática de términos importantes que mejor describan el tema de un documento.
 # - Extracción de entidades (*Named-Entity Recognition*): busca localizar en el texto entidades como personas, organizaciones, lugares, expresiones de tiempo y cantidades.
 # - Clasificación de texto: es asignar una categoría a un documento, esto sirve para la detección de *spam*, análisis de sentimientos, priorización de contenido, etc.
@@ -18,14 +19,13 @@
 #     2. [Quitar palabras de parada](#3)
 #     3. [Otras tareas de limpieza que se pueden considerar](#4)
 #     4. [Lematización](#5)
-#     5. [Identificar n-gramas](#6)
+#     5. [Identificaciín de N-gramas](#6)
 #     6. [Desambiguación lingüística (*Word Sense Disambiguation*)](#7)
 #     7. [Etiquetado gramatical (*Part of Speech Tagging*)](#8)
-# 2. [Representaciones](#9)
-#     1. [*Feature vector*](#10)
-#         1. [*One-hot encoding*](#11)
-#         2. [*TF-IDF*](#12)
-#         3. [*Word embeddings*](#13)
+# 2. [Representacion del texto](#9)
+#     1. [One-hot encoding (tuplas de palabras)](#10)
+#     2. [ TF-IDF (Term frequency, inverse document frequency)](#11)
+#     3. [*Word embeddings*](#12)
 
 # <a id="1"></a>
 # # Vocabulario del problema
@@ -72,7 +72,7 @@ print("Texto de la oracion 1: {}".format(oraciones_noticia[0]))
 # La función <font color="gray">nltk.word_tokenize(...)</font> es el tokenizador a nivel de palabras recomendado por *NLTK*. El resultado de esta función es una lista con todas las palabras de la noticia. Internamente usa una instancia de la clase <font color="gray">TreebankWordTokenizer</font> (en la versión más reciente)
 # 
 
-# In[12]:
+# In[3]:
 
 
 palabras_noticia = nltk.word_tokenize(texto_noticia)
@@ -81,13 +81,13 @@ palabras_noticia
 
 # Debes saber que <font color="gray">word_tokenize</font>, no es la única función que permite realizar este trabajo. Puedes utilizar también <font color="gray">casual_tokenize</font>. Encuentra la diferencia =)
 
-# In[13]:
+# In[4]:
 
 
 nltk.tokenize.casual.casual_tokenize("Que buena pelicula. Gracias por invitarme :)")
 
 
-# In[14]:
+# In[5]:
 
 
 nltk.word_tokenize("Que buena pelicula. Gracias por invitarme :)")
@@ -98,7 +98,7 @@ nltk.word_tokenize("Que buena pelicula. Gracias por invitarme :)")
 # 
 # Dependiendo del lenguaje existen palabras que tienden a repetirse mucho más que otras, estas generalmente son los artículos, las preposiciones, y las conjunciones. Estas palabras suelen ser perjudiciales al momento de analizar el texto porque no aportan información relevante, es por eso que se deben quitar las palabras de parada del vocabulario del problema. Tener en cuenta que NO hay una lista universal y exhaustiva de estas palabras. Cada lenguage e incluso tipo de problema puede tener su propia lista de palabras de parada.
 # 
-# ![Tokenización](02_remove_stopwords.png)
+# ![Tokenización](./img/02_remove_stopwords.png)
 # 
 # Puesto que estas listas pueden variar dependiendo de la librería o incluso entre versiones de la misma librería, incluir este paso puede dificultar la reproducción de los resultados en otros entornos. Veremos más adelante que hay otros mecanismos para lidiar con este tipo de palabras (*TF*, *IDF*).
 # 
@@ -118,7 +118,7 @@ nltk.word_tokenize("Que buena pelicula. Gracias por invitarme :)")
 
 # Si tienes problemas importando la libreria *nltk*, ejecuta este comando <font color="gray">nltk.download('stopwords')</font>. En el ejemplo se puede ver la lista de palabras de parada que nos ofrece la libreria <font color="gray">nltk.corpus</font>
 
-# In[15]:
+# In[6]:
 
 
 import nltk
@@ -128,7 +128,7 @@ nltk.corpus.stopwords.words('spanish')
 
 # Otra lista de palabras de parada que podrías tomar en cuenta son los signos de puntuación.
 
-# In[16]:
+# In[7]:
 
 
 import string
@@ -137,7 +137,7 @@ list(string.punctuation)
 
 # Puedes unir ambas listas para tener todo mejor organizado
 
-# In[17]:
+# In[8]:
 
 
 palabras_de_parada = set( nltk.corpus.stopwords.words('spanish') + list(string.punctuation))
@@ -146,7 +146,7 @@ palabras_de_parada
 
 # Finalmente solo queda eliminar las palabras de parada del texto de la noticia.
 
-# In[18]:
+# In[9]:
 
 
 palabras_noticia_sin_palabras_de_parada = [palabra for palabra in palabras_noticia if palabra not in palabras_de_parada]
@@ -237,14 +237,10 @@ palabras_noticia_sin_palabras_de_parada
 # 
 # - __[Choosing a Spanish Part-of-Speech tagger for a lexically sensitive task](https://www.researchgate.net/publication/282828110_Choosing_a_Spanish_Part-of-Speech_tagger_for_a_lexically_sensitive_task)__
 
-# # Enfoques
-# Basado en reglas (sistemas expertos)
-# Aprendizaje Automático (capturar patrones en datos históricos)
-# 
-# Ejemplo: Detección de Spam, Sentiment Analysis
-
 # <a id="9"></a>
-# # Representaciones
+# 
+# # Representación del texto
+# 
 # Dependiendo del tipo de problema *NLP*, el texto deberá transformarse en una representación adecuada para las herramientas y algoritmos empleandos para abordar el problema. Una de las más usadas es crear representaciones numéricas. Esencialmente, se trata de convertir texto en un vector/arreglo de números.
 # 
 # Los valores en el arreglo pueden ser por ejemplo: la frequencia del *tóken* en el documento, el código en un *word embedding*, o la métrica *TF-IDF*. 
@@ -255,7 +251,7 @@ palabras_noticia_sin_palabras_de_parada
 
 # Primero debemos obtener el texto de la noticia.
 
-# In[19]:
+# In[10]:
 
 
 texto_noticia = """Los clubes cochabambinos de Olympic, Albert Einstein y el paceño Universidad Católica Boliviana (UCB) avanzan a paso firme y constante rumbo a la corona en la Liga Superior de voleibol, rama femenina, que se desarrolla en el coliseo Julio Borelli Vitterito de La Paz, luego de cosechar sendas victorias la noche de este martes. El ganador será representante de Bolivia en la Liga Sudamericana de Clubes 2020.
@@ -266,7 +262,7 @@ texto_noticia
 
 # Ahora debemos importar las librerias correspondientes y generar la lista de *stop words* en español.
 
-# In[20]:
+# In[11]:
 
 
 import nltk
@@ -283,7 +279,7 @@ palabras_de_parada_espanol = set( nltk.corpus.stopwords.words('spanish') + list(
 
 # Luego proceguimos a tokenizar el texto a nivel oración.
 
-# In[21]:
+# In[12]:
 
 
 # nltk.download('punkt') # Si no está ya presente
@@ -294,7 +290,7 @@ oraciones_noticia[0]
 
 # Creamos una funcion para eliminar las palabras de parada de una oración.
 
-# In[22]:
+# In[13]:
 
 
 def normalizar_oraciones(oraciones, language='spanish'):
@@ -305,7 +301,7 @@ def normalizar_oraciones(oraciones, language='spanish'):
 
 # Aplicamos la función a todo el cuerpo del texto.
 
-# In[23]:
+# In[14]:
 
 
 def normalizar_cuerpo_texto(oraciones, language='spanish'):
@@ -317,7 +313,7 @@ cuerpo_texto_normalizado
 
 # Muy bien, ahora obtendremos el vocabulario del problema con el siguiente código.
 
-# In[24]:
+# In[15]:
 
 
 def obtener_vocabulario_problema(cuerpo_texto_normalizado):
@@ -329,7 +325,7 @@ def obtener_vocabulario_problema(cuerpo_texto_normalizado):
 
 # Con la siguiente función, tendremos cada palabra del vocabulario con su posición.
 
-# In[25]:
+# In[16]:
 
 
 def obtener_vocabulario_problema_y_posicion(vocabulario_del_problema_ordenado):
@@ -346,28 +342,27 @@ vocabulario_problema_y_su_posicion
 
 
 # <a id="10"></a>
-# ## Feature Vectors
+# 
+# ### One-hot encoding (tuplas de palabras)
 # 
 # Los *feature vectors* se utilizan para representar características simbólicas o númericas; llamados *features*, de un objeto de una manera matemática y fácilmente analizable.
-
-# <a id="11"></a>
-# ### One-hot encoding (tuplas de palabras)
+# 
 # Se crea un vocabulario con todas la palabras de todos los documentos. Y cada documento se representa como una arreglo donde se indica la presencia o ausencia de una palabra en el documento.
 # 
-# ![one-hot-encoding](one-hot-encoding.png)
+# ![one-hot-encoding](./img/one-hot-encoding.png)
 # 
 # - Cada documento se representa con uno arreglo tan grande como todo el vocabulario! :(
 # - Se pierde el órden y la frequencia de las palabras.
 # - No captura relaciones entre palabras.
 # - Su mayor ventaja es la simplicidad.
 
-# In[26]:
+# In[17]:
 
 
 cuerpo_texto_normalizado[2]
 
 
-# In[27]:
+# In[18]:
 
 
 def vector_one_hot(oracion, vocabulario_problema_y_su_posicion):
@@ -379,13 +374,15 @@ def vector_one_hot(oracion, vocabulario_problema_y_su_posicion):
 vector_one_hot(cuerpo_texto_normalizado[2], vocabulario_problema_y_su_posicion)
 
 
-# <a id="12"></a>
-# ### Basadas en frecuencias
+# <a id="11"></a>
+# 
+# ### TF-IDF (Term frequency, inverse document frequency)
+# 
 # **Conteos**
 # 
 # El vector de cada documento contiene la cantidad de veces que aparece una palabra (no solo se marca su presencia/ausencia)
 # 
-# ***TF-IDF (Term frequency, inverse document frequency)***
+# **TF-IDF (Term frequency, inverse document frequency)**
 # 
 # *TF*: La frecuencia de una palabra en un documento.
 # 
@@ -401,13 +398,13 @@ vector_one_hot(cuerpo_texto_normalizado[2], vocabulario_problema_y_su_posicion)
 
 # #### TF  (Term Frequency)
 
-# In[28]:
+# In[19]:
 
 
 cuerpo_texto_normalizado
 
 
-# In[29]:
+# In[20]:
 
 
 vocabulario_problema_y_su_posicion
@@ -415,7 +412,7 @@ vocabulario_problema_y_su_posicion
 
 # Contamos la frecuencia de cada *token*.
 
-# In[30]:
+# In[21]:
 
 
 tokens_y_su_frecuencia = collections.Counter(cuerpo_texto_normalizado[3].split())
@@ -424,7 +421,7 @@ tokens_y_su_frecuencia
 
 # Puedes contar también de esta forma:
 
-# In[31]:
+# In[22]:
 
 
 frecuencia = collections.Counter(['a','b','c','a'])
@@ -433,7 +430,7 @@ frecuencia
 
 # Con el siguiente código puedes obtener todos los *tokens*
 
-# In[46]:
+# In[23]:
 
 
 from heapq import nlargest
@@ -443,7 +440,7 @@ nlargest(10, frecuencia, key=frecuencia.get)
 
 # La siguiente función anota la frecuencia de cada palabra en el vector *one hot*
 
-# In[33]:
+# In[24]:
 
 
 def obtener_vector_frecuencia_termino(oracion, vocabulario_problema_y_su_posicion):
@@ -456,12 +453,12 @@ def obtener_vector_frecuencia_termino(oracion, vocabulario_problema_y_su_posicio
 obtener_vector_frecuencia_termino(cuerpo_texto_normalizado[3], vocabulario_problema_y_su_posicion)
 
 
-# #####  Evite escribir código, cuando se puede hacer con librerias
+# ***Evite escribir código, cuando se puede hacer con librerias***
 # 
 # Un enlace de ayuda:
 # __[Scikit-Learn Design Principles](https://towardsdatascience.com/scikit-learn-design-principles-d1371958059b)__
 
-# In[34]:
+# In[25]:
 
 
 simple_cuerpo_texto_normalizado = np.array(['p1 co','p2 co co'])
@@ -470,7 +467,7 @@ simple_cuerpo_texto_normalizado
 
 # La funcion <font color="gray">CountVectorizer()</font> implementa <font color="gray">transform</font>
 
-# In[35]:
+# In[26]:
 
 
 from sklearn.feature_extraction.text import CountVectorizer
@@ -481,7 +478,7 @@ cv_matris
 
 # Algunos ejemplos más:
 
-# In[36]:
+# In[27]:
 
 
 print("Matriz disperza:")
@@ -498,7 +495,7 @@ print(np.sign(cv_matris.toarray()))
 
 # Puedes también utilizar los *dataframes*
 
-# In[37]:
+# In[28]:
 
 
 pd.DataFrame(cv_matris.toarray(), columns=cv.get_feature_names())
@@ -506,13 +503,13 @@ pd.DataFrame(cv_matris.toarray(), columns=cv.get_feature_names())
 
 # Ahora unos ejemplos para bi-gramas.
 
-# In[38]:
+# In[29]:
 
 
 simple_cuerpo_texto_normalizado
 
 
-# In[39]:
+# In[30]:
 
 
 bv = CountVectorizer(ngram_range=(1,2))
@@ -527,13 +524,13 @@ print(bv.get_feature_names())
 
 # Puedes también utilizar *dataframes*
 
-# In[40]:
+# In[31]:
 
 
 pd.DataFrame(cv_matris_con_bigramas.toarray(), columns=bv.get_feature_names())
 
 
-# #### *IDF  (Inverse Document Frequency)*
+# #### IDF  (Inverse Document Frequency)
 
 # idf(t) = log(cantidad-documentos/cantidad-documentos-con-el-termino)
 # 
@@ -541,14 +538,14 @@ pd.DataFrame(cv_matris_con_bigramas.toarray(), columns=bv.get_feature_names())
 # 
 # Interpretación de resultados
 
-# In[41]:
+# In[32]:
 
 
 simple_cuerpo_texto_normalizado = np.array(['p1 co','p2 co co'])
 simple_cuerpo_texto_normalizado
 
 
-# In[42]:
+# In[33]:
 
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -558,13 +555,13 @@ tfIdfv.fit(simple_cuerpo_texto_normalizado)
 
 # Fijate lo que pasa con el valor idf para las palabras que aparecen en muchos documentos. Debido a cómo sckit-learn hace los cálculos, no hay IDF = 0, el valor mínimo es 1
 
-# In[43]:
+# In[34]:
 
 
 dict(zip(tfIdfv.get_feature_names(),tfIdfv.idf_ ))
 
 
-# In[44]:
+# In[35]:
 
 
 simple_cuerpo_texto_normalizado = np.array(['p1 co co','p2 co'])
@@ -573,7 +570,7 @@ tfIdfv.fit(simple_cuerpo_texto_normalizado)
 
 # Este *score*/indicador aumenta con la frequencia de la palabra en el documento, pero disminuye cuando la palabra se hace muy común (baja su relevancia)
 
-# In[45]:
+# In[36]:
 
 
 tt_matris = tfIdfv.transform(simple_cuerpo_texto_normalizado)
@@ -583,14 +580,8 @@ print("Variables:")
 print(tfIdfv.get_feature_names())
 
 
-# #### Co-ocurrencias
+# <a id="12"></a>
 # 
-# Se representa con una matrix en la se indica el número de veces que dos palabras aparecen en la misma "ventana" de 
-# co-ocurrencia (nro de palabras a izquierda, derecha o ambos lados cercanas a otra).
-# 
-# Trata de capturar la relaciones entre las palabras.
-
-# <a id="13"></a>
 # ### Word embeddings
 # 
 # Asociación de palabras con códigos numéricos que capturan su similitud semánticas. Por ejemplo, Londres tendrá un valor numérico cercano a París porque ambas palabras tiene significado parecido (ambas son ciudades importantes de europa); de la misma manera, la distancia entre las palabras "varón" y "mujer" sería similar a la distancia que existe entre "rey" y "reina".

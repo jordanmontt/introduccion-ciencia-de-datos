@@ -1,16 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Ejercicio misceláneo: Análisis exploratorio y Feature Engineering
+
 # In[1]:
-
-
-#Habilitar intellisense
-get_ipython().run_line_magic('config', 'IPCompleter.greedy = True')
-get_ipython().run_line_magic('autosave', '60')
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
-# In[76]:
 
 
 import pandas as pd
@@ -19,22 +12,22 @@ import os
 from scipy import stats
 
 
-# In[3]:
+# In[2]:
 
 
 ruta_archivo = os.path.join("titanic", "train.csv")
 df = pd.read_csv(os.path.join("titanic", "train.csv"), index_col='PassengerId')
 
 
-# In[4]:
+# In[3]:
 
 
 df.head()
 
 
-# ## 1 Elimine las variables/columnas 'Ticket' y 'Cabin'
+# ## 1. Elimine las variables/columnas 'Ticket' y 'Cabin'
 
-# In[6]:
+# In[4]:
 
 
 df.drop(columns=['Cabin'], inplace=True)
@@ -42,21 +35,21 @@ df.drop(columns=['Ticket'], inplace=True)
 df.head()
 
 
-# In[15]:
+# In[5]:
 
 
 df.describe(include='all')
 
 
-# ## 2 Encuentre los mejores valores para completar la variable 'Embarked' para los  pasajeros con datos faltantes
+# ## 2. Encuentre los mejores valores para completar la variable 'Embarked' para los  pasajeros con datos faltantes
 
-# In[93]:
+# In[6]:
 
 
 df[df.Embarked.isnull()]
 
 
-# In[46]:
+# In[7]:
 
 
 #Tome en cuenta que simplemente emplear el valor que más aparece casi nunca es la mejor alternativa
@@ -65,14 +58,14 @@ df[df.Embarked.isnull()]
 df['Embarked'].value_counts()
 
 
-# In[91]:
+# In[8]:
 
 
 # Obtenemos el puerto más común según la clase y el sexo
 df.groupby(['Pclass', 'Sex'])['Embarked'].agg(pd.Series.mode)
 
 
-# In[92]:
+# In[9]:
 
 
 # Como podemos observar, todos los valores que se obtuvieron en la celda de arriba pertenecen al puerto 'S'
@@ -81,9 +74,9 @@ df['Embarked'].fillna('S', inplace=True)
 df[df.Embarked.isnull()]
 
 
-# ## 3 Complete el código de la siguiente función para extraer el título de cada pasajero
+# ## 3. Complete el código de la siguiente función para extraer el título de cada pasajero
 
-# In[22]:
+# In[10]:
 
 
 def extractTitle(name):
@@ -110,43 +103,44 @@ def extractTitle(name):
     return title_mapping[title]
 
 
-# In[23]:
+# In[11]:
 
 
 df['Title'] =  df['Name'].map(lambda name : extractTitle(name))
 df.head()
 
 
-# In[24]:
+# In[12]:
 
 
 df.describe(include='all')
 
 
-# ## 4 Encuentre los mejores valores para completar la variable 'Age' para los pasajeros con datos faltantes
+# ## 4. Encuentre los mejores valores para completar la variable 'Age' para los pasajeros con datos faltantes
 
-# In[40]:
+# Tome en cuenta que simplemente emplear el valor de tendencia central (mediana) de todo el conjunto casi nunca es la mejor alternativa
+# Para obtener mejores resultados deberá apoyarse en los resultados de un análisis exploratorio de datos
+# aplicado a las variable(s) que puedan estar relacionadas con 'Age'
+
+# In[13]:
 
 
-#Tome en cuenta que simplemente emplear el valor de tendencia central (mediana) de todo el conjunto casi nunca es la mejor alternativa
-#Para obtener mejores resultados deberá apoyarse en los resultados de un análisis exploratorio de datos
-#aplicado a las variable(s) que puedan estar relacionadas con 'Age'
 df[df['Age'].isnull()].head()
 
 
-# In[41]:
+# In[14]:
 
 
 df[df['Age'].isnull()].shape
 
 
-# In[26]:
+# In[15]:
 
 
 df['Age'].median()
 
 
-# In[28]:
+# In[16]:
 
 
 df.corr()
@@ -154,14 +148,14 @@ df.corr()
 
 # Según la matriz de correlación, *Age* tiene la correlación más alta con *Pclass*. Entonces, agruparemos los datos según este parámetro. También los agruparemos según el sexo, o sea, que los datos estarán agrupados por clase y por sexo. Porque las edades de las personas pueden variar según su sexo.
 
-# In[29]:
+# In[17]:
 
 
 pasajeros_por_clase_y_sexo = df.groupby(['Pclass', 'Sex'])
 mediana_age_pasajeros = pasajeros_por_clase_y_sexo['Age'].transform('median')
 
 
-# In[30]:
+# In[18]:
 
 
 # Reemplazar los datos nulos de Age
@@ -170,10 +164,10 @@ df['Age'].fillna(mediana_age_pasajeros, inplace=True)
 df[df['Age'].isnull()].head()
 
 
-# ## 5 Cree una nueva variable 'IsMother' (1=es madre, 0=no es madre) 
+# ## 5. Cree una nueva variable 'IsMother' (1=es madre, 0=no es madre) 
 # 
-# ## Responda la siguiente pregunta sustentando su respuesta con los resultados de un análisis exploratorio de datos.
-# ### Las madres tuvieron mayor probabilidad de sobrevivir al accidente del Titanic?
+# #### Responda la siguiente pregunta sustentando su respuesta con los resultados de un análisis exploratorio de datos.
+# #### Las madres tuvieron mayor probabilidad de sobrevivir al accidente del Titanic?
 
 # Elegimos a las madres como las mujeres que están casadas y que viajen al menos con un Parch(parientes que sean padres o hijos).
 # 
@@ -183,7 +177,7 @@ df[df['Age'].isnull()].head()
 # Hay que tener en cuenta que en esa época no habían muchas madres solteras (por el machismo), así que no se
 # pierde mucha información en caso de que una mujer sea madre y no esté casada.
 
-# In[40]:
+# In[19]:
 
 
 def es_mujer_y_no_soltera_y_viaja_con_hijos(fila):
@@ -198,7 +192,7 @@ df['IsMother'] = df.apply(es_madre, axis=1)
 df.tail()
 
 
-# In[41]:
+# In[20]:
 
 
 df.loc[(df['IsMother'] == 1)]

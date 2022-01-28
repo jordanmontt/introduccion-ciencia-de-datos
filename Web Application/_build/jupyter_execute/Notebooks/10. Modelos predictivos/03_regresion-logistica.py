@@ -29,13 +29,13 @@ import numpy as np
 import os
 
 
-# In[21]:
+# In[2]:
 
 
 df_entrenamiento = pd.read_csv(os.path.join("csv", "train.csv"), index_col='PassengerId')
 
 
-# In[14]:
+# In[3]:
 
 
 df_entrenamiento.head()
@@ -43,21 +43,21 @@ df_entrenamiento.head()
 
 # Hacemos limpieza de las columnas que no son necesarias para este ejercicio.
 
-# In[22]:
+# In[4]:
 
 
 df_entrenamiento = df_entrenamiento.drop(['Ticket', 'Embarked', 'Cabin'], axis=1)
 df_entrenamiento = df_entrenamiento.dropna()
 
 
-# In[23]:
+# In[5]:
 
 
 X = df_entrenamiento.loc[:,'Age':].to_numpy().astype('float')
 y = df_entrenamiento['Survived'].ravel() 
 
 
-# In[24]:
+# In[6]:
 
 
 from sklearn.model_selection import train_test_split
@@ -67,27 +67,27 @@ print(X_train.shape, y_train.shape)
 print(X_test.shape, y_test.shape)
 
 
-# In[18]:
+# In[7]:
 
 
 from sklearn.linear_model import LogisticRegression
 
 
-# In[19]:
+# In[8]:
 
 
 # crear el clasificador
 clasificador_reg_log = LogisticRegression(random_state=0, solver='liblinear')
 
 
-# In[25]:
+# In[9]:
 
 
 # entrenar el clasificador
 clasificador_reg_log.fit(X_train,y_train)
 
 
-# In[26]:
+# In[10]:
 
 
 print('accuracy del clasificador - version 1 : {0:.2f}'.format(clasificador_reg_log.score(X_test, y_test)))
@@ -98,14 +98,14 @@ print('accuracy del clasificador - version 1 : {0:.2f}'.format(clasificador_reg_
 # 
 # __[L1 and L2 Regularization Methods](https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c)__
 
-# In[27]:
+# In[11]:
 
 
 #evaluar el desempeño
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
 
 
-# In[28]:
+# In[12]:
 
 
 # accuracy
@@ -120,20 +120,20 @@ print('recall del clasificador - version 1 : {0:.2f}'.format(recall_score(y_test
 print('f1 del clasificador - version 1 : {0:.2f}'.format(f1_score(y_test, clasificador_reg_log.predict(X_test))))
 
 
-# In[29]:
+# In[13]:
 
 
 # coeficientes del modelo
 clasificador_reg_log.coef_
 
 
-# In[30]:
+# In[14]:
 
 
 df_entrenamiento.loc[:,'Age':].columns
 
 
-# In[31]:
+# In[15]:
 
 
 list(zip(df_entrenamiento.loc[:,'Age':].columns, clasificador_reg_log.coef_[0]))

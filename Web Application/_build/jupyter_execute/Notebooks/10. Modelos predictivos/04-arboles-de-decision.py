@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Arboles de decisión
+# ## Arboles de decisión: Introducción
 
 # Un árbol de decisión es un clasificador que toma como entrada una entidad descrita por un conjunto de atributos y devuelve una «decisión». Los atributos de entrada pueden ser discretos o continuos. 
 # 

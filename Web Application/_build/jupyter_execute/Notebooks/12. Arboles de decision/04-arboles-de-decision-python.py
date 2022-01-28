@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Arboles de decisión
+# ## Arboles de decisión: Hiperparámetros, Random Forest y Optimización de Parámetros
 
 # In[1]:
 
@@ -13,14 +13,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
 
 
-# In[8]:
+# In[2]:
 
 
 df = pd.read_csv(os.path.join('../Datasets/diabetes.csv'))
 df.head()
 
 
-# In[11]:
+# In[3]:
 
 
 feature_cols = ['Pregnancies', 'Insulin', 'BMI', 'Age','Glucose','BloodPressure','DiabetesPedigreeFunction']
@@ -30,7 +30,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 print(X_train.shape, X_test.shape, Y_train.shape, Y_test.shape)
 
 
-# In[13]:
+# In[4]:
 
 
 # baseline no incluye poda (max_depth)
@@ -38,14 +38,14 @@ treev1 = DecisionTreeClassifier()
 treev1.fit(X_train, Y_train)
 
 
-# In[15]:
+# In[5]:
 
 
 Y_pred = treev1.predict(X_test)
 Y_pred
 
 
-# In[28]:
+# In[6]:
 
 
 def metricas_desempenio(tree):
@@ -57,7 +57,7 @@ def metricas_desempenio(tree):
 metricas_desempenio(treev1)
 
 
-# In[29]:
+# In[7]:
 
 
 #Ajustar algunos hiperparámetros
@@ -65,7 +65,7 @@ tree_v2 = DecisionTreeClassifier(criterion="entropy", max_depth=3)
 tree_v2.fit(X_train, Y_train)
 
 
-# In[30]:
+# In[8]:
 
 
 metricas_desempenio(tree_v2)
@@ -127,7 +127,7 @@ metricas_desempenio(tree_v2)
 # 
 # Los valores adecuados para este y otros parámetros se obtienen via experimentación (prueba y error). Si es posible, se recomienda tener varios conjuntos de prueba para seleccionar el modelo con el mejor desempeño (promedio) en todos los conjunto de prueba
 
-# In[31]:
+# In[9]:
 
 
 from sklearn.ensemble import RandomForestClassifier
@@ -136,13 +136,13 @@ tree_v3 = RandomForestClassifier(n_estimators=10)
 tree_v3
 
 
-# In[34]:
+# In[10]:
 
 
 tree_v3.fit(X_train, Y_train)
 
 
-# In[35]:
+# In[11]:
 
 
 metricas_desempenio(tree_v3)
@@ -160,26 +160,26 @@ metricas_desempenio(tree_v3)
 # __[xgboost](https://xgboost.readthedocs.io/en/latest/python/python_api.html)__
 # 
 
-# In[38]:
+# In[12]:
 
 
 from xgboost.sklearn import XGBClassifier
 
 
-# In[39]:
+# In[13]:
 
 
 tree_v4 = XGBClassifier(n_estimators=10)
 tree_v4
 
 
-# In[40]:
+# In[14]:
 
 
 tree_v4.fit(X_train, Y_train)
 
 
-# In[41]:
+# In[15]:
 
 
 metricas_desempenio(tree_v4)
@@ -203,14 +203,14 @@ metricas_desempenio(tree_v4)
 # 
 # __[hyperopt (Distributed Hyperparameter Optimization)](https://github.com/hyperopt/hyperopt)__ es el módulo python que facilita realizar esta tarea.
 
-# In[42]:
+# In[16]:
 
 
 #conda install -c conda-forge hyperopt
 from hyperopt import fmin, tpe, hp, STATUS_OK,Trials
 
 
-# In[43]:
+# In[17]:
 
 
 space = {
@@ -218,7 +218,7 @@ space = {
 }
 
 
-# In[44]:
+# In[18]:
 
 
 def objective(params):
@@ -226,20 +226,20 @@ def objective(params):
     return {'loss':x ** 2,'status':STATUS_OK}   
 
 
-# In[45]:
+# In[19]:
 
 
 trials = Trials()
 
 
-# In[46]:
+# In[20]:
 
 
 best = fmin(objective, space, algo=tpe.suggest, trials=trials, max_evals=5)
 print(best)
 
 
-# In[51]:
+# In[21]:
 
 
 #Probar valores entre 100 - 1000, con incrementos de 1 - con igual probabilidad de ser seleccionado: 
@@ -257,7 +257,7 @@ space =  {
 }
 
 
-# In[52]:
+# In[22]:
 
 
 #Es necesario definir una función de manera tal que cuando alcance el valor mínimo, esto implique que el clasificador
@@ -272,7 +272,7 @@ def objective(params):
     return {'loss': 1 - accuracy, 'status': STATUS_OK}
 
 
-# In[53]:
+# In[23]:
 
 
 #https://github.com/hyperopt/hyperopt/wiki/FMin#12-attaching-extra-information-via-the-trials-object
@@ -282,27 +282,27 @@ best = fmin(objective,space,algo=tpe.suggest,trials=trials,max_evals=100)
 print(best)
 
 
-# In[54]:
+# In[24]:
 
 
 best['n_estimators'] = int(best['n_estimators'])
 best['max_depth'] = int(best['max_depth'])                      
 
 
-# In[55]:
+# In[25]:
 
 
 tree_v5 = XGBClassifier(**best)
 tree_v5
 
 
-# In[56]:
+# In[26]:
 
 
 tree_v5.fit(X_train, Y_train)
 
 
-# In[57]:
+# In[27]:
 
 
 metricas_desempenio(tree_v5)

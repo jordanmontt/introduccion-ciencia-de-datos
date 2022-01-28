@@ -8,17 +8,14 @@
 # 
 # Identificar las correlaciones que existen en las variables para así poder formular hipótesis sobre relaciones causa-efecto.
 # 
-# 
 # ## Técnicas de análisis
 # 
 # 1. [Covarianza](#1)
 # 2. [Coeficiente de correlación](#2)
 # 3. [Visualización de la relación entre dos variables](#3)
 # 4. [Variables cualitativas](#4)
-# 
-#     4.1 [Crosstabs](#5)
-#     
-#     4.2 [Pivot table (Tablas de contingencia)](#6)
+#     1. [Crosstabs](#5)
+#     2. [Pivot table (Tablas de contingencia)](#6)
 
 # ## Carga de datos
 # __[Fuente de datos](https://archive.ics.uci.edu/ml/datasets/Forest+Fires)__
@@ -76,89 +73,93 @@ tips.cov()
 np.corrcoef(tips['total_bill'], tips['tip'])
 
 
-# In[8]:
+# In[5]:
 
 
 tips.corr()
 
 
 # ## Visualización de la relación entre dos variables
+# 
 # <a id="3"></a>
 # 
 # __[Seaborn](https://seaborn.pydata.org/generated/seaborn.kdeplot.html)__
 # 
 # __[matplotlib](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axvline.html?highlight=axvline)__
 
-# In[5]:
+# In[6]:
 
 
 tips.plot.scatter(x='total_bill', y='tip', color='c', title='scatter plot : Tip by Total bill', alpha=0.1)
 
 
-# In[22]:
+# In[7]:
 
 
 sns.jointplot(x='total_bill', y='tip', data=tips, color='#F15B2A')
 
 
-# In[11]:
+# In[8]:
 
 
 sns.jointplot(x='total_bill', y='tip', data=tips, color='#F15B2A', kind='kde')
 
 
 # ## Variables cualitativas
+# 
 # <a id="4" ></a>
 # 
 # ### Crosstabs
+# 
 # <a id="5" ></a>
 
-# In[12]:
+# In[9]:
 
 
 tips.head()
 
 
-# In[13]:
+# In[10]:
 
 
 #Conteos de la combinacion de variables nominales
 pd.crosstab(tips["smoker"], tips["sex"])
 
 
-# In[25]:
+# In[11]:
 
 
 pd.crosstab(tips["smoker"], tips["sex"]).plot(kind='bar')
 
 
 # ### Pivot (tablas de contingencia)
+# 
 # <a id="6" ></a>
 # 
 # Es una extensión del crosstab que permite analizar dos variables categóricas y una numérica.
 # 
 # <img src="./img/18_pivot_table.png" style="width:600px"/>
 
-# In[15]:
+# In[12]:
 
 
 tips.pivot_table(index='time',columns = 'smoker',values='tip', aggfunc='mean')
 
 
-# In[33]:
+# In[13]:
 
 
 tips.groupby(['time','smoker'])['tip'].mean()
 #type(tips.groupby(['time','smoker'])['tip'].mean())
 
 
-# In[17]:
+# In[14]:
 
 
 tips.groupby(['time','smoker'])['tip'].mean().unstack()
 
 
-# In[18]:
+# In[15]:
 
 
 tips.groupby(['time','smoker'])['tip'].mean().unstack().plot.bar()

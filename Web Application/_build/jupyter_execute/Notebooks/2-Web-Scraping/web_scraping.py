@@ -41,14 +41,14 @@
 
 import requests
 
-respuesta = requests.get("./html/auto_mpg.html")
+respuesta = requests.get("https://jordanmontt.github.io/fake-cars-webpage/")
 
 
 # La biblioteca BeautifulSoup de bs4 nos permitirá análizar documentos HTML. 
 # 
 # Ejecuta las siguientes líneas de código para utilizar esta librería:
 
-# In[ ]:
+# In[2]:
 
 
 from bs4 import BeautifulSoup
@@ -57,7 +57,7 @@ pagina = BeautifulSoup(respuesta.text, "html.parser" )
 
 # Vizualiza si extrajiste bien el código HTML
 
-# In[ ]:
+# In[3]:
 
 
 print(pagina.prettify())
@@ -65,7 +65,7 @@ print(pagina.prettify())
 
 # Puedes acceder directamente al body del html utilizando pagina.body
 
-# In[ ]:
+# In[4]:
 
 
 print(pagina.body)
@@ -75,7 +75,7 @@ print(pagina.body)
 # ## Realizar búsquedas
 # Puedes utilizar la función .find y .find_all para encontrar los elementos que deseas
 
-# In[ ]:
+# In[5]:
 
 
 print(pagina.body.find(name="div", attrs={"id":"car-1"}))
@@ -85,7 +85,7 @@ print(pagina.body.find_all(name="div", attrs={"class":"car_block"})[0])
 
 # Puedes acceder a los atributos de cada elemento como en el siguiente ejemplo.
 
-# In[ ]:
+# In[6]:
 
 
 car_divs = pagina.body.find_all(name="div", attrs={"class":"car_block"})
@@ -97,7 +97,7 @@ div['class']
 # ## Experimentar estrategias para extraer datos
 # Si deseas extraer únicamente el contenido sin elementos HTML, realiza lo siguiente.
 
-# In[ ]:
+# In[7]:
 
 
 print(div.text)
@@ -105,7 +105,7 @@ print(div.text)
 
 # Puedes crear un generador (similar a un iterable) de la siguiente forma.
 
-# In[ ]:
+# In[8]:
 
 
 print(div.stripped_strings)
@@ -114,7 +114,7 @@ print(list(div.stripped_strings))
 
 # Puedes utilizar funciones poprias del lenguaje para obtener un mejor resultado de los datos que deseas obtener.
 
-# In[ ]:
+# In[9]:
 
 
 div.find("span", attrs={"class":"mpg"}).text
@@ -123,7 +123,7 @@ div.find("span", attrs={"class":"mpg"}).text.split(" ")[0]
 
 # Incluso puedes utilizar expresiones regulares si así lo deseas.
 
-# In[ ]:
+# In[10]:
 
 
 import re
@@ -136,7 +136,7 @@ re.findall(r'.* (\d+.\d+) cubic inches', div.text)[0]
 # 
 # A continuación se muestra un ejemplo:
 
-# In[ ]:
+# In[11]:
 
 
 import csv
@@ -201,7 +201,7 @@ def extraer_datos_automoviles(pagina):
     return list(map(extraer_datos, divs_automoviles))
 
         
-respuesta = requests.get("http://localhost:8000/auto_mpg.html")
+respuesta = requests.get("https://jordanmontt.github.io/fake-cars-webpage/")
 pagina = BeautifulSoup(respuesta.text, "html.parser" )
 datos_automoviles = extraer_datos_automoviles(pagina)
 
@@ -214,7 +214,7 @@ print(datos_automoviles[-1])
 # ## Almacenar los datos en archivos
 # Puedes almacenar los datos extraídos en un archivo de tu preferencia
 
-# In[ ]:
+# In[12]:
 
 
 def almacenar_datos_en_un_archivo_csv(datos_automoviles):

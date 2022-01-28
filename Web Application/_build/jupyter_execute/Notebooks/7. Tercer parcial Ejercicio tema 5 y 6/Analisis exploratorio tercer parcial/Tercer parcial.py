@@ -18,7 +18,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # ## 1. Importar las librerias y cargar el archivo csv
 
-# In[147]:
+# In[2]:
 
 
 import os
@@ -34,7 +34,7 @@ pasajeros_titanic
 
 # ## 2. Visualizar los indicadores y los datos faltantes
 
-# In[148]:
+# In[3]:
 
 
 pasajeros_titanic.describe(include='all')
@@ -42,7 +42,7 @@ pasajeros_titanic.describe(include='all')
 
 # ## 3. Ver la matriz de correlación
 
-# In[1]:
+# In[4]:
 
 
 pasajeros_titanic.corr()
@@ -52,7 +52,7 @@ pasajeros_titanic.corr()
 
 # ### 4.1 Reemplazar los datos de la columna "Fare"
 
-# In[150]:
+# In[5]:
 
 
 # Ver los datos faltantes
@@ -63,7 +63,7 @@ pasajeros_titanic.loc[pasajeros_titanic['Fare'].isnull()]
 # 
 # La correlación entre Fare y Pclass es la más alta de todas (-0.549500 ). Sólo falta una fila y es de un pasajero que viaja en tercera clase (Pclass = 3) y viaja solo (SibSp = 0 y Parch = 0).
 
-# In[151]:
+# In[6]:
 
 
 pasajeros_por_clase_y_por_numero_acompanantes = pasajeros_titanic.groupby(['Pclass', 'SibSp', 'Parch'])
@@ -75,7 +75,7 @@ pasajeros_titanic['Fare'].fillna(mediana_fare_pasajeros, inplace=True)
 
 # ### 4.2 Reemplazar los datos de la columna "Embarked"
 
-# In[152]:
+# In[7]:
 
 
 pasajeros_titanic.loc[pasajeros_titanic['Embarked'].isnull()]
@@ -83,7 +83,7 @@ pasajeros_titanic.loc[pasajeros_titanic['Embarked'].isnull()]
 
 # ### 4.3 Reemplazar los datos de la columna "Age"
 
-# In[155]:
+# In[8]:
 
 
 pasajeros_titanic.loc[pasajeros_titanic['Age'].isnull()]
@@ -91,7 +91,7 @@ pasajeros_titanic.loc[pasajeros_titanic['Age'].isnull()]
 
 # Según la matriz de correlación, *Age* tiene la correlación más alta con *Pclass*. Entonces, agruparemos los datos según este parámetro. También los agruparemos según el sexo, o sea, que los datos estarán agrupados por clase y por sexo. Porque las edades de las personas pueden variar según su sexo.
 
-# In[3]:
+# In[9]:
 
 
 pasajeros_por_clase_y_sexo = pasajeros_titanic.groupby(['Pclass', 'Sex'])
@@ -103,13 +103,13 @@ pasajeros_titanic['Age'].fillna(mediana_age_pasajeros, inplace=True)
 
 # ### 4.4 Reemplazar los datos de la columna "Cabin"
 
-# In[156]:
+# In[10]:
 
 
 pasajeros_titanic.loc[pasajeros_titanic['Cabin'].isnull()]
 
 
-# In[221]:
+# In[11]:
 
 
 pasajeros_sin_cabina = pasajeros_titanic.loc[pasajeros_titanic['Cabin'].isnull()]
@@ -121,7 +121,7 @@ pd.Series(valores, index =["Con Cabina", "Sin Cabina"]).plot.pie(autopct='%1.1f%
 
 # Como podemos observar, una gran mayoria de los datos (filas) no tiene la columna *Cabin*. Además que si observamos los datos, el valor de la cabina es una cadena que indica, probablemente, en qué cabina estaba el pasajero. Entonces es muy difícil determinar con qué valores se puede reemplazar los valores restantes. Por tanto, la mejor opción es eliminar la columna entera.
 
-# In[215]:
+# In[12]:
 
 
 # pasajeros_titanic.drop(columns=['Cabin'], inplace=True)

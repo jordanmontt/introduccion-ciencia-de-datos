@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Ejercicio clasificación
+# ## Ejercicio Regresión Logística
+# 
 # Crear un clasificador basado en el algoritmo de regresión logistica para predecir si el valor de la vivienda supera la media
 # 
 # entrada: housing.csv
@@ -18,10 +19,6 @@
 
 # In[1]:
 
-
-get_ipython().run_line_magic('config', 'IPCompleter.greedy = True')
-get_ipython().run_line_magic('matplotlib', 'inline')
-get_ipython().run_line_magic('autosave', '60')
 
 import os
 import numpy as np

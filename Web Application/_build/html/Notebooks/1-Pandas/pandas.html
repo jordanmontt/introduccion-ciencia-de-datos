@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandas &#8212; Introducción a la Ciencia de Datos</title>
+    <title>Explorando y analizando DataFrames con Pandas &#8212; Introducción a la Ciencia de Datos</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -86,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -99,7 +99,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Pandas
+   Explorando y analizando DataFrames con Pandas
   </a>
  </li>
  <li class="toctree-l1">
@@ -109,7 +109,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../2-Web-Scraping/Ejercicio_NUSO_web_scrappng.html">
-   Utilizando web scraping en una página real
+   Ejercicio: Web Scrapping para extraer información de un artículo
   </a>
  </li>
  <li class="toctree-l1">
@@ -123,12 +123,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Segundo%20examen%20parcial.html">
-   Enunciado
+   Ejercicio misceláneo: NLP, Web Scrapping (otra resolución)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Prueba%20dos%20resulta%20por%20el%20profesor.html">
-   Enunciado
+   Ejercicio misceláneo: NLP, Web Scrapping
   </a>
  </li>
  <li class="toctree-l1">
@@ -148,12 +148,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%201.html">
-   Ejercicio
+   Ejercicio análisi exploratorio parte 1
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%202.html">
-   Ejercicio parte 2
+   Ejercicio análisi exploratorio parte 2
   </a>
  </li>
  <li class="toctree-l1">
@@ -163,17 +163,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../6.%20Feature%20Engineering/data%20reshaping.html">
-   Reshaping
+   Data Reshaping
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../6.%20Feature%20Engineering/Ejercicio%20feature%20engineering.html">
-   Ejercicio
+   Ejercicio Feature Engineering
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7.%20Tercer%20parcial%20Ejercicio%20tema%205%20y%206/pec03.html">
-   1 Elimine las variables/columnas ‘Ticket’ y ‘Cabin’
+   Ejercicio misceláneo: Análisis exploratorio y Feature Engineering
   </a>
  </li>
  <li class="toctree-l1">
@@ -188,7 +188,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../10.%20Modelos%20predictivos/02_scikit-learn.html">
-   scikit-learn
+   Scikit-learn: basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -198,32 +198,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../10.%20Modelos%20predictivos/04-arboles-de-decision.html">
-   Arboles de decisión
+   Arboles de decisión: Introducción
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../10.%20Modelos%20predictivos/Ejercicio%20regresi%C3%B3n%20log%C3%ADstica.html">
-   Ejercicio clasificación
+   Ejercicio Regresión Logística
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../11.%20Cuarto%20parcial/pec04.html">
-   1 En un filtro antispam ¿prefeririría que sea más alta la presición o la exhaustividad? Justifique su respuesta.
+   Ejercicio misceláneo: Feature Selection, Modelos predictivos
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../12.%20Arboles%20de%20decision/04-arboles-de-decision-python.html">
-   Arboles de decisión
+   Arboles de decisión: Hiperparámetros, Random Forest y Optimización de Parámetros
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../13.%20Guardar%20y%20utilizar%20una%20API/Guardar%20y%20desplegar%20un%20clasificador.html">
-   Arboles de decisión
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../14.%20Quinto%20parcial/pec05.html">
-   Arboles de decisión
+   Guardar y deployar un modelo predictivo
   </a>
  </li>
 </ul>
@@ -251,8 +246,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -260,7 +255,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -268,10 +263,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/Notebooks/1-Pandas/pandas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -284,12 +279,12 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/jordanmontt/introduccion-ciencia-de-datos"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
         <a class="issues-button"
             href="https://github.com/jordanmontt/introduccion-ciencia-de-datos/issues/new?title=Issue%20on%20page%20%2FNotebooks/1-Pandas/pandas.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
         
     </div>
 </div>
@@ -297,8 +292,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -309,7 +304,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/jordanmontt/introduccion-ciencia-de-datos/master?urlpath=tree/docs/Notebooks/1-Pandas/pandas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -326,13 +321,13 @@
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Contenu
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Pandas
+   Explorando y analizando DataFrames con Pandas
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -398,19 +393,19 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Pandas</h1>
+                <h1>Explorando y analizando DataFrames con Pandas</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Contenu </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Pandas
+   Explorando y analizando DataFrames con Pandas
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -475,8 +470,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pandas">
-<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="explorando-y-analizando-dataframes-con-pandas">
+<h1>Explorando y analizando DataFrames con Pandas<a class="headerlink" href="#explorando-y-analizando-dataframes-con-pandas" title="Permalink to this headline">¶</a></h1>
 <p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/index.html">Pandas</a></strong> es un paquete construido sobre la base de NumPy, incluye la implementación de la estructura <strong>DataFrame</strong>. Un DataFrame es, en esencia, un arreglo bidimensional con etiquetas para filas y columnas, típicamente las columnas contienen tipo de datos diferentes.</p>
 <ol class="simple">
 <li><p><a class="reference external" href="#1">Series</a></p></li>
@@ -495,22 +490,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="series">
 <h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
-<p><a id="1"></a>
-Un objecto de tipo <em>Series</em> es un arreglo de datos, parecido a un <em>Array</em> de <em>numpy</em>, que consta de índices y valores.</p>
+<p><a id="1"></a></p>
+<p>Un objecto de tipo <em>Series</em> es un arreglo de datos, parecido a un <em>Array</em> de <em>numpy</em>, que consta de índices y valores.</p>
 <p>Aquí algunos enlaces de referencia:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/series.html#computations-descriptive-stats">https://pandas.pydata.org/pandas-docs/stable/reference/series.html#computations-descriptive-stats</a></p></li>
@@ -669,8 +653,8 @@ dtype: object
 </div>
 <div class="section" id="dataframes">
 <h2>Dataframes<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h2>
-<p><a id="2"></a>
-Un <em>DataFrame</em> es un arreglo bi-dimensional formado por una secuencia de Series con la misma cantidad de elementos y con el mismo índice. Es decir: es como un diccionario de Series del mismo tamaño y con los mismos índices. Un <em>DataFrame</em> permite asignar nombres a las columnas.</p>
+<p><a id="2"></a></p>
+<p>Un <em>DataFrame</em> es un arreglo bi-dimensional formado por una secuencia de Series con la misma cantidad de elementos y con el mismo índice. Es decir: es como un diccionario de Series del mismo tamaño y con los mismos índices. Un <em>DataFrame</em> permite asignar nombres a las columnas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extension_departamentos_Bolivia_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Chuquisaca&#39;</span><span class="p">:</span> <span class="mi">51514</span><span class="p">,</span> 
@@ -1168,8 +1152,8 @@ memory usage: 516.0+ bytes
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="indices">
 <h1>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h1>
-<p><a id="3"></a>
-Un <em>Index</em> es el mecanismo para referenciar datos en las Series y los DataFrames. Un Index object es un <strong>conjunto</strong> ordenado de valores</p>
+<p><a id="3"></a></p>
+<p>Un <em>Index</em> es el mecanismo para referenciar datos en las Series y los DataFrames. Un Index object es un <strong>conjunto</strong> ordenado de valores</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indA</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span> 
@@ -1385,15 +1369,16 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_bolivia</span><span class="p">[</span><span class="s1">&#39;capital&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;Chuquisaca&#39;</span><span class="p">:</span> <span class="s1">&#39;Sucre&#39;</span><span class="p">,</span> 
-                    <span class="s1">&#39;La Paz&#39;</span><span class="p">:</span> <span class="s1">&#39;Murillo&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Cochabamba&#39;</span><span class="p">:</span> <span class="s1">&#39;Cercado&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Oruro&#39;</span><span class="p">:</span> <span class="s1">&#39;Cercado&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Potosí&#39;</span><span class="p">:</span> <span class="s1">&#39;Potosí&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Tarija&#39;</span><span class="p">:</span> <span class="s1">&#39;Tarija&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Santa Cruz&#39;</span><span class="p">:</span> <span class="s1">&#39;Santa Cruz de la Sierra&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;Pando&#39;</span><span class="p">:</span> <span class="s1">&#39;Cobija&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Beni&#39;</span><span class="p">:</span> <span class="s1">&#39;Trinidad&#39;</span> <span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_bolivia</span><span class="p">[</span><span class="s1">&#39;capital&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">&#39;Chuquisaca&#39;</span><span class="p">:</span> <span class="s1">&#39;Sucre&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;La Paz&#39;</span><span class="p">:</span> <span class="s1">&#39;Murillo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Cochabamba&#39;</span><span class="p">:</span> <span class="s1">&#39;Cercado&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Oruro&#39;</span><span class="p">:</span> <span class="s1">&#39;Cercado&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Potosí&#39;</span><span class="p">:</span> <span class="s1">&#39;Potosí&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Tarija&#39;</span><span class="p">:</span> <span class="s1">&#39;Tarija&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Santa Cruz&#39;</span><span class="p">:</span> <span class="s1">&#39;Santa Cruz de la Sierra&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pando&#39;</span><span class="p">:</span> <span class="s1">&#39;Cobija&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Beni&#39;</span><span class="p">:</span> <span class="s1">&#39;Trinidad&#39;</span> <span class="p">})</span>
 <span class="n">datos_bolivia</span>
 </pre></div>
 </div>
@@ -1419,6 +1404,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th></th>
       <th>poblacion</th>
       <th>extension</th>
+      <th>constante</th>
       <th>densidad</th>
       <th>capital</th>
     </tr>
@@ -1428,6 +1414,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Beni</th>
       <td>468000</td>
       <td>213564.0</td>
+      <td>1</td>
       <td>2.191381</td>
       <td>Trinidad</td>
     </tr>
@@ -1435,6 +1422,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Chuquisaca</th>
       <td>626000</td>
       <td>51514.0</td>
+      <td>1</td>
       <td>12.152036</td>
       <td>Sucre</td>
     </tr>
@@ -1442,6 +1430,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Cochabamba</th>
       <td>2883000</td>
       <td>55631.0</td>
+      <td>1</td>
       <td>51.823624</td>
       <td>Cercado</td>
     </tr>
@@ -1449,6 +1438,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>La Paz</th>
       <td>26448193</td>
       <td>133985.0</td>
+      <td>1</td>
       <td>197.396671</td>
       <td>Murillo</td>
     </tr>
@@ -1456,6 +1446,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Oruro</th>
       <td>538000</td>
       <td>55588.0</td>
+      <td>1</td>
       <td>9.678348</td>
       <td>Cercado</td>
     </tr>
@@ -1463,6 +1454,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Pando</th>
       <td>144000</td>
       <td>NaN</td>
+      <td>1</td>
       <td>NaN</td>
       <td>Cobija</td>
     </tr>
@@ -1470,6 +1462,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Potosí</th>
       <td>887000</td>
       <td>117218.0</td>
+      <td>1</td>
       <td>7.567097</td>
       <td>Potosí</td>
     </tr>
@@ -1477,6 +1470,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Santa Cruz</th>
       <td>3225000</td>
       <td>370621.0</td>
+      <td>1</td>
       <td>8.701612</td>
       <td>Santa Cruz de la Sierra</td>
     </tr>
@@ -1484,6 +1478,7 @@ Int64Index([1, 9], dtype=&#39;int64&#39;)
       <th>Tarija</th>
       <td>563000</td>
       <td>37623.0</td>
+      <td>1</td>
       <td>14.964251</td>
       <td>Tarija</td>
     </tr>
@@ -1569,7 +1564,7 @@ Name: Beni, dtype: object
       <td>55631.0</td>
       <td>1</td>
       <td>51.823624</td>
-      <td>Cochabamba</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>La Paz</th>
@@ -1577,7 +1572,7 @@ Name: Beni, dtype: object
       <td>133985.0</td>
       <td>1</td>
       <td>197.396671</td>
-      <td>La Paz</td>
+      <td>Murillo</td>
     </tr>
     <tr>
       <th>Oruro</th>
@@ -1585,7 +1580,7 @@ Name: Beni, dtype: object
       <td>55588.0</td>
       <td>1</td>
       <td>9.678348</td>
-      <td>Oruro</td>
+      <td>Cercado</td>
     </tr>
   </tbody>
 </table>
@@ -1692,7 +1687,7 @@ Name: extension, dtype: bool
       <td>55631.0</td>
       <td>1</td>
       <td>51.823624</td>
-      <td>Cochabamba</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>La Paz</th>
@@ -1700,7 +1695,7 @@ Name: extension, dtype: bool
       <td>133985.0</td>
       <td>1</td>
       <td>197.396671</td>
-      <td>La Paz</td>
+      <td>Murillo</td>
     </tr>
     <tr>
       <th>Oruro</th>
@@ -1708,7 +1703,7 @@ Name: extension, dtype: bool
       <td>55588.0</td>
       <td>1</td>
       <td>9.678348</td>
-      <td>Oruro</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>Pando</th>
@@ -1732,7 +1727,7 @@ Name: extension, dtype: bool
       <td>370621.0</td>
       <td>1</td>
       <td>8.701612</td>
-      <td>Santa Cruz</td>
+      <td>Santa Cruz de la Sierra</td>
     </tr>
     <tr>
       <th>Tarija</th>
@@ -1804,21 +1799,21 @@ Name: extension, dtype: bool
       <td>2883000</td>
       <td>55631.0</td>
       <td>51.823624</td>
-      <td>Cochabamba</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>La Paz</th>
       <td>26448193</td>
       <td>133985.0</td>
       <td>197.396671</td>
-      <td>La Paz</td>
+      <td>Murillo</td>
     </tr>
     <tr>
       <th>Oruro</th>
       <td>538000</td>
       <td>55588.0</td>
       <td>9.678348</td>
-      <td>Oruro</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>Pando</th>
@@ -1839,7 +1834,7 @@ Name: extension, dtype: bool
       <td>3225000</td>
       <td>370621.0</td>
       <td>8.701612</td>
-      <td>Santa Cruz</td>
+      <td>Santa Cruz de la Sierra</td>
     </tr>
     <tr>
       <th>Tarija</th>
@@ -1904,21 +1899,21 @@ Name: extension, dtype: bool
       <td>2883000</td>
       <td>55631.0</td>
       <td>51.823624</td>
-      <td>Cochabamba</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>La Paz</th>
       <td>26448193</td>
       <td>133985.0</td>
       <td>197.396671</td>
-      <td>La Paz</td>
+      <td>Murillo</td>
     </tr>
     <tr>
       <th>Oruro</th>
       <td>538000</td>
       <td>55588.0</td>
       <td>9.678348</td>
-      <td>Oruro</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>Potosí</th>
@@ -1932,7 +1927,7 @@ Name: extension, dtype: bool
       <td>3225000</td>
       <td>370621.0</td>
       <td>8.701612</td>
-      <td>Santa Cruz</td>
+      <td>Santa Cruz de la Sierra</td>
     </tr>
     <tr>
       <th>Tarija</th>
@@ -1997,21 +1992,21 @@ Name: extension, dtype: bool
       <td>2883000</td>
       <td>55631.0</td>
       <td>51.823624</td>
-      <td>Cochabamba</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>La Paz</th>
       <td>26448193</td>
       <td>133985.0</td>
       <td>197.396671</td>
-      <td>La Paz</td>
+      <td>Murillo</td>
     </tr>
     <tr>
       <th>Oruro</th>
       <td>538000</td>
       <td>55588.0</td>
       <td>9.678348</td>
-      <td>Oruro</td>
+      <td>Cercado</td>
     </tr>
     <tr>
       <th>Pando</th>
@@ -2032,7 +2027,7 @@ Name: extension, dtype: bool
       <td>3225000</td>
       <td>370621.0</td>
       <td>8.701612</td>
-      <td>Santa Cruz</td>
+      <td>Santa Cruz de la Sierra</td>
     </tr>
     <tr>
       <th>Tarija</th>
@@ -2047,8 +2042,8 @@ Name: extension, dtype: bool
 </div>
 <div class="section" id="apply">
 <h2>Apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h2>
-<p><a id="6"></a>
-Appy aplica una función que recibe como argumento a cada una de las columnas (o filas) de un DataFrame. Modifica el DataFrame existente.</p>
+<p><a id="6"></a></p>
+<p>Appy aplica una función que recibe como argumento a cada una de las columnas (o filas) de un DataFrame. Modifica el DataFrame existente.</p>
 <p><strong>axis=0 es la opción por defecto, significa que se recorrerá el DataFrame por las columnas (similar a recorrer una matriz por columas). Si axis=1 el DataFrame se recorrerá por sus filas.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2075,8 +2070,8 @@ dtype: float64
 </div>
 <div class="section" id="one-hot-encoding">
 <h2>One Hot Encoding<a class="headerlink" href="#one-hot-encoding" title="Permalink to this headline">¶</a></h2>
-<p><a id="7"></a>
-Conversión de valores numéricos y nominales en categorías y luego las categorías en valores numéricos.
+<p><a id="7"></a></p>
+<p>Conversión de valores numéricos y nominales en categorías y luego las categorías en valores numéricos.
 Necesario cuando el algoritmo de aprendizaje automático no es capaz de trabajar con valores nominales o contínuos</p>
 <p><strong>Obtener los códigos de una variable nominal</strong></p>
 <div class="cell docutils container">
@@ -2086,15 +2081,15 @@ Necesario cuando el algoritmo de aprendizaje automático no es capaz de trabajar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Beni          8
-Chuquisaca    6
-Cochabamba    1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Beni          7
+Chuquisaca    5
+Cochabamba    0
 La Paz        2
-Oruro         3
-Pando         0
-Potosí        4
-Santa Cruz    5
-Tarija        7
+Oruro         0
+Pando         1
+Potosí        3
+Santa Cruz    4
+Tarija        6
 dtype: int8
 </pre></div>
 </div>
@@ -2129,12 +2124,11 @@ dtype: int8
       <th>poblacion</th>
       <th>extension</th>
       <th>densidad</th>
+      <th>capital_Cercado</th>
       <th>capital_Cobija</th>
-      <th>capital_Cochabamba</th>
-      <th>capital_La Paz</th>
-      <th>capital_Oruro</th>
+      <th>capital_Murillo</th>
       <th>capital_Potosí</th>
-      <th>capital_Santa Cruz</th>
+      <th>capital_Santa Cruz de la Sierra</th>
       <th>capital_Sucre</th>
       <th>capital_Tarija</th>
       <th>capital_Trinidad</th>
@@ -2146,7 +2140,6 @@ dtype: int8
       <td>468000</td>
       <td>213564.0</td>
       <td>2.191381</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2166,7 +2159,6 @@ dtype: int8
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -2176,7 +2168,6 @@ dtype: int8
       <td>2883000</td>
       <td>55631.0</td>
       <td>51.823624</td>
-      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -2199,17 +2190,15 @@ dtype: int8
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>Oruro</th>
       <td>538000</td>
       <td>55588.0</td>
       <td>9.678348</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>1</td>
+      <td>0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2221,9 +2210,8 @@ dtype: int8
       <td>144000</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2236,7 +2224,6 @@ dtype: int8
       <td>887000</td>
       <td>117218.0</td>
       <td>7.567097</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2255,7 +2242,6 @@ dtype: int8
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -2266,7 +2252,6 @@ dtype: int8
       <td>563000</td>
       <td>37623.0</td>
       <td>14.964251</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2296,7 +2281,7 @@ dtype: int8
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Notebooks\1-Pandas"
+            path: "./Notebooks/1-Pandas"
         },
         predefinedOutput: true
     }
@@ -2329,9 +2314,9 @@ dtype: int8
     <footer class="footer">
   <p>
     
-      By The Jupyter Book Community<br/>
+      Par The Jupyter Book Community<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; droits d'auteur 2021.<br/>
   </p>
 </footer>
 </main>

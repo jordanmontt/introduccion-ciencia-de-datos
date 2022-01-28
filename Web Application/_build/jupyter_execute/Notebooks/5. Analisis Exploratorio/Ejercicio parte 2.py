@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Ejercicio parte 2
+# # Ejercicio análisi exploratorio parte 2
 # 
 # Utilizando los mimos datos sobre automoviles, responda a las siguientes preguntas 
 # 
@@ -19,16 +19,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-autos = pd.read_csv(os.path.join(".", "datos_automoviles.csv"))
+autos = pd.read_csv(os.path.join("./csv/", "datos_automoviles.csv"))
 autos.head()
 
 
 # ## 1. ¿Existe alguna relacion entre el territorio y los caballos de potencia?
+# 
 # <a id="1"></a>
 # 
 # `territorio` es una variable categórica, por tanto, no es posible calcular la correlación con `caballos_potencia`. Pero, como `territorio` solo puede tomar 3 valores (Europe, Japan, USA), convertir cada valor en un número y crear una nueva columna que tenga el `territorio` almacenado como un número. Así, sí es posible calcular la correlación.
 
-# In[17]:
+# In[2]:
 
 
 # Se crea la nueva columna
@@ -48,38 +49,41 @@ autos.corr()['territorio_num']['caballos_potencia']
 
 
 # ## 2. ¿Cuál es la correlación entre los caballos de potencia y las millas por galón?
+# 
 # <a id="2"></a>
 
-# In[19]:
+# In[3]:
 
 
 autos_corr = autos.corr()
 autos_corr
 
 
-# In[20]:
+# In[4]:
 
 
 autos_corr['caballos_potencia']['mpg']
 
 
 # ## 3. ¿Si existiese una relación, ambas variables se mueven en la misma dirección?
+# 
 # <a id="3"></a>
 # 
 # Como se puede apreciar, la covarianza es negativa, lo cual indica que las variables se mueven en direcciones contrarias.
 
-# In[28]:
+# In[5]:
 
 
 autos.cov()['mpg']['caballos_potencia']
 
 
-# ## Compruebe la dirección de la relación con una visualización
+# ## 4. Compruebe la dirección de la relación con una visualización
+# 
 # <a id="4"></a>
 # 
 # Las gráficas de regresión, se observa que la pendiente de la curva es negativa, lo cual indica que las variables son inversamente proporcionales, lo cual significa que las variables se mueven en direcciones contrarias.
 
-# In[29]:
+# In[6]:
 
 
 # Graficar utilizando seaborn

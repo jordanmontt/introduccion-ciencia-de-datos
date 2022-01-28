@@ -84,13 +84,13 @@ import numpy as np
 import os
 
 
-# In[30]:
+# In[2]:
 
 
 df_entrenamiento = pd.read_csv(os.path.join("csv", "train.csv"), index_col='PassengerId')
 
 
-# In[27]:
+# In[3]:
 
 
 df_entrenamiento.info()
@@ -98,13 +98,13 @@ df_entrenamiento.info()
 
 # Hacemos limpieza de las columnas que no son necesarias para este ejercicio.
 
-# In[31]:
+# In[4]:
 
 
 df_entrenamiento = df_entrenamiento.drop(['Ticket', 'Embarked', 'Cabin'], axis=1)
 
 
-# In[32]:
+# In[5]:
 
 
 df_entrenamiento.head()
@@ -116,26 +116,26 @@ df_entrenamiento.head()
 # 
 # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.ravel.html
 
-# In[33]:
+# In[6]:
 
 
 X = df_entrenamiento.loc[:,'Age':].to_numpy().astype('float') #convertir a una matriz numpy
 y = df_entrenamiento['Survived'].ravel() #convertir a un vector numpy
 
 
-# In[34]:
+# In[7]:
 
 
 print(X.shape, y.shape)
 
 
-# In[35]:
+# In[8]:
 
 
 print(type(X), type(y))
 
 
-# In[37]:
+# In[9]:
 
 
 from sklearn.model_selection import train_test_split
@@ -147,7 +147,7 @@ print(X_test.shape, y_test.shape)
 
 # Ver si no se trata de un problema con clases muy "desbalanceadas"
 
-# In[39]:
+# In[10]:
 
 
 print('media de supervivencia en el conjunto de entrenamiento : {0:.3f}'.format(np.mean(y_train)))
@@ -158,7 +158,7 @@ print('media de supervivencia en el conjunto de prueba : {0:.3f}'.format(np.mean
 
 # importar el algoritmo de clasificación
 
-# In[40]:
+# In[11]:
 
 
 from sklearn.dummy import DummyClassifier
@@ -166,7 +166,7 @@ from sklearn.dummy import DummyClassifier
 
 # Crear el clasificador
 
-# In[41]:
+# In[12]:
 
 
 clasificador_lineabase = DummyClassifier(strategy='most_frequent', random_state=0)
@@ -174,7 +174,7 @@ clasificador_lineabase = DummyClassifier(strategy='most_frequent', random_state=
 
 # "entrenar" el clasificador
 
-# In[42]:
+# In[13]:
 
 
 clasificador_lineabase.fit(X_train, y_train)
@@ -184,13 +184,13 @@ clasificador_lineabase.fit(X_train, y_train)
 # Accuracy obtenido sólo con devolver la clasificación con mayor frecuencia
 # Se debe superar este valor empleando Machine Learning.
 
-# In[43]:
+# In[14]:
 
 
 print('accuracy del clasificador : {0:.2f}'.format(clasificador_lineabase.score(X_test, y_test)))
 
 
-# In[44]:
+# In[15]:
 
 
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
@@ -199,7 +199,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, r
 # La función compara las clasificaciones conocidas (del conjunto de prueba) 
 # con las predicciones hechas por el clasificador para los ejemplos del conjunto de prueba
 
-# In[45]:
+# In[16]:
 
 
 print('accuracy del clasificador : {0:.2f}'.format(accuracy_score(y_test, clasificador_lineabase.predict(X_test))))
@@ -207,13 +207,13 @@ print('accuracy del clasificador : {0:.2f}'.format(accuracy_score(y_test, clasif
 
 # Matriz de confusión
 
-# In[46]:
+# In[17]:
 
 
 print('matriz de confusión del clasificador: \n {0}'.format(confusion_matrix(y_test, clasificador_lineabase.predict(X_test))))
 
 
-# In[47]:
+# In[18]:
 
 
 # precision y recall

@@ -45,7 +45,7 @@ data.head()
 # 
 # Llamando a la función`describe()` de _Pandas_ se obtiene una matriz la cual tiene varios indicadores para cada una de las columnas. Con estos indicaroes se puede tener una visión general de los datos.
 
-# In[29]:
+# In[2]:
 
 
 data_description = data.describe(include='all')
@@ -66,7 +66,7 @@ data_description
 # 
 # 
 
-# In[30]:
+# In[3]:
 
 
 import seaborn as sns
@@ -99,7 +99,7 @@ plt.show()
 # 
 # - **Media**
 
-# In[26]:
+# In[4]:
 
 
 from statistics import mean
@@ -113,7 +113,7 @@ print(f'{a1}, {a2}, {a3}')
 
 # - **Mediana**
 
-# In[25]:
+# In[5]:
 
 
 from statistics import median
@@ -144,7 +144,7 @@ print(f'{a1}, {a2}, {a3}')
 # 
 # <img src="./img/03-dispersion.png" style="width:600px"/>
 
-# In[24]:
+# In[6]:
 
 
 from statistics import stdev
@@ -170,7 +170,7 @@ print(f'Varianza: {varianza1}, {varianza2}, {varianza3}')
 # 
 # <img src="./img/05-skewness.png" style="width:600px"/>
 
-# In[23]:
+# In[7]:
 
 
 from scipy.stats import skew
@@ -185,7 +185,7 @@ print(a1, a2)
 # 
 # <img src="./img/06-kurtosis.png" style="width:600px"/>
 
-# In[22]:
+# In[8]:
 
 
 from scipy.stats import kurtosis
@@ -209,7 +209,7 @@ print(a1, a2)
 # 
 # 
 
-# In[21]:
+# In[9]:
 
 
 data['temp'].plot.hist(title='Histograma Temp', color='c', bins=20)
@@ -219,7 +219,7 @@ data['temp'].plot.hist(title='Histograma Temp', color='c', bins=20)
 # 
 # <img src="./img/08-density-plot.png" style="width:400px"/>
 
-# In[20]:
+# In[10]:
 
 
 data['temp'].plot.density(title='Densidad Temp', color='c')
@@ -231,7 +231,7 @@ data['temp'].plot.density(title='Densidad Temp', color='c')
 # 
 # <img src="./img/09-box-plot.png" style="width:400px"/>
 
-# In[19]:
+# In[11]:
 
 
 data['temp'].plot.box(title='Box Temp', color='c')
@@ -248,7 +248,7 @@ data['temp'].plot.box(title='Box Temp', color='c')
 # 
 # <img src="./img/10-bar-chart.png" style="width:400px"/>
 
-# In[18]:
+# In[12]:
 
 
 df = pd.DataFrame({'lab':['A', 'B', 'C'], 'val':[10, 30, 20]})
@@ -273,7 +273,7 @@ df.plot.bar(x='lab', y='val', rot=0)
 # <img src="./img/12-pie-chart.png" style="width:400px"/>
 # 
 
-# In[16]:
+# In[13]:
 
 
 df = pd.DataFrame({'masa': [0.330, 4.87 , 5.97],
@@ -290,7 +290,7 @@ df["masa"].plot.pie()
 # <img src="./img/13-stacked-bar.png" style="width:400px"/>
 # 
 
-# In[ ]:
+# In[14]:
 
 
 df = pd.DataFrame({'vestimenta': [8261.68, 7875.87 , 4990.23],
@@ -300,7 +300,7 @@ df = pd.DataFrame({'vestimenta': [8261.68, 7875.87 , 4990.23],
 df
 
 
-# In[17]:
+# In[15]:
 
 
 df.plot.bar(stacked=True, rot=0)
@@ -315,7 +315,7 @@ df.plot.bar(stacked=True, rot=0)
 # 
 # La función groupby puede ser beneficiosa. Por ejemplo, si queremos saber qué temperatura promedio tiene cada mes se hace lo siguiente:
 
-# In[14]:
+# In[16]:
 
 
 # Este celda agrega una columna month_number la cual tiene el número del mes.
@@ -351,7 +351,7 @@ def month_number(month):
 data["month_number"] = data["month"].map(month_number)
 
 
-# In[15]:
+# In[17]:
 
 
 # Ahora, agruparemos los datos según la nueva columna month_number

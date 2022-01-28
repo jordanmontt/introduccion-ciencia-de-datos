@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## scikit-learn
+# ## Scikit-learn: basics
 # 
 # ### Facilidad de uso
 # 1. Crear el clasificador. Ex. DummyClassifier(strategy='most_frequent', random_state=0)

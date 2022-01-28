@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Utilizando web scraping en una página real
+# # Ejercicio: Web Scrapping para extraer información de un artículo
 
 # Este ejercicio consiste en extraer la información más importante de una página web. Para este ejercicio elegimos un artículo sobre el transhumanismo que se puede encontrar [en este enlace](https://nuso.org/articulo/hacia-un-futuro-transhumano/). El artículo está en español. Dejaremos aquí el abstracto de este.
 # 
@@ -23,7 +23,7 @@ import string
 
 # Ahora, obtenemos la página como un objecto
 
-# In[ ]:
+# In[2]:
 
 
 # Obtener el código HTML del artículo
@@ -33,7 +33,7 @@ pagina = BeautifulSoup(respuesta.text, 'html.parser' )
 
 # Primeramente, vamos a obtener el nombre de la revista. el objeto `página` tiene un método que retorna el título del documento HTML
 
-# In[ ]:
+# In[3]:
 
 
 def nombre_revista(pagina):
@@ -44,7 +44,7 @@ nombre_revista = nombre_revista(pagina)
 
 # Podemos ver que `title` retorna, para nuestro caso específico, un array con 2 elementos: el título de la ravista y el del artícul. Ahora queremos el nombre del artículo.
 
-# In[ ]:
+# In[4]:
 
 
 def nombre_articulo(pagina):
@@ -55,7 +55,7 @@ nombre_articulo = nombre_articulo(pagina)
 
 # También podemos obtener el número del artículo con respecto a la revista. Esa información se encutra en la primera parte de la página web y representa cuántos artículos tenía publicado la revista, hasta el momento.
 
-# In[ ]:
+# In[5]:
 
 
 def numero_revista(pagina):
@@ -69,7 +69,7 @@ numero_revista = numero_revista(pagina)
 
 # Queremos obtener la fecha de la publicación del artículo
 
-# In[ ]:
+# In[6]:
 
 
 def fecha(pagina):
@@ -81,7 +81,7 @@ fecha = fecha(pagina)
 
 # Queremos obtener el resumen, o el abstract, del artículo. Es la pequeña explicación sobre que trata el artículo.
 
-# In[ ]:
+# In[7]:
 
 
 def resumen_articulo(pagina):
@@ -92,7 +92,7 @@ resumen_articulo = resumen_articulo(pagina)
 
 # Finalmente, queremos el texto, o la redacción principal del artículo.
 
-# In[ ]:
+# In[8]:
 
 
 def redaccion_principal(pagina):

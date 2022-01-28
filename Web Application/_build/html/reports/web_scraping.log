@@ -1,95 +1,167 @@
 Traceback (most recent call last):
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+  File "/usr/local/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 1085, in execute
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\nbclient\util.py", line 84, in wrapped
+  File "/usr/local/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\nbclient\util.py", line 62, in just_run
+  File "/usr/local/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
     return loop.run_until_complete(coro)
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+  File "/usr/local/Cellar/python@3.9/3.9.7/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
     return future.result()
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 551, in async_execute
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
     await self.async_execute_cell(
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 846, in async_execute_cell
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "c:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 748, in _check_raise_for_error
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+#https://archive.ics.uci.edu/ml/datasets/auto+mpg
+#Auto MPG Data Set
+#Inciar el servidor web localmente: 
+#python -m http.server
 import requests
-
-respuesta = requests.get("./html/auto_mpg.html")
+respuesta = requests.get("http://localhost:8000/auto_mpg.html")
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mMissingSchema[0m                             Traceback (most recent call last)
-Input [1;32mIn [1][0m, in [0;36m<module>[1;34m[0m
-[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mrequests[39;00m
-[1;32m----> 3[0m respuesta [38;5;241m=[39m [43mrequests[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m./html/auto_mpg.html[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mConnectionRefusedError[0m                    Traceback (most recent call last)
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connection.py[0m in [0;36m_new_conn[0;34m(self)[0m
+[1;32m    168[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 169[0;31m             conn = connection.create_connection(
+[0m[1;32m    170[0m                 [0;34m([0m[0mself[0m[0;34m.[0m[0m_dns_host[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mport[0m[0;34m)[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mtimeout[0m[0;34m,[0m [0;34m**[0m[0mextra_kw[0m[0;34m[0m[0;34m[0m[0m
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\api.py:75[0m, in [0;36mget[1;34m(url, params, **kwargs)[0m
-[0;32m     64[0m [38;5;28;01mdef[39;00m [38;5;21mget[39m(url, params[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
-[0;32m     65[0m     [38;5;124mr[39m[38;5;124;03m"""Sends a GET request.[39;00m
-[0;32m     66[0m 
-[0;32m     67[0m [38;5;124;03m    :param url: URL for the new :class:`Request` object.[39;00m
-[1;32m   (...)[0m
-[0;32m     72[0m [38;5;124;03m    :rtype: requests.Response[39;00m
-[0;32m     73[0m [38;5;124;03m    """[39;00m
-[1;32m---> 75[0m     [38;5;28;01mreturn[39;00m request([38;5;124m'[39m[38;5;124mget[39m[38;5;124m'[39m, url, params[38;5;241m=[39mparams, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py[0m in [0;36mcreate_connection[0;34m(address, timeout, source_address, socket_options)[0m
+[1;32m     95[0m     [0;32mif[0m [0merr[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 96[0;31m         [0;32mraise[0m [0merr[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     97[0m [0;34m[0m[0m
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\api.py:61[0m, in [0;36mrequest[1;34m(method, url, **kwargs)[0m
-[0;32m     57[0m [38;5;66;03m# By using the 'with' statement we are sure the session is closed, thus we[39;00m
-[0;32m     58[0m [38;5;66;03m# avoid leaving sockets open which can trigger a ResourceWarning in some[39;00m
-[0;32m     59[0m [38;5;66;03m# cases, and look like a memory leak in others.[39;00m
-[0;32m     60[0m [38;5;28;01mwith[39;00m sessions[38;5;241m.[39mSession() [38;5;28;01mas[39;00m session:
-[1;32m---> 61[0m     [38;5;28;01mreturn[39;00m session[38;5;241m.[39mrequest(method[38;5;241m=[39mmethod, url[38;5;241m=[39murl, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py[0m in [0;36mcreate_connection[0;34m(address, timeout, source_address, socket_options)[0m
+[1;32m     85[0m                 [0msock[0m[0;34m.[0m[0mbind[0m[0;34m([0m[0msource_address[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 86[0;31m             [0msock[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0msa[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     87[0m             [0;32mreturn[0m [0msock[0m[0;34m[0m[0;34m[0m[0m
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\sessions.py:515[0m, in [0;36mSession.request[1;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
-[0;32m    502[0m [38;5;66;03m# Create the Request.[39;00m
-[0;32m    503[0m req [38;5;241m=[39m Request(
-[0;32m    504[0m     method[38;5;241m=[39mmethod[38;5;241m.[39mupper(),
-[0;32m    505[0m     url[38;5;241m=[39murl,
-[1;32m   (...)[0m
-[0;32m    513[0m     hooks[38;5;241m=[39mhooks,
-[0;32m    514[0m )
-[1;32m--> 515[0m prep [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mprepare_request[49m[43m([49m[43mreq[49m[43m)[49m
-[0;32m    517[0m proxies [38;5;241m=[39m proxies [38;5;129;01mor[39;00m {}
-[0;32m    519[0m settings [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mmerge_environment_settings(
-[0;32m    520[0m     prep[38;5;241m.[39murl, proxies, stream, verify, cert
-[0;32m    521[0m )
+[0;31mConnectionRefusedError[0m: [Errno 61] Connection refused
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\sessions.py:443[0m, in [0;36mSession.prepare_request[1;34m(self, request)[0m
-[0;32m    440[0m     auth [38;5;241m=[39m get_netrc_auth(request[38;5;241m.[39murl)
-[0;32m    442[0m p [38;5;241m=[39m PreparedRequest()
-[1;32m--> 443[0m [43mp[49m[38;5;241;43m.[39;49m[43mprepare[49m[43m([49m
-[0;32m    444[0m [43m    [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[38;5;241;43m.[39;49m[43mupper[49m[43m([49m[43m)[49m[43m,[49m
-[0;32m    445[0m [43m    [49m[43murl[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43murl[49m[43m,[49m
-[0;32m    446[0m [43m    [49m[43mfiles[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mfiles[49m[43m,[49m
-[0;32m    447[0m [43m    [49m[43mdata[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mdata[49m[43m,[49m
-[0;32m    448[0m [43m    [49m[43mjson[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mjson[49m[43m,[49m
-[0;32m    449[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mmerge_setting[49m[43m([49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m [49m[43mdict_class[49m[38;5;241;43m=[39;49m[43mCaseInsensitiveDict[49m[43m)[49m[43m,[49m
-[0;32m    450[0m [43m    [49m[43mparams[49m[38;5;241;43m=[39;49m[43mmerge_setting[49m[43m([49m[43mrequest[49m[38;5;241;43m.[39;49m[43mparams[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mparams[49m[43m)[49m[43m,[49m
-[0;32m    451[0m [43m    [49m[43mauth[49m[38;5;241;43m=[39;49m[43mmerge_setting[49m[43m([49m[43mauth[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mauth[49m[43m)[49m[43m,[49m
-[0;32m    452[0m [43m    [49m[43mcookies[49m[38;5;241;43m=[39;49m[43mmerged_cookies[49m[43m,[49m
-[0;32m    453[0m [43m    [49m[43mhooks[49m[38;5;241;43m=[39;49m[43mmerge_hooks[49m[43m([49m[43mrequest[49m[38;5;241;43m.[39;49m[43mhooks[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mhooks[49m[43m)[49m[43m,[49m
-[0;32m    454[0m [43m[49m[43m)[49m
-[0;32m    455[0m [38;5;28;01mreturn[39;00m p
+During handling of the above exception, another exception occurred:
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\models.py:318[0m, in [0;36mPreparedRequest.prepare[1;34m(self, method, url, headers, files, data, params, auth, cookies, hooks, json)[0m
-[0;32m    315[0m [38;5;124;03m"""Prepares the entire request with the given parameters."""[39;00m
-[0;32m    317[0m [38;5;28mself[39m[38;5;241m.[39mprepare_method(method)
-[1;32m--> 318[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mprepare_url[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mparams[49m[43m)[49m
-[0;32m    319[0m [38;5;28mself[39m[38;5;241m.[39mprepare_headers(headers)
-[0;32m    320[0m [38;5;28mself[39m[38;5;241m.[39mprepare_cookies(cookies)
+[0;31mNewConnectionError[0m                        Traceback (most recent call last)
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py[0m in [0;36murlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    698[0m             [0;31m# Make the request on the httplib connection object.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 699[0;31m             httplib_response = self._make_request(
+[0m[1;32m    700[0m                 [0mconn[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 
-File [1;32mc:\users\daniel.oropeza\appdata\local\programs\python\python39\lib\site-packages\requests\models.py:392[0m, in [0;36mPreparedRequest.prepare_url[1;34m(self, url, params)[0m
-[0;32m    389[0m     error [38;5;241m=[39m ([38;5;124m"[39m[38;5;124mInvalid URL [39m[38;5;132;01m{0!r}[39;00m[38;5;124m: No scheme supplied. Perhaps you meant http://[39m[38;5;132;01m{0}[39;00m[38;5;124m?[39m[38;5;124m"[39m)
-[0;32m    390[0m     error [38;5;241m=[39m error[38;5;241m.[39mformat(to_native_string(url, [38;5;124m'[39m[38;5;124mutf8[39m[38;5;124m'[39m))
-[1;32m--> 392[0m     [38;5;28;01mraise[39;00m MissingSchema(error)
-[0;32m    394[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m host:
-[0;32m    395[0m     [38;5;28;01mraise[39;00m InvalidURL([38;5;124m"[39m[38;5;124mInvalid URL [39m[38;5;132;01m%r[39;00m[38;5;124m: No host supplied[39m[38;5;124m"[39m [38;5;241m%[39m url)
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py[0m in [0;36m_make_request[0;34m(self, conn, method, url, timeout, chunked, **httplib_request_kw)[0m
+[1;32m    393[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 394[0;31m                 [0mconn[0m[0;34m.[0m[0mrequest[0m[0;34m([0m[0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0;34m**[0m[0mhttplib_request_kw[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    395[0m [0;34m[0m[0m
 
-[1;31mMissingSchema[0m: Invalid URL './html/auto_mpg.html': No scheme supplied. Perhaps you meant http://./html/auto_mpg.html?
-MissingSchema: Invalid URL './html/auto_mpg.html': No scheme supplied. Perhaps you meant http://./html/auto_mpg.html?
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connection.py[0m in [0;36mrequest[0;34m(self, method, url, body, headers)[0m
+[1;32m    233[0m             [0mheaders[0m[0;34m[[0m[0;34m"User-Agent"[0m[0;34m][0m [0;34m=[0m [0m_get_default_user_agent[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 234[0;31m         [0msuper[0m[0;34m([0m[0mHTTPConnection[0m[0;34m,[0m [0mself[0m[0;34m)[0m[0;34m.[0m[0mrequest[0m[0;34m([0m[0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mbody[0m[0;34m=[0m[0mbody[0m[0;34m,[0m [0mheaders[0m[0;34m=[0m[0mheaders[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    235[0m [0;34m[0m[0m
+
+[0;32m/usr/local/Cellar/python@3.9/3.9.7/Frameworks/Python.framework/Versions/3.9/lib/python3.9/http/client.py[0m in [0;36mrequest[0;34m(self, method, url, body, headers, encode_chunked)[0m
+[1;32m   1278[0m         [0;34m"""Send a complete request to the server."""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1279[0;31m         [0mself[0m[0;34m.[0m[0m_send_request[0m[0;34m([0m[0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mbody[0m[0;34m,[0m [0mheaders[0m[0;34m,[0m [0mencode_chunked[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1280[0m [0;34m[0m[0m
+
+[0;32m/usr/local/Cellar/python@3.9/3.9.7/Frameworks/Python.framework/Versions/3.9/lib/python3.9/http/client.py[0m in [0;36m_send_request[0;34m(self, method, url, body, headers, encode_chunked)[0m
+[1;32m   1324[0m             [0mbody[0m [0;34m=[0m [0m_encode[0m[0;34m([0m[0mbody[0m[0;34m,[0m [0;34m'body'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1325[0;31m         [0mself[0m[0;34m.[0m[0mendheaders[0m[0;34m([0m[0mbody[0m[0;34m,[0m [0mencode_chunked[0m[0;34m=[0m[0mencode_chunked[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1326[0m [0;34m[0m[0m
+
+[0;32m/usr/local/Cellar/python@3.9/3.9.7/Frameworks/Python.framework/Versions/3.9/lib/python3.9/http/client.py[0m in [0;36mendheaders[0;34m(self, message_body, encode_chunked)[0m
+[1;32m   1273[0m             [0;32mraise[0m [0mCannotSendHeader[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1274[0;31m         [0mself[0m[0;34m.[0m[0m_send_output[0m[0;34m([0m[0mmessage_body[0m[0;34m,[0m [0mencode_chunked[0m[0;34m=[0m[0mencode_chunked[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1275[0m [0;34m[0m[0m
+
+[0;32m/usr/local/Cellar/python@3.9/3.9.7/Frameworks/Python.framework/Versions/3.9/lib/python3.9/http/client.py[0m in [0;36m_send_output[0;34m(self, message_body, encode_chunked)[0m
+[1;32m   1033[0m         [0;32mdel[0m [0mself[0m[0;34m.[0m[0m_buffer[0m[0;34m[[0m[0;34m:[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1034[0;31m         [0mself[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1035[0m [0;34m[0m[0m
+
+[0;32m/usr/local/Cellar/python@3.9/3.9.7/Frameworks/Python.framework/Versions/3.9/lib/python3.9/http/client.py[0m in [0;36msend[0;34m(self, data)[0m
+[1;32m    973[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0mauto_open[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 974[0;31m                 [0mself[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    975[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connection.py[0m in [0;36mconnect[0;34m(self)[0m
+[1;32m    199[0m     [0;32mdef[0m [0mconnect[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 200[0;31m         [0mconn[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_new_conn[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    201[0m         [0mself[0m[0;34m.[0m[0m_prepare_conn[0m[0;34m([0m[0mconn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connection.py[0m in [0;36m_new_conn[0;34m(self)[0m
+[1;32m    180[0m         [0;32mexcept[0m [0mSocketError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 181[0;31m             raise NewConnectionError(
+[0m[1;32m    182[0m                 [0mself[0m[0;34m,[0m [0;34m"Failed to establish a new connection: %s"[0m [0;34m%[0m [0me[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPConnection object at 0x10a26fb20>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+[0;31mMaxRetryError[0m                             Traceback (most recent call last)
+[0;32m/usr/local/lib/python3.9/site-packages/requests/adapters.py[0m in [0;36msend[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    438[0m             [0;32mif[0m [0;32mnot[0m [0mchunked[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 439[0;31m                 resp = conn.urlopen(
+[0m[1;32m    440[0m                     [0mmethod[0m[0;34m=[0m[0mrequest[0m[0;34m.[0m[0mmethod[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py[0m in [0;36murlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    754[0m [0;34m[0m[0m
+[0;32m--> 755[0;31m             retries = retries.increment(
+[0m[1;32m    756[0m                 [0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m[0;34m=[0m[0me[0m[0;34m,[0m [0m_pool[0m[0;34m=[0m[0mself[0m[0;34m,[0m [0m_stacktrace[0m[0;34m=[0m[0msys[0m[0;34m.[0m[0mexc_info[0m[0;34m([0m[0;34m)[0m[0;34m[[0m[0;36m2[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py[0m in [0;36mincrement[0;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[1;32m    573[0m         [0;32mif[0m [0mnew_retry[0m[0;34m.[0m[0mis_exhausted[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 574[0;31m             [0;32mraise[0m [0mMaxRetryError[0m[0;34m([0m[0m_pool[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m [0;32mor[0m [0mResponseError[0m[0;34m([0m[0mcause[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    575[0m [0;34m[0m[0m
+
+[0;31mMaxRetryError[0m: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /auto_mpg.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10a26fb20>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+[0;31mConnectionError[0m                           Traceback (most recent call last)
+[0;32m/var/folders/qh/pvjjyjr96l329fgsgrwn11nr0000gp/T/ipykernel_17933/2377906807.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      4[0m [0;31m#python -m http.server[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;32mimport[0m [0mrequests[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m [0mrespuesta[0m [0;34m=[0m [0mrequests[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"http://localhost:8000/auto_mpg.html"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/usr/local/lib/python3.9/site-packages/requests/api.py[0m in [0;36mget[0;34m(url, params, **kwargs)[0m
+[1;32m     74[0m [0;34m[0m[0m
+[1;32m     75[0m     [0mkwargs[0m[0;34m.[0m[0msetdefault[0m[0;34m([0m[0;34m'allow_redirects'[0m[0;34m,[0m [0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 76[0;31m     [0;32mreturn[0m [0mrequest[0m[0;34m([0m[0;34m'get'[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mparams[0m[0;34m=[0m[0mparams[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     77[0m [0;34m[0m[0m
+[1;32m     78[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/requests/api.py[0m in [0;36mrequest[0;34m(method, url, **kwargs)[0m
+[1;32m     59[0m     [0;31m# cases, and look like a memory leak in others.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     60[0m     [0;32mwith[0m [0msessions[0m[0;34m.[0m[0mSession[0m[0;34m([0m[0;34m)[0m [0;32mas[0m [0msession[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 61[0;31m         [0;32mreturn[0m [0msession[0m[0;34m.[0m[0mrequest[0m[0;34m([0m[0mmethod[0m[0;34m=[0m[0mmethod[0m[0;34m,[0m [0murl[0m[0;34m=[0m[0murl[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     62[0m [0;34m[0m[0m
+[1;32m     63[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/requests/sessions.py[0m in [0;36mrequest[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[1;32m    540[0m         }
+[1;32m    541[0m         [0msend_kwargs[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0msettings[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 542[0;31m         [0mresp[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mprep[0m[0;34m,[0m [0;34m**[0m[0msend_kwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    543[0m [0;34m[0m[0m
+[1;32m    544[0m         [0;32mreturn[0m [0mresp[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/requests/sessions.py[0m in [0;36msend[0;34m(self, request, **kwargs)[0m
+[1;32m    653[0m [0;34m[0m[0m
+[1;32m    654[0m         [0;31m# Send the request[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 655[0;31m         [0mr[0m [0;34m=[0m [0madapter[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mrequest[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    656[0m [0;34m[0m[0m
+[1;32m    657[0m         [0;31m# Total elapsed time of the request (approximately)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/requests/adapters.py[0m in [0;36msend[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    514[0m                 [0;32mraise[0m [0mSSLError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    515[0m [0;34m[0m[0m
+[0;32m--> 516[0;31m             [0;32mraise[0m [0mConnectionError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    517[0m [0;34m[0m[0m
+[1;32m    518[0m         [0;32mexcept[0m [0mClosedPoolError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mConnectionError[0m: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /auto_mpg.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10a26fb20>: Failed to establish a new connection: [Errno 61] Connection refused'))
+ConnectionError: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /auto_mpg.html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10a26fb20>: Failed to establish a new connection: [Errno 61] Connection refused'))
 

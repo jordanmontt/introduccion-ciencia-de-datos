@@ -1,14 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
-#Habilitar intellisense
-get_ipython().run_line_magic('config', 'IPCompleter.greedy=True')
-
-
-# ## Enunciado
+# ## Ejercicio misceláneo: NLP, Web Scrapping (otra resolución)
+# 
 # La prueba consiste en completar el código marcado con **#FIXME** para obtener automáticamente el resumen de un texto.
 # 
 # La decripción general de las reglas/algoritmo:
@@ -18,7 +12,7 @@ get_ipython().run_line_magic('config', 'IPCompleter.greedy=True')
 # - Obtener un score para cada oración/párrafo que indique su importancia en el texto, tendrán mayor score aquellas oraciones que incluyan las palabras con mayor frecuencia.
 # - Seleccionar las 3 oraciones con el score más alto para construir el resumen.
 
-# In[2]:
+# In[1]:
 
 
 import urllib3
@@ -35,13 +29,13 @@ import unicodedata
 http = urllib3.PoolManager()
 
 
-# In[189]:
+# In[2]:
 
 
 articleURL = "https://www.muyinteresante.es/naturaleza/video/objetivo-2030-proteger-el-30-de-la-tierra-751579255112"
 
 
-# In[190]:
+# In[3]:
 
 
 import requests
@@ -49,19 +43,13 @@ respuesta = requests.get(articleURL)
 soup = BeautifulSoup(respuesta.text,"html.parser")
 
 
-# In[191]:
+# In[4]:
 
 
 text_containers = soup.body.find_all(name='div', class_='paragraph--text')
 
 
-# In[ ]:
-
-
-
-
-
-# In[211]:
+# In[5]:
 
 
 #El valor de la variable text debe ser una cadena con los párrafos separados por '\n'
@@ -74,14 +62,14 @@ text = text[26:]
 text
 
 
-# In[215]:
+# In[6]:
 
 
 text = unicodedata.normalize("NFKD",text) #replace \xa0 with regular space
 print(text)
 
 
-# In[250]:
+# In[7]:
 
 
 def summarize(text, n):
@@ -118,14 +106,8 @@ def summarize(text, n):
     return summary_sentences
 
 
-# In[251]:
+# In[8]:
 
 
 summarize(text,3)
-
-
-# In[ ]:
-
-
-
 

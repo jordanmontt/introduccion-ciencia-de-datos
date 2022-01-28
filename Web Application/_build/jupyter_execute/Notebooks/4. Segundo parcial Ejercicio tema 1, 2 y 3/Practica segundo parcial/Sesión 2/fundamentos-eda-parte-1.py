@@ -44,7 +44,7 @@ import numpy as np
 import os
 
 
-# In[3]:
+# In[4]:
 
 
 ruta_archivo = os.path.join("titanic", "train.csv")
@@ -52,13 +52,13 @@ print(ruta_archivo)
 df = pd.read_csv(ruta_archivo, index_col='PassengerId')
 
 
-# In[4]:
+# In[5]:
 
 
 type(df)
 
 
-# In[10]:
+# In[6]:
 
 
 #info() muestra un resumen del DataFrame
@@ -69,19 +69,19 @@ type(df)
 df.info()
 
 
-# In[12]:
+# In[7]:
 
 
 df.head(10)
 
 
-# In[14]:
+# In[8]:
 
 
 df.tail(10)
 
 
-# In[5]:
+# In[9]:
 
 
 #Concetenar DFs
@@ -91,52 +91,52 @@ df["NuevaVariable"] = "Test"
 df.head(5)
 
 
-# In[9]:
+# In[10]:
 
 
 #del df["NuevaVariable"]
 df.head(5)
 
 
-# In[10]:
+# In[11]:
 
 
 #Igual que df.Name
 df["Name"]
 
 
-# In[28]:
+# In[12]:
 
 
 type(df.Fare)
 
 
-# In[34]:
+# In[13]:
 
 
 df[['Name','Age']].head(5)
 
 
-# In[11]:
+# In[14]:
 
 
 #Seleccionar por filas y columnas
 df.loc[7:10, ['Name','Age']]
 
 
-# In[12]:
+# In[15]:
 
 
 df.loc[0:5, "Name":"Age"]
 
 
-# In[13]:
+# In[16]:
 
 
 df.iloc[0:5, 2:5]
 
 
-# In[15]:
+# In[17]:
 
 
 #Filtrado
@@ -145,14 +145,14 @@ print(type(varones))
 varones.head(5)
 
 
-# In[16]:
+# In[18]:
 
 
 varones_en_primera_clase = df.loc[((df.Sex == 'male') & (df.Pclass == 1)),:]
 varones_en_primera_clase.head(5)
 
 
-# In[53]:
+# In[19]:
 
 
 #Estadisticas
@@ -171,14 +171,14 @@ varones_en_primera_clase.head(5)
 df.describe()
 
 
-# In[54]:
+# In[20]:
 
 
 print('Promedio del precio  : {0}'.format(df.Fare.mean()))
 print('Mediana del precio : {0}'.format(df.Fare.median()))
 
 
-# In[56]:
+# In[21]:
 
 
 #Nan porque hay valores faltantes
@@ -191,20 +191,20 @@ print('75 percentil : {0}'.format(df.Fare.quantile(.75)))
 print('Desviacion estandar precio : {0}'.format(df.Fare.std()))
 
 
-# In[3]:
+# In[22]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[59]:
+# In[23]:
 
 
 #gráfico box-whisker
 df.Fare.plot(kind='box')
 
 
-# In[61]:
+# In[24]:
 
 
 #Categorico:
@@ -214,32 +214,32 @@ df.Fare.plot(kind='box')
 df.describe(include='all')
 
 
-# In[63]:
+# In[25]:
 
 
 df.Sex.value_counts()
 
 
-# In[64]:
+# In[26]:
 
 
 df.Sex.value_counts(normalize=True)
 
 
-# In[65]:
+# In[27]:
 
 
 #Cuántos sobrevivieron? (Ejercicio)
 df.Pclass.value_counts()
 
 
-# In[66]:
+# In[28]:
 
 
 df.Pclass.value_counts().plot(kind='bar')
 
 
-# In[68]:
+# In[29]:
 
 
 df.Pclass.value_counts().plot(kind='bar',rot = 0, title='Conteo de pasajes por clase', color='c');

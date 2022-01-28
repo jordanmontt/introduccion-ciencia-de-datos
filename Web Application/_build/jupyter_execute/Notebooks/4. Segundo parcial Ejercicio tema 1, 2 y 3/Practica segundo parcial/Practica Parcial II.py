@@ -31,7 +31,7 @@ import string
 http = urllib3.PoolManager()
 
 
-# In[203]:
+# In[3]:
 
 
 articleURL = "https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Bolivia"
@@ -40,7 +40,7 @@ articleURL = "https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavir
 # ## Web Scraping
 # Obtener el texto de la pagina de Wikipedia
 
-# In[247]:
+# In[4]:
 
 
 def obtener_contenedor_texto(pagina):
@@ -89,7 +89,7 @@ def quitar_elementos_intempestivos(contenedor_texto):
     return contenedor_texto
 
 
-# In[248]:
+# In[5]:
 
 
 respuesta = requests.get(articleURL)
@@ -103,7 +103,7 @@ texto = texto.replace('\u200b', ' ').replace('\n', ' ').replace('\xa0000', ' ').
 
 # ## Convertir el texto a minúsculas
 
-# In[244]:
+# In[6]:
 
 
 texto = texto.lower()
@@ -111,7 +111,7 @@ texto = texto.lower()
 
 # ## Eliminar las palabras de parada junto con los signos de puntuación
 
-# In[252]:
+# In[7]:
 
 
 # Obtener las palabras de parada y los signos de puntuacion en una sola lista
@@ -126,7 +126,7 @@ texto_sin_palabras_de_parada = [p for p in texto_tokenisado if p not in palabras
 
 # ## Obtener una lista ordenada ascendentemente con las 10 palabras que más aparecen el en texto
 
-# In[260]:
+# In[8]:
 
 
 # Tekenizar el texto según las palabras
