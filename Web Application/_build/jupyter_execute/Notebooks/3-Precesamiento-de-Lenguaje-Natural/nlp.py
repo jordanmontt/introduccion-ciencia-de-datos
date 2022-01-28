@@ -38,8 +38,9 @@
 
 # <a id="2"></a>
 # ## Tokenización
-# [Tokenización](https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html) es el proceso de separar el texto en piezas llamadas *tokens*. Es la primera tarea/proceso en cualquier proyecto *NLP*. Es fundamental realizarla bien para no afectar la calidad de los datos de entrada en las etapas siguientes. Se recomienda usar un *tokenizer* reconocido y evitar intentar programar uno desde cero. 
-# ![Tokenización](01_tokenization.png)
+# [Tokenización](https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html) es el proceso de separar el texto en piezas llamadas *tokens*. Es la primera tarea/proceso en cualquier proyecto *NLP*. Es fundamental realizarla bien para no afectar la calidad de los datos de entrada en las etapas siguientes. Se recomienda usar un *tokenizer* reconocido y evitar intentar programar uno desde cero.
+# 
+# ![Tokenización](./img/01_tokenization.png)
 # 
 # A continuación, se muestra un ejemplo de tokenización sobre esta [noticia](https://www.lostiempos.com/deportes/multideportivo/20200115/olympic-albert-einstein-ucb-lpz-van-paso-firme-liga-superior). Primero debes cargar la noticia.
 # 

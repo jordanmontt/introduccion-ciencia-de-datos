@@ -41,7 +41,7 @@
 
 import requests
 
-respuesta = requests.get("http://localhost:8000/auto_mpg.html")
+respuesta = requests.get("./html/auto_mpg.html")
 
 
 # La biblioteca BeautifulSoup de bs4 nos permitirá análizar documentos HTML. 
