@@ -17,3 +17,8 @@ chapters:
 - file: Notebooks/6. Feature Engineering/Ejercicio feature engineering
 - file: Notebooks/7. Tercer parcial Ejercicio tema 5 y 6/pec03
 - file: Notebooks/8. Feature Selection/03_feature-selection
+- file: Notebooks/10. Modelos predictivos/01_fundamentos
+- file: Notebooks/10. Modelos predictivos/02_scikit-learn
+- file: Notebooks/10. Modelos predictivos/03_regresion-logistica
+- file: Notebooks/10. Modelos predictivos/04-arboles-de-decision
+- file: Notebooks/10. Modelos predictivos/Ejercicio regresión logística
