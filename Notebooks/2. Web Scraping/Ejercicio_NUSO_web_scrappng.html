@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio: Web Scrapping para extraer información de un artículo &#8212; Introducción a la Ciencia de Datos</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Procesamiento de Lenguaje Natural (NLP)" href="../3.%20Procesamiento%20del%20Lenguaje%20Natural/nlp.html" />
+    <link rel="prev" title="Web Scraping" href="web_scraping.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introducción a la Ciencia de Datos</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1.%20Pandas/pandas.html">
+   Explorando y analizando DataFrames con Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="web_scraping.html">
+   Web Scraping
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ejercicio: Web Scrapping para extraer información de un artículo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3.%20Procesamiento%20del%20Lenguaje%20Natural/nlp.html">
+   Procesamiento de Lenguaje Natural (
+   <em>
+    NLP
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Prueba%20dos%20resulta%20por%20el%20profesor.html">
+   Ejercicio misceláneo: NLP, Web Scrapping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.%20Segundo%20parcial%20Ejercicio%20tema%201%2C%202%20y%203/Segundo%20examen%20parcial.html">
+   Ejercicio misceláneo: NLP, Web Scrapping (otra resolución)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.1%20Introduccion%20al%20Analisis%20Exploratorio%20de%20Datos.html">
+   Análisis exploratorio de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.2%20An%C3%A1lisis%20exploratorio%20de%20datos%20unidimensionales.html">
+   Análisis unidimensional
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/5.3%20Analisis%20exploratorio%20de%20datos%20multidimensionales.html">
+   Análisis exploratorio de datos multivariable
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%201.html">
+   Ejercicio análisi exploratorio parte 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5.%20Analisis%20Exploratorio/Ejercicio%20parte%202.html">
+   Ejercicio análisi exploratorio parte 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/data%20reshaping.html">
+   Data Reshaping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/feature%20engineering.html">
+   Feature engineering (preparación de variables)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6.%20Feature%20Engineering/Ejercicio%20feature%20engineering.html">
+   Ejercicio Feature Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7.%20Tercer%20parcial%20Ejercicio%20tema%205%20y%206/pec03.html">
+   Ejercicio misceláneo: Análisis exploratorio y Feature Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8.%20Feature%20Selection/03_feature-selection.html">
+   Feature selection (selección de variables)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/01_fundamentos.html">
+   Aprendizaje Automático (Machine Learning)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/02_scikit-learn.html">
+   Scikit-learn: basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/03_regresion-logistica.html">
+   Regresión logística
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/04-arboles-de-decision.html">
+   Arboles de decisión: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.%20Modelos%20predictivos/Ejercicio%20regresi%C3%B3n%20log%C3%ADstica.html">
+   Ejercicio Regresión Logística
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11.%20Cuarto%20parcial/pec04.html">
+   Ejercicio misceláneo: Feature Selection, Modelos predictivos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12.%20Arboles%20de%20decision/04-arboles-de-decision-python.html">
+   Arboles de decisión: Hiperparámetros, Random Forest y Optimización de Parámetros
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../13.%20Guardar%20y%20utilizar%20una%20API/Guardar%20y%20desplegar%20un%20clasificador.html">
+   Guardar y deployar un modelo predictivo
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/2. Web Scraping/Ejercicio_NUSO_web_scrappng.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jordanmontt/introduccion-ciencia-de-datos"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/jordanmontt/introduccion-ciencia-de-datos/issues/new?title=Issue%20on%20page%20%2FNotebooks/2. Web Scraping/Ejercicio_NUSO_web_scrappng.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jordanmontt/introduccion-ciencia-de-datos/master?urlpath=tree/docs/Notebooks/2. Web Scraping/Ejercicio_NUSO_web_scrappng.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ejercicio: Web Scrapping para extraer información de un artículo</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ejercicio-web-scrapping-para-extraer-informacion-de-un-articulo">
+<h1>Ejercicio: Web Scrapping para extraer información de un artículo<a class="headerlink" href="#ejercicio-web-scrapping-para-extraer-informacion-de-un-articulo" title="Permalink to this headline">¶</a></h1>
+<p>Este ejercicio consiste en extraer la información más importante de una página web. Para este ejercicio elegimos un artículo sobre el transhumanismo que se puede encontrar <a class="reference external" href="https://nuso.org/articulo/hacia-un-futuro-transhumano/">en este enlace</a>. El artículo está en español. Dejaremos aquí el abstracto de este.</p>
+<blockquote>
+<div><p>El transhumanismo es un movimiento intelectual que propone superar los límites naturales de la humanidad mediante el mejoramiento tecnológico y, eventualmente, la separación de la mente del cuerpo humano. Si bien ha sido históricamente marginal y sectario, sus planteos de medicina mejorativa, su materialismo radical, incluso sus controvertidas ideas de eugenesia, inmortalidad y singularidad adquieren creciente interés en un momento en el cual la tecnología amenaza con avanzar sobre esferas de la vida humana hasta ahora en apariencia intocables.</p>
+</div></blockquote>
+<p>En este ejercicio, extraeremos los párrafos del texto, un resumen de este, el vocabulario usado, el título, la fecha de publicación, el nombre de la revista, el nombre del autor, entre otras cosas.</p>
+<p><strong>Primero importamos las librerias necesarias</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">import</span> <span class="nn">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">re</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">nltk</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">string</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;nltk&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, obtenemos la página como un objecto</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener el código HTML del artículo</span>
+<span class="n">respuesta</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://nuso.org/articulo/hacia-un-futuro-transhumano/&quot;</span><span class="p">)</span>
+<span class="n">pagina</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primeramente, vamos a obtener el nombre de la revista. el objeto <code class="docutils literal notranslate"><span class="pre">página</span></code> tiene un método que retorna el título del documento HTML</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pagina</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">nombre_revista</span> <span class="o">=</span> <span class="n">nombre_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos ver que <code class="docutils literal notranslate"><span class="pre">title</span></code> retorna, para nuestro caso específico, un array con 2 elementos: el título de la ravista y el del artícul. Ahora queremos el nombre del artículo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nombre_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pagina</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">nombre_articulo</span> <span class="o">=</span> <span class="n">nombre_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos obtener el número del artículo con respecto a la revista. Esa información se encutra en la primera parte de la página web y representa cuántos artículos tenía publicado la revista, hasta el momento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numero_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Nº (\d+)&#39;</span>
+    <span class="n">texto_pagina</span> <span class="o">=</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;section-title has-magazine&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span>    
+    <span class="n">numero_revista</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span><span class="n">texto_pagina</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numero_revista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">numero_revista</span> <span class="o">=</span> <span class="n">numero_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Queremos obtener la fecha de la publicación del artículo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fecha</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">texto_pagina</span> <span class="o">=</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;section-title has-magazine&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">return</span> <span class="n">texto_pagina</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Queremos obtener el resumen, o el abstract, del artículo. Es la pequeña explicación sobre que trata el artículo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resumen_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;summary&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">resumen_articulo</span> <span class="o">=</span> <span class="n">resumen_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finalmente, queremos el texto, o la redacción principal del artículo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">redaccion_principal</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">parrafos</span> <span class="o">=</span> <span class="n">obtener_lista_de_parrafos</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+    <span class="n">texto_articulo</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">parrafo</span> <span class="ow">in</span> <span class="n">parrafos</span><span class="p">:</span>
+        <span class="n">texto_articulo</span> <span class="o">=</span> <span class="n">texto_articulo</span> <span class="o">+</span> <span class="n">parrafo</span><span class="o">.</span><span class="n">text</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">texto_articulo</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    
+<span class="n">redaccion_principal</span> <span class="o">=</span> <span class="n">redaccion_principal</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Después de obtener todos los atributos principales del artículo, podemos hacer la “limpieza del texto”. Si nosotros, por ejemplo, quisiéramos utilizar este texto para entrenar un modelo de machine learning, normalmente tenemos que eliminar los elementos del texto que no son relevantes para el modelo de machine learning. Por ejemplo, podemos eliminar las palabras de parada, las palabras como los artículos, que no brindan información importante.</p>
+<p>También normalmente se quiere tener el vocabulario del texto. Es decir, cuantas palabras diferentes tiene el texto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obtener_palabras_de_parada</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;spanish&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">obtener_vocabulario</span><span class="p">(</span><span class="n">texto_en_palabras</span><span class="p">,</span> <span class="n">palabras_parada</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">palabra</span> <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">texto_en_palabras</span> <span class="k">if</span> <span class="n">palabra</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">palabras_parada</span><span class="p">]</span>
+
+<span class="n">palabras_parada</span> <span class="o">=</span> <span class="n">obtener_palabras_de_parada</span><span class="p">()</span>
+<span class="n">texto_en_palabras</span> <span class="o">=</span>  <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">redaccion_principal</span><span class="p">)</span>
+<span class="n">vocabulario</span> <span class="o">=</span> <span class="n">obtener_vocabulario</span><span class="p">(</span><span class="n">texto_en_palabras</span><span class="p">,</span> <span class="n">palabras_parada</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora simplemente mostramos todo el código que se necesitó para realizar este ejercicio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funciones relativas al procesamiento del documento HTML</span>
+<span class="k">def</span> <span class="nf">nombre_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pagina</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">nombre_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pagina</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">numero_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Nº (\d+)&#39;</span>
+    <span class="n">texto_pagina</span> <span class="o">=</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;section-title has-magazine&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span>    
+    <span class="n">numero_revista</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span><span class="n">texto_pagina</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numero_revista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">fecha</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">texto_pagina</span> <span class="o">=</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;section-title has-magazine&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">return</span> <span class="n">texto_pagina</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">resumen_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;summary&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">obtener_lista_de_parrafos</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">contenedor_texto</span> <span class="o">=</span> <span class="n">pagina</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;uk-width-expand&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">contenedor_texto</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">redaccion_principal</span><span class="p">(</span><span class="n">pagina</span><span class="p">):</span>
+    <span class="n">parrafos</span> <span class="o">=</span> <span class="n">obtener_lista_de_parrafos</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+    <span class="n">texto_articulo</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">parrafo</span> <span class="ow">in</span> <span class="n">parrafos</span><span class="p">:</span>
+        <span class="n">texto_articulo</span> <span class="o">=</span> <span class="n">texto_articulo</span> <span class="o">+</span> <span class="n">parrafo</span><span class="o">.</span><span class="n">text</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">texto_articulo</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+
+<span class="c1"># Recuperar la información en texto del artículo</span>
+<span class="n">nombre_revista</span> <span class="o">=</span> <span class="n">nombre_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+<span class="n">nombre_articulo</span> <span class="o">=</span> <span class="n">nombre_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+<span class="n">numero_revista</span> <span class="o">=</span> <span class="n">numero_revista</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+<span class="n">resumen_articulo</span> <span class="o">=</span> <span class="n">resumen_articulo</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+<span class="n">redaccion_principal</span> <span class="o">=</span> <span class="n">redaccion_principal</span><span class="p">(</span><span class="n">pagina</span><span class="p">)</span>
+
+
+<span class="c1"># Funciones relativas a la limpieza del texto</span>
+<span class="k">def</span> <span class="nf">obtener_palabras_de_parada</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span> <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;spanish&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">obtener_vocabulario</span><span class="p">(</span><span class="n">texto_en_palabras</span><span class="p">,</span> <span class="n">palabras_parada</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">palabra</span> <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">texto_en_palabras</span> <span class="k">if</span> <span class="n">palabra</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">palabras_parada</span><span class="p">]</span>
+
+
+<span class="c1"># Obtener el vocabulario relevante del texto</span>
+<span class="n">palabras_parada</span> <span class="o">=</span> <span class="n">obtener_palabras_de_parada</span><span class="p">()</span>
+<span class="n">texto_en_palabras</span> <span class="o">=</span>  <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">redaccion_principal</span><span class="p">)</span>
+<span class="n">vocabulario</span> <span class="o">=</span> <span class="n">obtener_vocabulario</span><span class="p">(</span><span class="n">texto_en_palabras</span><span class="p">,</span> <span class="n">palabras_parada</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks\2. Web Scraping"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="web_scraping.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Web Scraping</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../3.%20Procesamiento%20del%20Lenguaje%20Natural/nlp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Procesamiento de Lenguaje Natural (<em>NLP</em>)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
