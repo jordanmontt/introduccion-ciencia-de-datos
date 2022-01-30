@@ -390,15 +390,17 @@
 <p>Un árbol de decisión es un clasificador que toma como entrada una entidad descrita por un conjunto de atributos y devuelve una «decisión». Los atributos de entrada pueden ser discretos o continuos.</p>
 <p>Un árbol de decisión aplica una secuencia de tests para poder alcanzar la decisión. Cada nodo interno del árbol corresponde con un test sobre el valor de una de las propiedades, y las ramas que salen del nodo están etiquetadas con los posibles valores de dicha propiedad. Cada nodo hoja del árbol representa el valor que ha de ser devuelto si dicho nodo hoja es alcanzado.</p>
 <p>La representación en forma de árboles de decisión es muy natural para los humanos; muchos manuales que explican cómo hacer determinadas tareas (por ejemplo, reparar un coche) están escritos en su totalidad como un árbol de decisión.</p>
-<img src="./img/21-arbol-decision.png" style="width:600px"/></div>
+<a class="reference internal image-reference" href="../../_images/21-arbol-decision.png"><img alt="../../_images/21-arbol-decision.png" src="../../_images/21-arbol-decision.png" style="width: 600px;" /></a>
+</div>
 <div class="section" id="aprendizaje-de-arboles-de-decision">
 <h1>Aprendizaje de Arboles de decisión<a class="headerlink" href="#aprendizaje-de-arboles-de-decision" title="Permalink to this headline">¶</a></h1>
 <p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Aprendizaje_basado_en_%C3%A1rboles_de_decisi%C3%B3n">Aprendizaje basado en árboles de decisión</a></strong></p>
-<img src="./img/22-ejemplos-arbol-decision.png" style="width:600px"/>
+<a class="reference internal image-reference" href="../../_images/22-ejemplos-arbol-decision.png"><img alt="../../_images/22-ejemplos-arbol-decision.png" src="../../_images/22-ejemplos-arbol-decision.png" style="width: 600px;" /></a>
 <p>La idea básica del algoritmo APRENDIZAJE-ÁRBOL-DECISIÓN es realizar primero el test sobre el atributo más importante. Se considera como «atributo más importante» aquel que clasifica la mayor cantidad de ejemplos. De esta forma, esperamos obtener la clasificación correcta con un número reducido de tests; es decir, que todos los caminos en el árbol sean cortos y así el árbol completo será pequeño.</p>
-<img src="./img/23-atributo-importante.png" style="width:600px"/>
-<img src="./img/24-algoritmo-aprendizaje-arbol.png" style="width:600px"/>
-<img src="./img/25-contenido-informacion-atributo.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/23-atributo-importante.png"><img alt="../../_images/23-atributo-importante.png" src="../../_images/23-atributo-importante.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/24-algoritmo-aprendizaje-arbol.png"><img alt="../../_images/24-algoritmo-aprendizaje-arbol.png" src="../../_images/24-algoritmo-aprendizaje-arbol.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/25-contenido-informacion-atributo.png"><img alt="../../_images/25-contenido-informacion-atributo.png" src="../../_images/25-contenido-informacion-atributo.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -451,8 +453,9 @@ Necesitamos 1 bit de información para responder la pregunta sobre si saldrá ca
 </div>
 <div class="section" id="ganancia-de-informacion">
 <h1>Ganancia de información<a class="headerlink" href="#ganancia-de-informacion" title="Permalink to this headline">¶</a></h1>
-<img src="./img/26-cantidad-informacion-inicial.png" style="width:600px"/>
-<img src="./img/27-ganacia-informacion.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/26-cantidad-informacion-inicial.png"><img alt="../../_images/26-cantidad-informacion-inicial.png" src="../../_images/26-cantidad-informacion-inicial.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/27-ganacia-informacion.png"><img alt="../../_images/27-ganacia-informacion.png" src="../../_images/27-ganacia-informacion.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># si = 6/12, no = 6/12</span>
 <span class="n">cantidad_de_info_inicial</span> <span class="o">=</span> <span class="n">cantidad_info</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
@@ -466,8 +469,9 @@ Necesitamos 1 bit de información para responder la pregunta sobre si saldrá ca
 </div>
 </div>
 </div>
-<img src="./img/22-ejemplos-arbol-decision.png" style="width:600px"/>
-<img src="./img/23-atributo-importante.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/22-ejemplos-arbol-decision.png"><img alt="../../_images/22-ejemplos-arbol-decision.png" src="../../_images/22-ejemplos-arbol-decision.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/23-atributo-importante.png"><img alt="../../_images/23-atributo-importante.png" src="../../_images/23-atributo-importante.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#francés 2 casos;italiano 2 casos;tai 4 casos;hamburguesería 4 casos</span>
 <span class="n">info_tipo</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">cantidad_info</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">cantidad_info</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">cantidad_info</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>  <span class="o">+</span> <span class="mi">4</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">cantidad_info</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
@@ -536,7 +540,8 @@ Necesitamos 1 bit de información para responder la pregunta sobre si saldrá ca
 </div>
 </div>
 </div>
-<img src="./img/22.c-ejercicio-arbol-decision.png" style="width:600px"/></div>
+<a class="reference internal image-reference" href="../../_images/22.c-ejercicio-arbol-decision.png"><img alt="../../_images/22.c-ejercicio-arbol-decision.png" src="../../_images/22.c-ejercicio-arbol-decision.png" style="width: 600px;" /></a>
+</div>
 
     <script type="text/x-thebe-config">
     {

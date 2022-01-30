@@ -872,7 +872,8 @@
 - 3er cuantil (Q3) 	75% de los datos es menor que o igual a este valor. 
 </pre></div>
 </div>
-<img src="../../img/02-quartiles.png" style="width:600px"/></div>
+<a class="reference internal image-reference" href="../../_images/02-quartiles.png"><img alt="../../_images/02-quartiles.png" src="../../_images/02-quartiles.png" style="width: 600px;" /></a>
+</div>
 <div class="section" id="indicadores-de-dispersion">
 <h2>Indicadores de dispersión<a class="headerlink" href="#indicadores-de-dispersion" title="Permalink to this headline">¶</a></h2>
 <p><a id="2"></a></p>
@@ -880,7 +881,8 @@
 <ul class="simple">
 <li><p><strong>Varianza, desviación estándar</strong></p></li>
 </ul>
-<img src="../../img/03-dispersion.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/03-dispersion.png"><img alt="../../_images/03-dispersion.png" src="../../_images/03-dispersion.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">stdev</span>
 <span class="kn">from</span> <span class="nn">statistics</span> <span class="kn">import</span> <span class="n">variance</span>
@@ -908,10 +910,12 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <ul class="simple">
 <li><p><strong>Valores atípicos</strong></p></li>
 </ul>
-<img src="../../img/04-outliers.png" style="width:600px"/><ul class="simple">
+<a class="reference internal image-reference" href="../../_images/04-outliers.png"><img alt="../../_images/04-outliers.png" src="../../_images/04-outliers.png" style="width: 600px;" /></a>
+<ul class="simple">
 <li><p><strong>Asimetría (skweness). Grado de simetría de la distribución.</strong></p></li>
 </ul>
-<img src="../../img/05-skewness.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/05-skewness.png"><img alt="../../_images/05-skewness.png" src="../../_images/05-skewness.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">skew</span>
 
@@ -931,7 +935,8 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <ul class="simple">
 <li><p><strong>Curtosis. Indicador de la “anchura” de una distribución</strong></p></li>
 </ul>
-<img src="../../img/06-kurtosis.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/06-kurtosis.png"><img alt="../../_images/06-kurtosis.png" src="../../_images/06-kurtosis.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kurtosis</span>
 
@@ -957,7 +962,7 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Histograma">Histograma</a></strong></p></li>
 </ul>
 <p>Permite visualizar las frecuencias de diferentes categorías o rangos de valores (clases o bins)</p>
-<img src="../../img/07-histograma.png" style="width:400px"/>
+<a class="reference internal image-reference" href="../../_images/07-histograma.png"><img alt="../../_images/07-histograma.png" src="../../_images/07-histograma.png" style="width: 400px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma Temp&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -974,7 +979,8 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Funci%C3%B3n_de_densidad_de_probabilidad">Diagrama de Densidad</a></strong></p></li>
 </ul>
-<img src="../../img/08-density-plot.png" style="width:400px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/08-density-plot.png"><img alt="../../_images/08-density-plot.png" src="../../_images/08-density-plot.png" style="width: 400px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Densidad Temp&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 </pre></div>
@@ -991,7 +997,8 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Diagrama_de_caja">Diagrama de Caja</a></strong></p></li>
 </ul>
 <p>Este es especialmente útil para la identificación de valores atípicos.</p>
-<img src="../../img/09-box-plot.png" style="width:400px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/09-box-plot.png"><img alt="../../_images/09-box-plot.png" src="../../_images/09-box-plot.png" style="width: 400px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Box Temp&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1013,7 +1020,8 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <li><p><strong><a class="reference external" href="https://es.wikipedia.org/wiki/Diagrama_de_barras">Gráfico de Barras</a></strong></p></li>
 </ul>
 <p>Presenta datos <strong>cualitativos</strong> con barras rectangulares con alturas o longitudes proporcionales a los valores que representan. (No son histogramas!!)</p>
-<img src="../../img/10-bar-chart.png" style="width:400px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/10-bar-chart.png"><img alt="../../_images/10-bar-chart.png" src="../../_images/10-bar-chart.png" style="width: 400px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;lab&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="s1">&#39;val&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;lab&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1031,7 +1039,7 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <li><p><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Line_chart">Gráfico de lineas</a></strong></p></li>
 </ul>
 <p>Presenta una serie de valores (marcas) conectados por líneas. Se emplean frecuentemente para visualizar tendencias a lo largo del tiempo.</p>
-<img src="../../img/11-line-chart.png" style="width:400px"/>
+<a class="reference internal image-reference" href="../../_images/11-line-chart.png"><img alt="../../_images/11-line-chart.png" src="../../_images/11-line-chart.png" style="width: 400px;" /></a>
 <p>Para ambos tipos de gráficos, se recomienda aplicarlos para un número reducido de variables (~ 6)</p>
 </div>
 <div class="section" id="graficos-de-composicion">
@@ -1041,7 +1049,7 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">Torta</a></strong></p></li>
 </ul>
-<img src="../../img/12-pie-chart.png" style="width:400px"/>
+<a class="reference internal image-reference" href="../../_images/12-pie-chart.png"><img alt="../../_images/12-pie-chart.png" src="../../_images/12-pie-chart.png" style="width: 400px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;masa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.330</span><span class="p">,</span> <span class="mf">4.87</span> <span class="p">,</span> <span class="mf">5.97</span><span class="p">],</span>
@@ -1064,7 +1072,7 @@ Varianza: 33.71689795030963, 33.71689795030963, 33.65168151326841
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://businessq-software.com/2017/02/21/stacked-bar-chart-definition-and-examples-businessq/">Barras apiladas</a></strong></p></li>
 </ul>
-<img src="../../img/13-stacked-bar.png" style="width:400px"/>
+<a class="reference internal image-reference" href="../../_images/13-stacked-bar.png"><img alt="../../_images/13-stacked-bar.png" src="../../_images/13-stacked-bar.png" style="width: 400px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;vestimenta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">8261.68</span><span class="p">,</span> <span class="mf">7875.87</span> <span class="p">,</span> <span class="mf">4990.23</span><span class="p">],</span>

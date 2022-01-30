@@ -508,7 +508,8 @@
 <h3>Covarianza<a class="headerlink" href="#covarianza" title="Permalink to this headline">¶</a></h3>
 <p><a id="1"></a></p>
 <p>Mide la relación lineal entre dos variables (si incrementan o decrementan juntas). Una covarianza positiva indica que las variables se mueven en la misma dirección y un covarianza negativa que las variables cambian en direcciones opuestas. Sin embargo, <strong>no permite valorar la intensidad de la relación.</strong></p>
-<img src="./img/14-covarianza.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/14-covarianza.png"><img alt="../../_images/14-covarianza.png" src="../../_images/14-covarianza.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;total_bill&#39;</span><span class="p">],</span> <span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">])</span>
 </pre></div>
@@ -579,11 +580,12 @@
 <h3>Coeficiente de correlación<a class="headerlink" href="#coeficiente-de-correlacion" title="Permalink to this headline">¶</a></h3>
 <p><a id="2"></a></p>
 <p>Al igual que la covarianza mide la dirección pero tambien la intensidad de la relación. Es importante recordar que  <strong><a class="reference external" href="https://www.gaussianos.com/hay-que-decirlo-mas-correlacion-implica-causalidad/">correlación no implica causalidad</a></strong></p>
-<img src="./img/15-correlacion.png" style="width:600px"/>
-<img src="./img/16-rango-correlacion.png" style="width:600px"/>
+<a class="reference internal image-reference" href="../../_images/15-correlacion.png"><img alt="../../_images/15-correlacion.png" src="../../_images/15-correlacion.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/16-rango-correlacion.png"><img alt="../../_images/16-rango-correlacion.png" src="../../_images/16-rango-correlacion.png" style="width: 600px;" /></a>
 <p>Un coeficiente de correlación igual a cero no necesarimente implica que las variables sean independientes. Dos variables independientes tendrán un coefiente de correlación de cero. Por esta razón, <strong>el cálculo del coeficiente de correlación debe ser complementado con la exploración visual de los datos.</strong>.</p>
 <p>Tambien es importante recordar que el índice de correlación <em><strong>sólo indica relaciones lineales entre las variables</strong></em>. Por tanto, no indica las relaciones no lineales que pudieran existir entre las variables. Por ejemplo, en la ecuación y=x^2, las variables tendrán una correlación de 0 a pesar de estar claramente relacionadas.</p>
-<img src="./img/17-correlacion-cero-no-implica-independencia.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/17-correlacion-cero-no-implica-independencia.png"><img alt="../../_images/17-correlacion-cero-no-implica-independencia.png" src="../../_images/17-correlacion-cero-no-implica-independencia.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;total_bill&#39;</span><span class="p">],</span> <span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">])</span>
 </pre></div>
@@ -859,7 +861,8 @@
 <h3>Pivot (tablas de contingencia)<a class="headerlink" href="#pivot-tablas-de-contingencia" title="Permalink to this headline">¶</a></h3>
 <p><a id="6" ></a></p>
 <p>Es una extensión del crosstab que permite analizar dos variables categóricas y una numérica.</p>
-<img src="./img/18_pivot_table.png" style="width:600px"/><div class="cell docutils container">
+<a class="reference internal image-reference" href="../../_images/18_pivot_table.png"><img alt="../../_images/18_pivot_table.png" src="../../_images/18_pivot_table.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;smoker&#39;</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;tip&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 </pre></div>
