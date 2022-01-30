@@ -26,3 +26,7 @@ html:
 sphinx:
   config:
     html_show_copyright: false
+
+parse:
+  myst_enable_extensions:
+    - html_image
