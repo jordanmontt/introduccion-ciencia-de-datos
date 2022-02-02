@@ -1,5 +1,5 @@
 title: Introducción a la Ciencia de Datos
-author: Daniel Oropeza and Sebastian Jordan
+author: ""
 logo: logo.png
 
 execute:
@@ -26,3 +26,7 @@ html:
 sphinx:
   config:
     html_show_copyright: false
+
+parse:
+  myst_enable_extensions:
+    - html_image
